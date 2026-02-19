@@ -82,7 +82,7 @@ styleSheet.innerText = `
     box-shadow: 0 10px 40px rgba(0,0,0,0.8);
     transition: opacity 0.5s ease;
     animation: surgindo 0.5s ease-out;
-    border: 1px solid #d4af37;
+    border: 1px solid #020202;
 }
 @keyframes surgindo {
     from { opacity: 0; transform: translate(-50%, 20px); }
