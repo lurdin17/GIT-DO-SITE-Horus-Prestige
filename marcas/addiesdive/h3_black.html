@@ -8,12 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Playfair Display', serif; }
 body {
     color: #EAEAEA;
     overflow-x: hidden;
@@ -22,40 +17,33 @@ body {
     background-size: cover;
 }
 
-#particles-container {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
+#particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .particle { position: absolute; border-radius: 50%; }
 
 /* HEADER */
 header {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 90px;
+    position: fixed; top: 0; left: 0; width: 100%; height: 90px;
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://i.imgur.com/9swFJOL.png') center/cover no-repeat;
-    display: flex; justify-content: center; align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.9);
-    backdrop-filter: blur(8px);
+    display: flex; justify-content: center; align-items: center; z-index: 1000;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.9); backdrop-filter: blur(8px);
 }
 .logo-header { width: 110px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
 
-nav {
-    position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
-    display: flex; align-items: center; gap: 12px;
-}
+nav { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; }
 nav a {
     text-decoration: none; font-size: 13px; font-weight: 500;
     padding: 10px 20px; border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255,255,255,0.1); color: #fff;
-    transition: 0.3s ease;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+    transition: 0.3s ease; position: relative;
 }
 nav a:hover { background: #fff; color: #000; }
+
+/* BOLINHA DO CARRINHO */
+#cart-count {
+    position: absolute; top: -5px; right: -2px; background: #ff4d4d; color: white;
+    font-size: 10px; font-weight: bold; width: 18px; height: 18px;
+    border-radius: 50%; display: none; align-items: center; justify-content: center;
+}
 
 /* LAYOUT DO PRODUTO */
 .product-page {
@@ -70,38 +58,19 @@ nav a:hover { background: #fff; color: #000; }
 
 .product-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .brand-name { color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px; }
-.product-info h1 { font-size: 2.rem; margin-bottom: 15px; letter-spacing: 2px; }
+.product-info h1 { font-size: 2rem; margin-bottom: 15px; letter-spacing: 2px; }
 .price { font-size: 1.6rem; color: #fff; font-weight: 700; margin-bottom: 30px; }
 .description-box { margin-bottom: 40px; line-height: 1.8; color: #ccc; font-size: 0.95rem; }
 
+/* BOTÃO ADICIONAR (BRANCO) */
 .btn-add-cart {
-    padding: 15px; background: #fff; color: #000; text-align: center; border: none;
+    padding: 20px; background: #fff; color: #000; text-align: center; border: none;
     cursor: pointer; font-weight: 700; border-radius: 15px; transition: 0.4s;
     letter-spacing: 1px; text-transform: uppercase; font-size: 1rem;
 }
+.btn-add-cart:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255,255,255,0.1); background: #f0f0f0; }
 
-.btn-add-cart {
-    padding: 20px;
-    background: #fff;
-    color: #000;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    border-radius: 15px;
-    transition: 0.4s;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 1rem;
-}
-.btn-add-cart:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255,255,255,0.1);
-}
-
-@media (max-width: 900px) {
-    .product-page { flex-direction: column; margin: 20px; padding: 20px; }
-}
+@media (max-width: 900px) { .product-page { flex-direction: column; margin: 20px; padding: 20px; } }
 </style>
 <script src="../../produtos.js"></script>
 </head>
@@ -110,24 +79,22 @@ nav a:hover { background: #fff; color: #000; }
 <div id="particles-container"></div>
 
 <header>
-    <a href="../../index.html">
-        <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
-    </a>
+    <a href="../../index.html"><img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo"></a>
     <nav>
         <a href="../../index.html">Início</a>
         <a href="../../catalogo.html">Catálogo</a>
-        <a href="../../carrinho.html">Carrinho</a>
+        <a href="../../carrinho.html">Carrinho <span id="cart-count">0</span></a>
     </nav>
 </header>
 
 <main class="product-page">
     <div class="product-image">
-        <img src="https://i.imgur.com/ORlGCxO.jpeg" alt="H3 Black">
+        <img id="product-img" src="https://i.imgur.com/ORlGCxO.jpeg" alt="H3 Black">
     </div>
 
     <div class="product-info">
          <span class="brand-name">Addiesdive</span>
-        <h1>H3 Black</h1>
+        <h1 id="product-name">H3 Black</h1>
         <div class="price" id="product-price">R$ 0,00</div>
         
         <div class="description-box">
@@ -135,7 +102,7 @@ nav a:hover { background: #fff; color: #000; }
             <p>teste</p>
         </div>
 
-        <button class="btn-add-cart" onclick="adicionarAoCarrinhoPeloId('h3-black')">
+        <button class="btn-add-cart" onclick="adicionarAoCarrinho()">
             Adicionar ao Carrinho
         </button>
     </div>
@@ -146,19 +113,55 @@ nav a:hover { background: #fff; color: #000; }
 </footer>
 
 <script>
-// FUNÇÃO PARA CARREGAR O PREÇO DO BANCO DE DADOS AUTOMATICAMENTE
-function carregarPreco() {
-    const idProduto = 'h3-black'; // Identificador do produto
+const idProduto = 'h3-black';
+
+function carregarDados() {
     const info = BANCO_DE_DADOS[idProduto];
-    
     if(info) {
-        const precoFormatado = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-        document.getElementById('product-price').innerText = precoFormatado;
+        document.getElementById('product-price').innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+        document.getElementById('product-img').src = info.imagem;
+        document.getElementById('product-name').innerText = info.nome;
+    }
+    atualizarContadorCarrinho();
+}
+
+function adicionarAoCarrinho() {
+    const info = BANCO_DE_DADOS[idProduto];
+    if(!info) return;
+
+    let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
+    const index = carrinho.findIndex(item => item.nome === info.nome);
+    
+    if (index > -1) { 
+        carrinho[index].quantidade += 1; 
+    } else { 
+        carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); 
+    }
+    
+    localStorage.setItem('horus_cart', JSON.stringify(carrinho));
+    atualizarContadorCarrinho();
+    
+    // Notificação elegante em vez do alert
+    if(typeof mostrarAvisoLuxo === 'function') {
+        mostrarAvisoLuxo("Produto adicionado à sua coleção!");
     }
 }
 
-// Executa as funções ao carregar a página
-window.onload = carregarPreco;
+function atualizarContadorCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
+    const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
+    const contador = document.getElementById('cart-count');
+    if (contador) {
+        if (totalItens > 0) { 
+            contador.innerText = totalItens; 
+            contador.style.display = 'flex'; 
+        } else { 
+            contador.style.display = 'none'; 
+        }
+    }
+}
+
+window.onload = carregarDados;
 
 // Partículas
 const container = document.getElementById('particles-container');
