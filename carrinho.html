@@ -37,10 +37,32 @@ nav a {
 }
 nav a:hover { background: #fff; color: #000; }
 
+/* ANIMAÇÃO DA BOLINHA DO CARRINHO */
 #cart-count {
     position: absolute; top: -5px; right: -2px; background: #ff4d4d; color: white;
     font-size: 10px; font-weight: bold; width: 18px; height: 18px; border-radius: 50%;
-    display: none; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none; align-items: center; justify-content: center; box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+    70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+/* AVISO DE PRODUTO ADICIONADO (TOAST) */
+.toast-aviso {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95); color: #000; padding: 15px 30px;
+    border-radius: 50px; font-weight: 600; z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none; animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+    from { bottom: -50px; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
 }
 
 .cart-container {
@@ -48,6 +70,13 @@ nav a:hover { background: #fff; color: #000; }
     background: rgba(10, 10, 10, 0.9); border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px; padding: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.8);
 }
+
+.btn-empty {
+    display: inline-block; margin-top: 20px; padding: 12px 30px;
+    background: #d4af37; color: #fff; text-decoration: none;
+    border-radius: 10px; font-weight: 600; transition: 0.3s;
+}
+.btn-empty:hover { background: #fff; color: #000; }
 
 h2 { font-size: 2rem; margin-bottom: 30px; text-align: center; letter-spacing: 2px; }
 .cart-items { margin-bottom: 30px; }
@@ -92,6 +121,7 @@ h2 { font-size: 2rem; margin-bottom: 30px; text-align: center; letter-spacing: 2
 <body>
 
 <div id="particles-container"></div>
+<div id="toast" class="toast-aviso">Produto adicionado ao carrinho!</div>
 
 <header>
     <a href="index.html">
@@ -108,7 +138,7 @@ h2 { font-size: 2rem; margin-bottom: 30px; text-align: center; letter-spacing: 2
     <h2>Sua Coleção</h2>
     <div class="cart-items" id="cart-items-list"></div>
 
-    <div class="cart-summary">
+    <div class="cart-summary" id="cart-footer">
         <span class="total-label">Subtotal</span>
         <span class="total-value" id="cart-total">R$ 0,00</span>
         <a href="#" class="btn-checkout" onclick="finalizarPedido()">FINALIZAR PEDIDO</a>
@@ -120,6 +150,14 @@ h2 { font-size: 2rem; margin-bottom: 30px; text-align: center; letter-spacing: 2
 </footer>
 
 <script>
+// Função para mostrar o aviso (Toast)
+function mostrarAviso(msg) {
+    const toast = document.getElementById('toast');
+    toast.innerText = msg;
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2500);
+}
+
 function atualizarContadorCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
@@ -133,17 +171,23 @@ function atualizarContadorCarrinho() {
 function carregarCarrinho() {
     const lista = document.getElementById('cart-items-list');
     const totalElement = document.getElementById('cart-total');
+    const footer = document.getElementById('cart-footer');
     let carrinhoSessao = JSON.parse(localStorage.getItem('horus_cart')) || [];
     let totalGeral = 0;
 
     atualizarContadorCarrinho();
 
     if (carrinhoSessao.length === 0) {
-        lista.innerHTML = "<p style='text-align:center; padding: 40px; color:#aaa;'>Seu carrinho está vazio.</p>";
-        totalElement.innerText = "R$ 0,00";
+        lista.innerHTML = `
+            <div style='text-align:center; padding: 40px;'>
+                <p style='color:#aaa; font-size: 1.2rem;'>Seu carrinho está vazio.</p>
+                <a href="catalogo.html" class="btn-empty">VER CATÁLOGO</a>
+            </div>`;
+        footer.style.display = "none";
         return;
     }
 
+    footer.style.display = "block";
     lista.innerHTML = "";
     carrinhoSessao.forEach((item, index) => {
         const produtoNoBanco = BANCO_DE_DADOS[item.id] || Object.values(BANCO_DE_DADOS).find(p => p.nome === item.nome);
@@ -175,11 +219,16 @@ function carregarCarrinho() {
 
 function alterarQuantidade(index, delta) {
     let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
+    
+    if (delta > 0) {
+        mostrarAviso("Quantidade atualizada!");
+    }
+
     carrinho[index].quantidade = (carrinho[index].quantidade || 1) + delta;
 
-    // Se a quantidade for menor que 1, removemos o item direto, sem avisos.
     if (carrinho[index].quantidade < 1) {
         carrinho.splice(index, 1);
+        mostrarAviso("Produto removido.");
     }
 
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
@@ -189,11 +238,11 @@ function alterarQuantidade(index, delta) {
 function finalizarPedido() {
     let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     if(carrinho.length === 0) return;
-
-    // Removemos o alert e podemos redirecionar ou limpar o carrinho
-    // Exemplo: Limpar carrinho e voltar para o catálogo
+    
+    // Simulação de finalizar
     localStorage.removeItem('horus_cart');
-    window.location.href = "catalogo.html"; 
+    mostrarAviso("Pedido enviado!");
+    setTimeout(() => { window.location.href = "catalogo.html"; }, 1500);
 }
 
 // Efeito de Partículas
