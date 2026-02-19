@@ -125,7 +125,7 @@ function adicionarAoCarrinho() {
     else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
     atualizarContadorCarrinho();
-    alert("Produto adicionado ao carrinho!");
+    mostrarAvisoLuxo("Produto adicionado à sua coleção!");
 }
 
 function atualizarContadorCarrinho() {
