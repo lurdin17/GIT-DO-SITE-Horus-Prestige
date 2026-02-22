@@ -31,7 +31,6 @@ body {
 }
 .particle { position: absolute; border-radius: 50%; }
 
-/* --- EFEITO SHIMMER PADRÃO --- */
 .shimmer-effect {
     position: relative;
     overflow: hidden;
@@ -64,7 +63,6 @@ header {
 }
 .logo-header { width: 110px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
 
-/* MENU COM CONTADOR DE CARRINHO */
 nav {
     position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
     display: flex; align-items: center; gap: 12px;
@@ -76,29 +74,25 @@ nav a {
     border: 1px solid rgba(255,255,255,0.1); color: #fff;
     transition: 0.3s ease;
     display: flex; align-items: center; justify-content: center;
-    position: relative; /* Necessário para o contador */
+    position: relative;
 }
 nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
-/* BOLA VERMELHA DO CARRINHO */
 #cart-count {
     position: absolute;
-    top: -5px;
-    right: -2px;
+    top: -5px; right: -2px;
     background: #ff4d4d;
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: none; /* Escondido por padrão */
-    align-items: center;
-    justify-content: center;
+    color: white; font-size: 10px; font-weight: bold;
+    width: 18px; height: 18px; border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.social-icon svg { width: 20px; height: 20px; fill: currentColor; }
+.social-icon svg {
+    width: 20px; height: 20px;
+    fill: #fff; display: block; transition: 0.3s;
+}
+.social-icon:hover svg { fill: #000; }
 
 /* CONTAINERS DE IMAGEM */
 .img-container {
@@ -108,50 +102,25 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 }
 .img-container img { width: 100%; height: auto; display: block; }
 
-.img-container-small {
-    width: 40%; 
-    max-width: 400px; 
-    margin: 20px auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    overflow: hidden;
-}
-.img-container-small img { width: 100%; height: auto; display: block; }
-
-/* --- SEÇÃO DE PRODUTOS (COLEÇÃO) --- */
+/* SEÇÃO DE PRODUTOS */
 .collection-section {
     width: 90%; max-width: 1200px; margin: 60px auto;
     padding: 80px 40px;
     background: url('https://i.imgur.com/SvWvJOa.png') no-repeat center center;
-    background-size: cover;
-    border-radius: 40px;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    background-size: cover; border-radius: 40px;
+    text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
 }
-.collection-section h2 {
-    font-size: 2.2rem; margin-bottom: 50px; color: #fff; letter-spacing: 2px;
-}
-.collection-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-.collection-item {
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: block;
-}
-.collection-item:hover {
-    transform: translateY(-15px) scale(1.03);
-}
-.collection-item img {
-    width: 100%; height: auto; border-radius: 25px;
-}
+.collection-section h2 { font-size: 2.2rem; margin-bottom: 50px; color: #fff; letter-spacing: 2px; }
+.collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.collection-item { transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; }
+.collection-item:hover { transform: translateY(-15px) scale(1.03); }
+.collection-item img { width: 100%; height: auto; border-radius: 25px; }
 
 /* VIDEO BANNER */
 .banner-wrapper { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
 .banner-container {
-    position: relative; width: 90%; max-width: 1200px; height: 500px; 
-    overflow: hidden; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-    z-index: 1;
+    position: relative; width: 90%; max-width: 1200px; height: 500px;
+    overflow: hidden; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.9); z-index: 1;
 }
 .banner-container video { width: 100%; height: 100%; object-fit: cover; }
 .banner-cta {
@@ -168,8 +137,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     width: 92%; max-width: 1300px; margin: 100px auto;
     padding: 110px 60px; border-radius: 40px;
     background: linear-gradient(rgba(10,10,10,0.96), rgba(10,10,10,0.96));
-    text-align: center;
-    position: relative; z-index: 1;
+    text-align: center; position: relative; z-index: 1;
     border: 1px solid rgba(255,255,255,0.06);
     box-shadow: 0 40px 80px rgba(0,0,0,0.9);
     overflow: visible;
@@ -186,10 +154,30 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .floating-symbol {
     position: absolute; bottom: -60px; right: -30px; width: 220px; z-index: 10;
     filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
 }
 .floating-symbol:hover { transform: translateY(-45px) scale(1.1); filter: drop-shadow(0 40px 50px rgba(255,255,255,0.15)); }
+
+/* CONTAINER TRIPLO DE IMAGENS */
+.triple-img-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+.triple-img-container img {
+    width: 33.33%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+.triple-img-container img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
 </style>
 </head>
 <body>
@@ -258,22 +246,23 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </div>
 </section>
 
-<div class="img-container-small shimmer-effect">
+<!-- CONTAINER TRIPLO: fJDfm1Q | SiEXldA (selo) | h8beDZE -->
+<div class="triple-img-container">
+    <img src="https://i.imgur.com/fJDfm1Q.png" alt="Imagem 1">
     <img src="https://i.imgur.com/SiEXldA.jpeg" alt="Selo Qualidade Horus">
+    <img src="https://i.imgur.com/h8beDZE.png" alt="Imagem 2">
 </div>
 
-<footer style="text-align: center; padding: 40px 0; color: #000000; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
+<footer style="text-align: center; padding: 40px 0; color: #fff; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
     © 2026 Horus Prestige — Todos os direitos reservados.
 </footer>
 
 <script src="produtos.js"></script>
 <script>
-// 1. Atualiza a bolinha do carrinho
 function atualizarContador() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const total = carrinho.reduce((sum, item) => sum + (item.quantidade || 1), 0);
     const countEl = document.getElementById('cart-count');
-    
     if (total > 0) {
         countEl.innerText = total;
         countEl.style.display = 'flex';
@@ -282,7 +271,6 @@ function atualizarContador() {
     }
 }
 
-// 2. Partículas
 const container = document.getElementById('particles-container');
 for(let i=0;i<35;i++){
     const p=document.createElement('div');
@@ -294,7 +282,6 @@ for(let i=0;i<35;i++){
     container.appendChild(p);
 }
 
-// Inicializa
 window.onload = atualizarContador;
 </script>
 
