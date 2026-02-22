@@ -64,6 +64,7 @@ header {
 }
 .logo-header { width: 110px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
 
+/* MENU COM CONTADOR DE CARRINHO */
 nav {
     position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
     display: flex; align-items: center; gap: 12px;
@@ -75,10 +76,11 @@ nav a {
     border: 1px solid rgba(255,255,255,0.1); color: #fff;
     transition: 0.3s ease;
     display: flex; align-items: center; justify-content: center;
-    position: relative;
+    position: relative; /* Necessário para o contador */
 }
 nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
+/* BOLA VERMELHA DO CARRINHO */
 #cart-count {
     position: absolute;
     top: -5px;
@@ -90,20 +92,13 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    display: none;
+    display: none; /* Escondido por padrão */
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.social-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: #fff;
-    display: block;
-    transition: 0.3s;
-}
-.social-icon:hover svg { fill: #000; }
+.social-icon svg { width: 20px; height: 20px; fill: currentColor; }
 
 /* CONTAINERS DE IMAGEM */
 .img-container {
@@ -122,26 +117,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     overflow: hidden;
 }
 .img-container-small img { width: 100%; height: auto; display: block; }
-
-/* CONTAINER DUPLO */
-.double-img-container {
-    display: flex;
-    gap: 20px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-.double-img-container img {
-    width: 50%;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: 0.4s;
-}
-.double-img-container img:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-}
 
 /* --- SEÇÃO DE PRODUTOS (COLEÇÃO) --- */
 .collection-section {
@@ -254,12 +229,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </div>
 </section>
 
-<!-- CONTAINER DUPLO DE IMAGENS -->
-<div class="double-img-container">
-    <img src="https://i.imgur.com/jtaSrKC.jpeg" alt="Imagem 1">
-    <img src="https://i.imgur.com/UReDo93.jpeg" alt="Imagem 2">
-</div>
-
 <div class="img-container shimmer-effect">
     <img src="https://i.imgur.com/Zvooq4Y.png" alt="Destaque Horus">
 </div>
@@ -293,12 +262,13 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     <img src="https://i.imgur.com/SiEXldA.jpeg" alt="Selo Qualidade Horus">
 </div>
 
-<footer style="text-align: center; padding: 40px 0; color: #fff; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
+<footer style="text-align: center; padding: 40px 0; color: #000000; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
     © 2026 Horus Prestige — Todos os direitos reservados.
 </footer>
 
 <script src="produtos.js"></script>
 <script>
+// 1. Atualiza a bolinha do carrinho
 function atualizarContador() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const total = carrinho.reduce((sum, item) => sum + (item.quantidade || 1), 0);
@@ -312,6 +282,7 @@ function atualizarContador() {
     }
 }
 
+// 2. Partículas
 const container = document.getElementById('particles-container');
 for(let i=0;i<35;i++){
     const p=document.createElement('div');
@@ -323,6 +294,7 @@ for(let i=0;i<35;i++){
     container.appendChild(p);
 }
 
+// Inicializa
 window.onload = atualizarContador;
 </script>
 
