@@ -45,35 +45,66 @@ nav a:hover { background: #fff; color: #000; }
     border-radius: 50%; display: none; align-items: center; justify-content: center;
 }
 
+/* TOAST */
+.toast-aviso {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.95); color: #000; padding: 15px 30px;
+    border-radius: 50px; font-weight: 600; z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none; animation: slideUp 0.5s forwards;
+}
+@keyframes slideUp {
+    from { bottom: -50px; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+}
+
 .product-page {
     position: relative; z-index: 1; display: flex; max-width: 900px;
     margin: 40px auto; gap: 40px; padding: 40px;
-    background: rgba(10, 10, 10, 0.85); border-radius: 30px;
+    background: rgba(10,10,10,0.85); border-radius: 30px;
     border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
 }
-.product-image { flex: 0.8; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.product-image img { width: 100%; display: block; transition: 0.5s; }
+.product-image {
+    flex: 0 0 340px;
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    align-self: center;
+}
+.product-image img { width: 100%; height: 340px; object-fit: cover; display: block; transition: 0.5s; }
 .product-image:hover img { transform: scale(1.05); }
 
 .product-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .brand-name { color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px; }
 .product-info h1 { font-size: 2rem; margin-bottom: 15px; letter-spacing: 2px; }
 .price { font-size: 1.6rem; color: #fff; font-weight: 700; margin-bottom: 30px; }
-.description-box { margin-bottom: 40px; line-height: 1.8; color: #ccc; font-size: 0.95rem; }
 
 .btn-add-cart {
     padding: 20px; background: #fff; color: #000; text-align: center; border: none;
     cursor: pointer; font-weight: 700; border-radius: 15px; transition: 0.4s;
-    letter-spacing: 1px; text-transform: uppercase; font-size: 1rem;
+    letter-spacing: 1px; text-transform: uppercase; font-size: 1rem; width: 100%;
 }
 .btn-add-cart:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255,255,255,0.1); }
+
+.desc-container {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto 60px auto; padding: 40px 50px;
+    background: rgba(10,10,10,0.85); border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+    line-height: 1.9; color: #ccc; font-size: 0.95rem;
+}
+.desc-container h2 { color: #fff; letter-spacing: 2px; margin-bottom: 20px; font-size: 1.3rem; }
+.desc-container p { margin-bottom: 15px; }
+.desc-container p:last-child { margin-bottom: 0; }
 
 @media (max-width: 900px) { .product-page { flex-direction: column; margin: 20px; padding: 20px; } }
 </style>
 <script src="../../produtos.js"></script>
 </head>
 <body>
+
 <div id="particles-container"></div>
+<div id="toast" class="toast-aviso">Produto adicionado à sua coleção!</div>
+
 <header>
     <a href="../../index.html"><img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo"></a>
     <nav>
@@ -90,53 +121,42 @@ nav a:hover { background: #fff; color: #000; }
 </header>
 
 <main class="product-page">
-    <div class="product-image"><img id="product-img" src="https://i.imgur.com/SQElYEJ.jpeg" alt="PG GMT Brown"></div>
+    <div class="product-image">
+        <img id="product-img" src="https://i.imgur.com/SQElYEJ.jpeg" alt="PG GMT Brown">
+    </div>
     <div class="product-info">
         <span class="brand-name">Pagani</span>
         <h1 id="product-name">PG GMT Brown</h1>
         <div class="price" id="product-price">R$ 0,00</div>
-        </div>
         <button class="btn-add-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
     </div>
 </main>
 
-<div style="
-    position: relative; z-index: 1;
-    max-width: 900px; margin: 0 auto 60px auto; padding: 40px 50px;
-    background: rgba(10,10,10,0.85); border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
-    line-height: 1.9; color: #ccc; font-size: 0.95rem;
-">
-    <h2 style="color: #fff; letter-spacing: 2px; margin-bottom: 20px; font-size: 1.3rem;">
-        O PAGANI DESIGN 1662 V2 GMT
-    </h2>
-    <p style="margin-bottom: 15px;">
-        combina robustez, precisão e acabamento premium em um relógio esportivo de alto desempenho.
-    </p>
-    <p style="margin-bottom: 15px;">
-        Equipado com <strong style="color:#fff">movimento automático GMT</strong>, funciona sem bateria, sendo alimentado pelo movimento natural do pulso e permitindo acompanhar dois fusos horários simultaneamente.
-    </p>
-    <p style="margin-bottom: 15px;">
-        Produzido em <strong style="color:#fff">aço inoxidável</strong>, possui moldura em <strong style="color:#fff">cerâmica com 120 cliques</strong> (exceto versões preto-vermelho e azul-vermelho) e <strong style="color:#fff">cristal de safira sintético</strong>, altamente resistente a riscos.
-    </p>
-    <p style="margin-bottom: 15px;">
-        Com <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, é ideal para uso diário, piscina e snorkel.
-    </p>
-    <p>
-        Um modelo marcante para quem busca <strong style="color:#fff">presença, desempenho e durabilidade</strong>.
-    </p>
+<div class="desc-container">
+    <h2>O PAGANI DESIGN 1662 V2 GMT</h2>
+    <p>combina robustez, precisão e acabamento premium em um relógio esportivo de alto desempenho.</p>
+    <p>Equipado com <strong style="color:#fff">movimento automático GMT</strong>, funciona sem bateria, sendo alimentado pelo movimento natural do pulso e permitindo acompanhar dois fusos horários simultaneamente.</p>
+    <p>Produzido em <strong style="color:#fff">aço inoxidável</strong>, possui moldura em <strong style="color:#fff">cerâmica com 120 cliques</strong> (exceto versões preto-vermelho e azul-vermelho) e <strong style="color:#fff">cristal de safira sintético</strong>, altamente resistente a riscos.</p>
+    <p>Com <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, é ideal para uso diário, piscina e snorkel.</p>
+    <p>Um modelo marcante para quem busca <strong style="color:#fff">presença, desempenho e durabilidade</strong>.</p>
 </div>
 
-<footer style="text-align: center; padding: 40px 0; color: #fff; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
+<footer style="text-align: center; padding: 40px 0; color: #fff; font-size: 16px; width: 100%; background: transparent; margin-top: 10px; font-weight: 600;">
     © 2026 Horus Prestige — Todos os direitos reservados.
 </footer>
 
 <script>
-const idProduto = 'pg-gmt-brown'; // ← ID DO PRODUTO NO produtos.js
+const idProduto = 'pg-gmt-brown';
+
+function mostrarToast() {
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2500);
+}
 
 function carregarDados() {
     const info = BANCO_DE_DADOS[idProduto];
-    if(info) {
+    if (info) {
         document.getElementById('product-price').innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
         document.getElementById('product-img').src = info.imagem;
         document.getElementById('product-name').innerText = info.nome;
@@ -146,13 +166,14 @@ function carregarDados() {
 
 function adicionarAoCarrinho() {
     const info = BANCO_DE_DADOS[idProduto];
+    if (!info) return;
     let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const index = carrinho.findIndex(item => item.nome === info.nome);
     if (index > -1) { carrinho[index].quantidade += 1; }
     else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
     atualizarContadorCarrinho();
-    alert("Produto adicionado à sua coleção!");
+    mostrarToast();
 }
 
 function atualizarContadorCarrinho() {
@@ -160,21 +181,22 @@ function atualizarContadorCarrinho() {
     const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
     const contador = document.getElementById('cart-count');
     if (contador) {
-        if (totalItens > 0) { contador.innerText = totalItens; contador.style.display = 'flex'; }
-        else { contador.style.display = 'none'; }
+        contador.innerText = totalItens;
+        contador.style.display = totalItens > 0 ? 'flex' : 'none';
     }
 }
 
 window.onload = carregarDados;
 
 const container = document.getElementById('particles-container');
-for(let i=0;i<35;i++){
-    const p=document.createElement('div');
+for (let i = 0; i < 35; i++) {
+    const p = document.createElement('div');
     p.classList.add('particle');
-    const s=Math.random()*2+1;
-    p.style.width=p.style.height=`${s}px`;
-    p.style.background=`rgba(255,255,255,0.2)`;
-    p.style.top=`${Math.random()*100}%`; p.style.left=`${Math.random()*100}%`;
+    const s = Math.random() * 2 + 1;
+    p.style.width = p.style.height = `${s}px`;
+    p.style.background = `rgba(255,255,255,0.2)`;
+    p.style.top = `${Math.random() * 100}%`;
+    p.style.left = `${Math.random() * 100}%`;
     container.appendChild(p);
 }
 </script>
