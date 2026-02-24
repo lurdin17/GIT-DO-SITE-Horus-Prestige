@@ -115,7 +115,17 @@ nav a:hover { background: #fff; color: #000; }
 </header>
 
 <main class="product-page">
-    <div class="product-image">
+    <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
+    <!-- Foto principal -->
+    <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <img id="foto-principal" src="https://i.imgur.com/ElbXqJt.jpeg" style="width: 100%; display: block; transition: 0.5s;">
+    </div>
+    <!-- Miniaturas -->
+    <div style="display: flex; gap: 10px;">
+        <img src="https://i.imgur.com/ElbXqJt.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid #fff; opacity: 1; transition: 0.3s;">
+        <img src="https://i.imgur.com/mBZJaOp.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); opacity: 0.6; transition: 0.3s;">
+    </div>
+</div>
         <img id="product-img" src="https://i.imgur.com/ElbXqJt.jpeg" alt="PG GMT Gold">
     </div>
     <div class="product-info">
@@ -125,13 +135,18 @@ nav a:hover { background: #fff; color: #000; }
         <button class="btn-add-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
     </div>
 </main>
-<div class="desc-container">
-    <h2>O PAGANI DESIGN 1662 V2 GMT</h2>
-    <p>combina robustez, precisão e acabamento premium em um relógio esportivo de alto desempenho.</p>
-    <p>Equipado com <strong style="color:#fff">movimento automático GMT</strong>, funciona sem bateria, sendo alimentado pelo movimento natural do pulso e permitindo acompanhar dois fusos horários simultaneamente.</p>
-    <p>Produzido em <strong style="color:#fff">aço inoxidável</strong>, possui moldura em <strong style="color:#fff">cerâmica com 120 cliques</strong> (exceto versões preto-vermelho e azul-vermelho) e <strong style="color:#fff">cristal de safira sintético</strong>, altamente resistente a riscos.</p>
-    <p>Com <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, é ideal para uso diário, piscina e snorkel.</p>
-    <p>Um modelo marcante para quem busca <strong style="color:#fff">presença, desempenho e durabilidade</strong>.</p>
+<div style="max-width: 900px; margin: 0 auto 60px auto; display: flex; gap: 20px; align-items: center;">
+    <div class="desc-container" style="margin: 0; flex: 1;">
+        <h2>O PAGANI DESIGN 1662 V2 GMT</h2>
+        <p>combina robustez, precisão e acabamento premium em um relógio esportivo de alto desempenho.</p>
+        <p>Equipado com <strong style="color:#fff">movimento automático GMT</strong>, funciona sem bateria, sendo alimentado pelo movimento natural do pulso e permitindo acompanhar dois fusos horários simultaneamente.</p>
+        <p>Produzido em <strong style="color:#fff">aço inoxidável</strong>, possui moldura em <strong style="color:#fff">cerâmica com 120 cliques</strong> (exceto versões preto-vermelho e azul-vermelho) e <strong style="color:#fff">cristal de safira sintético</strong>, altamente resistente a riscos.</p>
+        <p>Com <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, é ideal para uso diário, piscina e snorkel.</p>
+        <p>Um modelo marcante para quem busca <strong style="color:#fff">presença, desempenho e durabilidade</strong>.</p>
+    </div>
+    <div style="flex: 0 0 280px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <img src="https://i.imgur.com/7EGcV17.jpeg" style="width: 100%; display: block;">
+    </div>
 </div>
 
 <footer style="text-align: center; padding: 40px 0; color: #000000; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
