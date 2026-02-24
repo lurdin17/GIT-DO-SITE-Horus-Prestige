@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PG Pepsi GMT | Horus Prestige</title>
+<title>PG GMT Pepsi | Horus Prestige</title>
 <link rel="icon" type="image/png" href="../../horus_perfil_cerca_2.png">
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -163,8 +163,10 @@ nav a:hover { background: #fff; color: #000; }
 <script src="../../produtos.js"></script>
 </head>
 <body>
+
 <div id="particles-container"></div>
 <div id="toast" class="toast-aviso">Produto adicionado ao carrinho!</div>
+
 <header>
     <!-- HAMBURGUER (mobile) -->
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -208,24 +210,23 @@ nav a:hover { background: #fff; color: #000; }
 
 <main class="product-page">
     <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
-    <!-- Foto principal -->
-    <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        <img id="foto-principal" src="https://i.imgur.com/o37Q581.jpeg" style="width: 100%; display: block; transition: 0.5s;">
+        <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <img id="foto-principal" src="https://i.imgur.com/o37Q581.jpeg" style="width: 100%; display: block; transition: 0.5s;">
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <img src="https://i.imgur.com/o37Q581.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid #fff; opacity: 1; transition: 0.3s;">
+            <img src="https://i.imgur.com/ort8U2S.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); opacity: 0.6; transition: 0.3s;">
+        </div>
     </div>
-    <!-- Miniaturas -->
-    <div style="display: flex; gap: 10px;">
-        <img src="https://i.imgur.com/o37Q581.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid #fff; opacity: 1; transition: 0.3s;">
-        <img src="https://i.imgur.com/ort8U2S.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); opacity: 0.6; transition: 0.3s;">
-    </div>
-</div>
     <div class="product-info">
         <span class="brand-name">Pagani</span>
-        <h1 id="product-name">PG Pepsi GMT</h1>
+        <h1 id="product-name">PG GMT Pepsi</h1>
         <div class="price" id="product-price">R$ 0,00</div>
         <button class="btn-add-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
     </div>
 </main>
-<div style="max-width: 900px; margin: 0 auto 60px auto; display: flex; gap: 20px; align-items: center;">
+
+<div class="desc-wrapper" style="max-width: 900px; margin: 0 auto 60px auto; display: flex; gap: 20px; align-items: center;">
     <div class="desc-container" style="margin: 0; flex: 1;">
         <h2>O PAGANI DESIGN 1662 V2 GMT</h2>
         <p>combina robustez, precisão e acabamento premium em um relógio esportivo de alto desempenho.</p>
@@ -234,7 +235,7 @@ nav a:hover { background: #fff; color: #000; }
         <p>Com <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, é ideal para uso diário, piscina e snorkel.</p>
         <p>Um modelo marcante para quem busca <strong style="color:#fff">presença, desempenho e durabilidade</strong>.</p>
     </div>
-    <div style="flex: 0 0 280px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <div class="desc-img" style="flex: 0 0 280px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         <img src="https://i.imgur.com/7EGcV17.jpeg" style="width: 100%; display: block;">
     </div>
 </div>
@@ -244,44 +245,15 @@ nav a:hover { background: #fff; color: #000; }
 </footer>
 
 <script>
-const idProduto = 'pg-pepsi'; // ID vinculado ao produtos.js
+const idProduto = 'pg-gmt-gold';
 
-function carregarDados() {
-    const info = BANCO_DE_DADOS[idProduto];
-    if(info) {
-        document.getElementById('product-price').innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-        document.getElementById('product-img').src = info.imagem;
-        document.getElementById('product-name').innerText = info.nome;
-    }
-    atualizarContadorCarrinho();
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    hamburger.classList.toggle('open');
 }
 
-function adicionarAoCarrinho() {
-    const info = BANCO_DE_DADOS[idProduto];
-    let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
-    const index = carrinho.findIndex(item => item.nome === info.nome);
-    if (index > -1) { carrinho[index].quantidade += 1; } 
-    else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
-    localStorage.setItem('horus_cart', JSON.stringify(carrinho));
-    atualizarContadorCarrinho();
-    mostrarToast();
-}
-
-function mostrarToast() {
-    const toast = document.getElementById('toast');
-    toast.style.display = 'block';
-    setTimeout(() => { toast.style.display = 'none'; }, 2500);
-}
-
-function atualizarContadorCarrinho() {
-    const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
-    const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
-    const contador = document.getElementById('cart-count');
-    if (contador) {
-        if (totalItens > 0) { contador.innerText = totalItens; contador.style.display = 'flex'; }
-        else { contador.style.display = 'none'; }
-    }
-}
 function trocarFoto(miniatura) {
     document.getElementById('foto-principal').src = miniatura.src;
     document.querySelectorAll('[onclick="trocarFoto(this)"]').forEach(img => {
@@ -292,17 +264,61 @@ function trocarFoto(miniatura) {
     miniatura.style.opacity = '1';
 }
 
+function mostrarToast() {
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2500);
+}
+
+function carregarDados() {
+    const info = BANCO_DE_DADOS[idProduto];
+    if (info) {
+        document.getElementById('product-price').innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+        document.getElementById('product-name').innerText = info.nome;
+    }
+    atualizarContadorCarrinho();
+}
+
+function adicionarAoCarrinho() {
+    const info = BANCO_DE_DADOS[idProduto];
+    if (!info) return;
+    let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
+    const index = carrinho.findIndex(item => item.nome === info.nome);
+    if (index > -1) { carrinho[index].quantidade += 1; }
+    else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
+    localStorage.setItem('horus_cart', JSON.stringify(carrinho));
+    atualizarContadorCarrinho();
+    mostrarToast();
+}
+
+function atualizarContadorCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
+    const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
+    
+    const contador = document.getElementById('cart-count');
+    if (contador) {
+        contador.innerText = totalItens;
+        contador.style.display = totalItens > 0 ? 'flex' : 'none';
+    }
+
+    const contadorMobile = document.getElementById('cart-count-mobile');
+    if (contadorMobile) {
+        contadorMobile.innerText = totalItens > 0 ? totalItens : '';
+        contadorMobile.style.display = totalItens > 0 ? 'inline-flex' : 'none';
+    }
+}
+
 window.onload = carregarDados;
 
-// Script das Partículas
 const container = document.getElementById('particles-container');
-for(let i=0;i<35;i++){
-    const p=document.createElement('div');
+for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
     p.classList.add('particle');
-    const s=Math.random()*2+1;
-    p.style.width=p.style.height=`${s}px`;
-    p.style.background=`rgba(255,255,255,0.2)`;
-    p.style.top=`${Math.random()*100}%`; p.style.left=`${Math.random()*100}%`;
+    const s = Math.random() * 2 + 1;
+    p.style.width = p.style.height = `${s}px`;
+    p.style.background = `rgba(255,255,255,0.2)`;
+    p.style.top = `${Math.random() * 100}%`;
+    p.style.left = `${Math.random() * 100}%`;
     container.appendChild(p);
 }
 </script>
