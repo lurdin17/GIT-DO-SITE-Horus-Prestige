@@ -246,6 +246,13 @@ nav a:hover { background: #fff; color: #000; }
             <div class="price" id="price-pg-gmt-gold">R$ 0,00</div>
         </a>
 
+         <a href="#" id="link-pg-gmt-blue" class="product-card" data-brand="pagani" data-linha="gmt">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/vRKb8Pc.jpeg" alt="PG GMT Blue">
+            <h3>PG GMT Blue</h3>
+            <div class="price" id="price-pg-gmt-blue">R$ 0,00</div>
+        </a>
+
         <!-- PAGANI DATEJUST -->
         <a href="#" id="link-pg-bright-blue" class="product-card" data-brand="pagani" data-linha="datejust">
             <span class="brand-tag">Pagani</span>
@@ -300,7 +307,7 @@ function sincronizarCatalogo() {
     const produtosIds = [
         'h3-black', 'h3-silver', 'h3-black-silver', 'h3-blue-silver', 'h3-zenturion-green',
         'pg-pepsi', 'pg-bright-blue', 'pg-wimbledon', 'pg-gmt-gold',
-        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown'
+        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue'
     ];
     produtosIds.forEach(id => {
         const info = BANCO_DE_DADOS[id];

@@ -87,6 +87,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/holuns/ho_platinum_gold.html",
     "marca": "holuns"
      },
+     "pg-gmt-blue": {
+    "nome": "PG GMT Blue",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/vRKb8Pc.jpeg",
+    "link": "marcas/pagani/pg_gmt_blue.html",
+    "marca": "pagani"
+     }
 };
 
 /**
