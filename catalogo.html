@@ -308,6 +308,13 @@ nav a:hover { background: #fff; color: #000; }
             <div class="price" id="price-pg-pepsi">R$ 0,00</div>
         </a>
 
+                <a href="#" id="link-pg-gmt-blue-sky" class="product-card" data-brand="pagani" data-linha="gmt">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/QXbol96.jpeg" alt="PG GMT Blue Sky">
+            <h3>PG GMT Blue Sky</h3>
+            <div class="price" id="price-pg-gmt-blue-sky">R$ 0,00</div>
+        </a>
+
         <a href="#" id="link-pg-gmt-brown" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/SQElYEJ.jpeg" alt="PG GMT Brown">
@@ -396,7 +403,7 @@ function sincronizarCatalogo() {
     const produtosIds = [
         'h3-black', 'h3-silver', 'h3-black-silver', 'h3-blue-silver', 'h3-zenturion-green',
         'pg-pepsi', 'pg-bright-blue', 'pg-wimbledon', 'pg-gmt-gold',
-        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue'
+        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue', 'pg-gmt-blue-sky'
     ];
     produtosIds.forEach(id => {
         const info = BANCO_DE_DADOS[id];

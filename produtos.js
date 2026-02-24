@@ -38,6 +38,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/pagani/pg_pepsi.html",
     "marca": "pagani" // Certifique-se de que está escrito assim
      },
+     "pg-gmt-blue-sky": {
+    "nome": "PG GMT Blue Sky",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/QXbol96.jpeg", // Imagem nova que você enviou
+    "link": "marcas/pagani/pg_gmt_blue_sky.html",
+    "marca": "pagani" // Certifique-se de que está escrito assim
+     },
     "pg-gmt-brown": {
     "nome": "PG GMT Brown",
     "preco": 0.00,
