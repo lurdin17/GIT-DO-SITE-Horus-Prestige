@@ -204,6 +204,15 @@ function atualizarContadorCarrinho() {
         else { contador.style.display = 'none'; }
     }
 }
+function trocarFoto(miniatura) {
+    document.getElementById('foto-principal').src = miniatura.src;
+    document.querySelectorAll('[onclick="trocarFoto(this)"]').forEach(img => {
+        img.style.border = '2px solid rgba(255,255,255,0.2)';
+        img.style.opacity = '0.6';
+    });
+    miniatura.style.border = '2px solid #fff';
+    miniatura.style.opacity = '1';
+}
 
 window.onload = carregarDados;
 
