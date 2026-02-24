@@ -34,23 +34,30 @@ const BANCO_DE_DADOS = {
     "pg-pepsi": {
     "nome": "PG Pepsi GMT",
     "preco": 0.00,
-    "imagem": "https://i.imgur.com/o37Q581.jpeg", // Imagem nova que você enviou
+    "imagem": "https://i.imgur.com/o37Q581.jpeg", 
     "link": "marcas/pagani/pg_pepsi.html",
-    "marca": "pagani" // Certifique-se de que está escrito assim
+    "marca": "pagani" 
      },
      "pg-gmt-blue-sky": {
     "nome": "PG GMT Blue Sky",
     "preco": 0.00,
-    "imagem": "https://i.imgur.com/QXbol96.jpeg", // Imagem nova que você enviou
+    "imagem": "https://i.imgur.com/QXbol96.jpeg", 
     "link": "marcas/pagani/pg_gmt_blue_sky.html",
-    "marca": "pagani" // Certifique-se de que está escrito assim
+    "marca": "pagani" 
+     },
+          "pg-gmt-red": {
+    "nome": "PG GMT Red",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/TOjG141.jpeg", 
+    "link": "marcas/pagani/pg_gmt_red.html",
+    "marca": "pagani" 
      },
     "pg-gmt-brown": {
     "nome": "PG GMT Brown",
     "preco": 0.00,
-    "imagem": "https://i.imgur.com/SQElYEJ.jpeg", // Imagem nova que você enviou
+    "imagem": "https://i.imgur.com/SQElYEJ.jpeg",
     "link": "marcas/pagani/pg_gmt_brown.html",
-    "marca": "pagani" // Certifique-se de que está escrito assim
+    "marca": "pagani" 
      },
      "pg-bright-blue": {
     "nome": "PG Bright Blue",
