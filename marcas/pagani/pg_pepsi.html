@@ -14,6 +14,8 @@ body {
     background: url('https://i.imgur.com/eWN4AWr.jpeg') no-repeat center center fixed;
     background-size: cover;
 }
+
+/* PARTÍCULAS */
 #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .particle { position: absolute; border-radius: 50%; }
 
@@ -40,50 +42,40 @@ nav a:hover { background: #fff; color: #000; }
 
 /* HAMBURGUER */
 .hamburger {
-    display: none;
-    flex-direction: column; gap: 5px; cursor: pointer;
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
     position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
     z-index: 1100; padding: 5px;
 }
-.hamburger span {
-    display: block; width: 25px; height: 2px;
-    background: #fff; border-radius: 2px; transition: 0.3s;
-}
+.hamburger span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* MENU MOBILE */
 .mobile-menu {
-    display: none;
-    position: fixed; top: 90px; left: 0; width: 100%;
+    display: none; position: fixed; top: 90px; left: 0; width: 100%;
     background: rgba(0,0,0,0.97); backdrop-filter: blur(10px);
-    flex-direction: column; gap: 0; z-index: 999;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    flex-direction: column; z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
     text-decoration: none; color: #fff; font-size: 15px; font-weight: 500;
-    padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
+    padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
 }
 .mobile-menu a:hover { background: rgba(255,255,255,0.05); }
-.mobile-menu .social-row {
-    display: flex; gap: 15px; padding: 18px 25px;
-}
+.mobile-menu .social-row { display: flex; gap: 15px; padding: 18px 25px; }
 .mobile-menu .social-row a {
     padding: 10px; border: 1px solid rgba(255,255,255,0.2);
     border-radius: 10px; display: flex; align-items: center; justify-content: center;
 }
 
-/* CARRINHO NO HEADER MOBILE */
+/* CARRINHO MOBILE */
 .cart-mobile {
-    display: none;
+    display: none; align-items: center;
     position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
     text-decoration: none; color: #fff; font-size: 13px; font-weight: 500;
     padding: 8px 16px; border-radius: 12px;
     background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    position: absolute; right: 20px;
 }
 #cart-count-mobile {
     display: inline-flex; align-items: center; justify-content: center;
@@ -104,11 +96,10 @@ nav a:hover { background: #fff; color: #000; }
     to { bottom: 30px; opacity: 1; }
 }
 
-/* PRODUTO */
+/* PÁGINA DO PRODUTO */
 .product-page {
     position: relative; z-index: 1; display: flex;
-    max-width: 900px;
-    margin: 40px auto; gap: 35px; padding: 30px;
+    max-width: 900px; margin: 40px auto; gap: 35px; padding: 30px;
     background: rgba(10,10,10,0.85); border-radius: 25px;
     border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
 }
@@ -117,6 +108,7 @@ nav a:hover { background: #fff; color: #000; }
 .product-info h1 { font-size: 2rem; margin-bottom: 12px; letter-spacing: 1px; }
 .price { font-size: 1.6rem; color: #fff; font-weight: 700; margin-bottom: 20px; }
 
+/* BOTÃO CARRINHO */
 .btn-add-cart {
     padding: 15px; background: #fff; color: #000; text-align: center; border: none;
     cursor: pointer; font-weight: 700; border-radius: 12px; transition: 0.4s;
@@ -136,25 +128,14 @@ nav a:hover { background: #fff; color: #000; }
 .desc-container p { margin-bottom: 15px; }
 .desc-container p:last-child { margin-bottom: 0; }
 
-/* RESPONSIVO */
+/* RESPONSIVO MOBILE */
 @media (max-width: 768px) {
     nav { display: none; }
     .hamburger { display: flex; }
-
-    .cart-mobile {
-        display: flex; align-items: center;
-        position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
-        text-decoration: none; color: #fff; font-size: 13px; font-weight: 500;
-        padding: 8px 16px; border-radius: 12px;
-        background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    }
-
+    .cart-mobile { display: flex; }
     .product-page { flex-direction: column; margin: 15px; padding: 20px; }
-
     .product-info h1 { font-size: 1.5rem; }
     .price { font-size: 1.3rem; }
-
-    /* DESC + IMAGEM em coluna no mobile */
     .desc-wrapper { flex-direction: column !important; margin: 0 15px 40px 15px !important; }
     .desc-wrapper .desc-container { margin: 0 !important; padding: 25px !important; }
     .desc-wrapper .desc-img { flex: none !important; width: 100% !important; }
@@ -164,11 +145,15 @@ nav a:hover { background: #fff; color: #000; }
 </head>
 <body>
 
+<!-- PARTÍCULAS -->
 <div id="particles-container"></div>
+
+<!-- TOAST (aviso de adicionado ao carrinho) -->
 <div id="toast" class="toast-aviso">Produto adicionado ao carrinho!</div>
 
+<!-- HEADER -->
 <header>
-    <!-- HAMBURGUER (mobile) -->
+    <!-- HAMBURGUER (aparece só no mobile) -->
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
     </div>
@@ -179,7 +164,7 @@ nav a:hover { background: #fff; color: #000; }
     <nav>
         <a href="../../index.html">Início</a>
         <a href="../../catalogo.html">Catálogo</a>
-        <a href="../../carrinho.html">Carrinho <span id="cart-count">0</span></a>
+        <a href="../../carrinho.html">Carrinho <span id="cart-count"></span></a>
         <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
@@ -194,7 +179,7 @@ nav a:hover { background: #fff; color: #000; }
     </a>
 </header>
 
-<!-- MENU MOBILE -->
+<!-- MENU MOBILE (abre ao clicar no hamburguer) -->
 <div class="mobile-menu" id="mobile-menu">
     <a href="../../index.html">Início</a>
     <a href="../../catalogo.html">Catálogo</a>
@@ -208,23 +193,36 @@ nav a:hover { background: #fff; color: #000; }
     </div>
 </div>
 
+<!-- PRODUTO PRINCIPAL -->
 <main class="product-page">
-  <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
-    <!-- CARROSSEL -->
-    <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        <div id="car-track" style="display: flex; transition: transform 0.4s ease;">
-            <img src="https://i.imgur.com/o37Q581.jpeg" style="min-width: 100%; display: block;">
-            <img src="https://i.imgur.com/ort8U2S.jpeg" style="min-width: 100%; display: block;">
+
+    <!-- GALERIA COM CARROSSEL + MINIATURAS -->
+    <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
+
+        <!-- FOTO PRINCIPAL COM SETAS -->
+        <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div id="car-track" style="display: flex; transition: transform 0.4s ease;">
+                <!-- // FOTO 1 — troca a URL aqui -->
+                <img src="https://i.imgur.com/o37Q581.jpeg" style="min-width: 100%; display: block;">
+                <!-- // FOTO 2 — troca a URL aqui -->
+                <img src="https://i.imgur.com/ort8U2S.jpeg" style="min-width: 100%; display: block;">
+            </div>
+            <!-- SETA ESQUERDA -->
+            <button onclick="moverCar(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#8249;</button>
+            <!-- SETA DIREITA -->
+            <button onclick="moverCar(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#8250;</button>
         </div>
-        <button onclick="moverCar(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;">&#8249;</button>
-        <button onclick="moverCar(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;">&#8250;</button>
+
+        <!-- MINIATURAS CLICÁVEIS -->
+        <div style="display: flex; gap: 10px;">
+            <!-- // MINIATURA 1 — mesma URL da foto 1 -->
+            <img src="https://i.imgur.com/o37Q581.jpeg" onclick="irParaCar(0)" id="thumb-0" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid #fff;opacity:1;transition:0.3s;">
+            <!-- // MINIATURA 2 — mesma URL da foto 2 -->
+            <img src="https://i.imgur.com/ort8U2S.jpeg" onclick="irParaCar(1)" id="thumb-1" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid rgba(255,255,255,0.2);opacity:0.6;transition:0.3s;">
+        </div>
     </div>
-    <!-- MINIATURAS -->
-    <div style="display: flex; gap: 10px;">
-        <img src="https://i.imgur.com/o37Q581.jpeg" onclick="irParaCar(0)" id="thumb-0" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid #fff;opacity:1;transition:0.3s;">
-        <img src="https://i.imgur.com/ort8U2S.jpeg" onclick="irParaCar(1)" id="thumb-1" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid rgba(255,255,255,0.2);opacity:0.6;transition:0.3s;">
-    </div>
-</div>
+
+    <!-- INFORMAÇÕES DO PRODUTO -->
     <div class="product-info">
         <span class="brand-name">Pagani</span>
         <h1 id="product-name">PG GMT Pepsi</h1>
@@ -233,6 +231,7 @@ nav a:hover { background: #fff; color: #000; }
     </div>
 </main>
 
+<!-- DESCRIÇÃO + IMAGEM LATERAL -->
 <div class="desc-wrapper" style="max-width: 900px; margin: 0 auto 60px auto; display: flex; gap: 20px; align-items: center;">
     <div class="desc-container" style="margin: 0; flex: 1;">
         <h2>O PAGANI DESIGN 1662 V2 GMT</h2>
@@ -242,6 +241,7 @@ nav a:hover { background: #fff; color: #000; }
         <p>Com <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, é ideal para uso diário, piscina e snorkel.</p>
         <p>Um modelo marcante para quem busca <strong style="color:#fff">presença, desempenho e durabilidade</strong>.</p>
     </div>
+    <!-- // IMAGEM AO LADO DA DESCRIÇÃO — troca a URL se quiser outra imagem -->
     <div class="desc-img" style="flex: 0 0 280px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         <img src="https://i.imgur.com/7EGcV17.jpeg" style="width: 100%; display: block;">
     </div>
@@ -252,26 +252,26 @@ nav a:hover { background: #fff; color: #000; }
 </footer>
 
 <script>
+// ID DO PRODUTO — muda aqui para cada produto novo
 const idProduto = 'pg-pepsi';
 
-function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const hamburger = document.getElementById('hamburger');
-    menu.classList.toggle('open');
-    hamburger.classList.toggle('open');
-}
-
+// NÚMERO DE FOTOS DO CARROSSEL — muda se tiver mais ou menos fotos
+const carTotal = 2;
 let carSlide = 0;
-const carTotal = 2; // número de fotos
 
+// CARROSSEL — passa para a foto anterior ou próxima
 function moverCar(dir) {
     carSlide = (carSlide + dir + carTotal) % carTotal;
     atualizarCar();
 }
+
+// CARROSSEL — vai direto para uma foto ao clicar na miniatura
 function irParaCar(index) {
     carSlide = index;
     atualizarCar();
 }
+
+// CARROSSEL — atualiza a posição e destaca a miniatura ativa
 function atualizarCar() {
     document.getElementById('car-track').style.transform = `translateX(-${carSlide * 100}%)`;
     for (let i = 0; i < carTotal; i++) {
@@ -281,12 +281,28 @@ function atualizarCar() {
     }
 }
 
+// SWIPE no mobile — passa foto arrastando o dedo
+let touchStartX = 0;
+document.getElementById('car-track').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.getElementById('car-track').addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) moverCar(diff > 0 ? 1 : -1);
+});
+
+// MENU HAMBURGUER — abre e fecha o menu mobile
+function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+}
+
+// TOAST — mostra o aviso de produto adicionado
 function mostrarToast() {
     const toast = document.getElementById('toast');
     toast.style.display = 'block';
     setTimeout(() => { toast.style.display = 'none'; }, 2500);
 }
 
+// CARREGA OS DADOS DO PRODUTO via produtos.js
 function carregarDados() {
     const info = BANCO_DE_DADOS[idProduto];
     if (info) {
@@ -296,6 +312,7 @@ function carregarDados() {
     atualizarContadorCarrinho();
 }
 
+// ADICIONA AO CARRINHO e salva no localStorage
 function adicionarAoCarrinho() {
     const info = BANCO_DE_DADOS[idProduto];
     if (!info) return;
@@ -308,16 +325,15 @@ function adicionarAoCarrinho() {
     mostrarToast();
 }
 
+// ATUALIZA A BOLINHA DO CARRINHO no header
 function atualizarContadorCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
-    
     const contador = document.getElementById('cart-count');
     if (contador) {
         contador.innerText = totalItens;
         contador.style.display = totalItens > 0 ? 'flex' : 'none';
     }
-
     const contadorMobile = document.getElementById('cart-count-mobile');
     if (contadorMobile) {
         contadorMobile.innerText = totalItens > 0 ? totalItens : '';
@@ -325,8 +341,10 @@ function atualizarContadorCarrinho() {
     }
 }
 
+// INICIA A PÁGINA
 window.onload = carregarDados;
 
+// PARTÍCULAS DE FUNDO
 const container = document.getElementById('particles-container');
 for (let i = 0; i < 30; i++) {
     const p = document.createElement('div');
