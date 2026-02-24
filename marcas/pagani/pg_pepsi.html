@@ -209,15 +209,22 @@ nav a:hover { background: #fff; color: #000; }
 </div>
 
 <main class="product-page">
-    <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
-        <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <img id="foto-principal" src="https://i.imgur.com/o37Q581.jpeg" style="width: 100%; display: block; transition: 0.5s;">
+  <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
+    <!-- CARROSSEL -->
+    <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <div id="car-track" style="display: flex; transition: transform 0.4s ease;">
+            <img src="https://i.imgur.com/o37Q581.jpeg" style="min-width: 100%; display: block;">
+            <img src="https://i.imgur.com/ort8U2S.jpeg" style="min-width: 100%; display: block;">
         </div>
-        <div style="display: flex; gap: 10px;">
-            <img src="https://i.imgur.com/o37Q581.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid #fff; opacity: 1; transition: 0.3s;">
-            <img src="https://i.imgur.com/ort8U2S.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); opacity: 0.6; transition: 0.3s;">
-        </div>
+        <button onclick="moverCar(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;">&#8249;</button>
+        <button onclick="moverCar(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;">&#8250;</button>
     </div>
+    <!-- MINIATURAS -->
+    <div style="display: flex; gap: 10px;">
+        <img src="https://i.imgur.com/o37Q581.jpeg" onclick="irParaCar(0)" id="thumb-0" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid #fff;opacity:1;transition:0.3s;">
+        <img src="https://i.imgur.com/ort8U2S.jpeg" onclick="irParaCar(1)" id="thumb-1" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid rgba(255,255,255,0.2);opacity:0.6;transition:0.3s;">
+    </div>
+</div>
     <div class="product-info">
         <span class="brand-name">Pagani</span>
         <h1 id="product-name">PG GMT Pepsi</h1>
@@ -254,14 +261,24 @@ function toggleMenu() {
     hamburger.classList.toggle('open');
 }
 
-function trocarFoto(miniatura) {
-    document.getElementById('foto-principal').src = miniatura.src;
-    document.querySelectorAll('[onclick="trocarFoto(this)"]').forEach(img => {
-        img.style.border = '2px solid rgba(255,255,255,0.2)';
-        img.style.opacity = '0.6';
-    });
-    miniatura.style.border = '2px solid #fff';
-    miniatura.style.opacity = '1';
+let carSlide = 0;
+const carTotal = 2; // número de fotos
+
+function moverCar(dir) {
+    carSlide = (carSlide + dir + carTotal) % carTotal;
+    atualizarCar();
+}
+function irParaCar(index) {
+    carSlide = index;
+    atualizarCar();
+}
+function atualizarCar() {
+    document.getElementById('car-track').style.transform = `translateX(-${carSlide * 100}%)`;
+    for (let i = 0; i < carTotal; i++) {
+        const thumb = document.getElementById(`thumb-${i}`);
+        thumb.style.border = i === carSlide ? '2px solid #fff' : '2px solid rgba(255,255,255,0.2)';
+        thumb.style.opacity = i === carSlide ? '1' : '0.6';
+    }
 }
 
 function mostrarToast() {
