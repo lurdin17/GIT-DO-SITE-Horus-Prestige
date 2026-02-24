@@ -59,15 +59,12 @@ nav a:hover { background: #fff; color: #000; }
 }
 
 .product-page {
-    position: relative; z-index: 1; display: flex; 
-    max-width: 900px; /* Tamanho reduzido conforme solicitado */
+    position: relative; z-index: 1; display: flex;
+    max-width: 900px;
     margin: 40px auto; gap: 35px; padding: 30px;
     background: rgba(10, 10, 10, 0.85); border-radius: 25px;
     border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
 }
-.product-image { flex: 0.8; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.product-image img { width: 100%; display: block; transition: 0.5s; }
-.product-image:hover img { transform: scale(1.05); }
 
 .product-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .brand-name { color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 5px; }
@@ -117,9 +114,19 @@ nav a:hover { background: #fff; color: #000; }
 </header>
 
 <main class="product-page">
-    <div class="product-image">
-        <img id="product-img" src="https://i.imgur.com/vRKb8Pc.jpeg" alt="PG GMT Blue">
+    <!-- GALERIA DE FOTOS -->
+    <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
+        <!-- Foto principal -->
+        <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <img id="foto-principal" src="https://i.imgur.com/vRKb8Pc.jpeg" style="width: 100%; display: block; transition: 0.5s;">
+        </div>
+        <!-- Miniaturas -->
+        <div style="display: flex; gap: 10px;">
+            <img src="https://i.imgur.com/vRKb8Pc.jpeg" onclick="trocarFoto(this)" style="width: 50%; border-radius: 10px; cursor: pointer; border: 2px solid #fff; opacity: 1; transition: 0.3s;">
+            <img src="https://i.imgur.com/X5a2PWU.jpeg" onclick="trocarFoto(this)" style="width: 50%; border-radius: 10px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); opacity: 0.6; transition: 0.3s;">
+        </div>
     </div>
+
     <div class="product-info">
         <span class="brand-name">Pagani</span>
         <h1 id="product-name">PG GMT Blue</h1>
@@ -144,6 +151,16 @@ nav a:hover { background: #fff; color: #000; }
 <script>
 const idProduto = 'pg-gmt-blue';
 
+function trocarFoto(miniatura) {
+    document.getElementById('foto-principal').src = miniatura.src;
+    document.querySelectorAll('[onclick="trocarFoto(this)"]').forEach(img => {
+        img.style.border = '2px solid rgba(255,255,255,0.2)';
+        img.style.opacity = '0.6';
+    });
+    miniatura.style.border = '2px solid #fff';
+    miniatura.style.opacity = '1';
+}
+
 function mostrarToast() {
     const toast = document.getElementById('toast');
     toast.style.display = 'block';
@@ -154,7 +171,6 @@ function carregarDados() {
     const info = BANCO_DE_DADOS[idProduto];
     if (info) {
         document.getElementById('product-price').innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-        document.getElementById('product-img').src = info.imagem;
         document.getElementById('product-name').innerText = info.nome;
     }
     atualizarContadorCarrinho();
