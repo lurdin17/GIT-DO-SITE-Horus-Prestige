@@ -72,11 +72,23 @@ nav a:hover { background: #fff; color: #000; }
 .btn-add-cart:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
 
 @media (max-width: 900px) { .product-page { flex-direction: column; margin: 20px; padding: 20px; } }
+.toast-aviso {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.95); color: #000; padding: 15px 30px;
+    border-radius: 50px; font-weight: 600; z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none; animation: slideUp 0.5s forwards;
+}
+@keyframes slideUp {
+    from { bottom: -50px; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+}
 </style>
 <script src="../../produtos.js"></script>
 </head>
 <body>
 <div id="particles-container"></div>
+<div id="toast" class="toast-aviso">Produto adicionado ao carrinho!</div>
 <header>
     <a href="../../index.html"><img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo"></a>
     <nav>
@@ -133,7 +145,13 @@ function adicionarAoCarrinho() {
     else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
     atualizarContadorCarrinho();
-    mostrarAvisoLuxo("Produto adicionado à sua coleção!");
+    mostrarToast();
+}
+
+function mostrarToast() {
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2500);
 }
 
 function atualizarContadorCarrinho() {
