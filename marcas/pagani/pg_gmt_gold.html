@@ -209,14 +209,25 @@ nav a:hover { background: #fff; color: #000; }
 </div>
 
 <main class="product-page">
+     <!-- GALERIA -->
     <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
-        <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <img id="foto-principal" src="https://i.imgur.com/ElbXqJt.jpeg" style="width: 100%; display: block; transition: 0.5s;">
+
+        <!-- FOTO PRINCIPAL COM SETAS -->
+        <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%;">
+            <div id="car-track" style="display: flex; transition: transform 0.4s ease; width: 100%;">
+                <img src="https://i.imgur.com/ElbXqJt.jpeg" style="min-width: 100%; width: 100%; display: block; object-fit: cover;">
+                <img src="https://i.imgur.com/mBZJaOp.jpeg" style="min-width: 100%; width: 100%; display: block; object-fit: cover;">
+            </div>
+            <button class="car-btn prev" onclick="moverCar(-1)">&#8249;</button>
+            <button class="car-btn next" onclick="moverCar(1)">&#8250;</button>
         </div>
+
+        <!-- MINIATURAS -->
         <div style="display: flex; gap: 10px;">
-            <img src="https://i.imgur.com/ElbXqJt.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid #fff; opacity: 1; transition: 0.3s;">
-            <img src="https://i.imgur.com/mBZJaOp.jpeg" onclick="trocarFoto(this)" style="width: 20%; border-radius: 10px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); opacity: 0.6; transition: 0.3s;">
+            <img src="https://i.imgur.com/ElbXqJt.jpeg" onclick="irParaCar(0)" id="thumb-0" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid #fff;opacity:1;transition:0.3s;">
+            <img src="https://i.imgur.com/mBZJaOp.jpeg" onclick="irParaCar(1)" id="thumb-1" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid rgba(255,255,255,0.2);opacity:0.6;transition:0.3s;">
         </div>
+    </div>
     </div>
     <div class="product-info">
         <span class="brand-name">Pagani</span>
