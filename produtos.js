@@ -52,6 +52,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/pagani/pg_gmt_red.html",
     "marca": "pagani" 
      },
+               "pg-gmt-gray": {
+    "nome": "PG GMT Gray",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/QKRLFaL.jpeg", 
+    "link": "marcas/pagani/pg_gmt_gray.html",
+    "marca": "pagani" 
+     },
     "pg-gmt-brown": {
     "nome": "PG GMT Brown",
     "preco": 0.00,

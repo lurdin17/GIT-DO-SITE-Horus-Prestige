@@ -308,6 +308,13 @@ nav a:hover { background: #fff; color: #000; }
             <div class="price" id="price-pg-pepsi">R$ 0,00</div>
         </a>
 
+               <a href="#" id="link-pg-gmt-gray" class="product-card" data-brand="pagani" data-linha="gmt">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/QKRLFaL.jpeg" alt="PG GMT Gray">
+            <h3>PG GMT Gray</h3>
+            <div class="price" id="price-pg-gmt-gray">R$ 0,00</div>
+        </a>
+
                 <a href="#" id="link-pg-gmt-red" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/TOjG141.jpeg" alt="PG GMT Red">
@@ -410,7 +417,7 @@ function sincronizarCatalogo() {
     const produtosIds = [
         'h3-black', 'h3-silver', 'h3-black-silver', 'h3-blue-silver', 'h3-zenturion-green',
         'pg-pepsi', 'pg-bright-blue', 'pg-wimbledon', 'pg-gmt-gold',
-        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue', 'pg-gmt-blue-sky', 'pg-gmt-red'
+        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue', 'pg-gmt-blue-sky', 'pg-gmt-red', 'pg-gmt-gray'
     ];
     produtosIds.forEach(id => {
         const info = BANCO_DE_DADOS[id];
