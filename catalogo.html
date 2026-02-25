@@ -367,6 +367,12 @@ nav a:hover { background: #fff; color: #000; }
             <h3>Rosé Line W</h3>
             <div class="price" id="price-pg-rose-line-w">R$ 0,00</div>
         </a>
+                    <a href="#" id="link-pg-rose-line-b" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/oNrwx5q.jpeg" alt="PG Rosé Line B">
+            <h3>Rosé Line B</h3>
+            <div class="price" id="price-pg-rose-line-b">R$ 0,00</div>
+        </a>
         <a href="#" id="link-ho-platinum-black" class="product-card" data-brand="holuns">
             <span class="brand-tag">Holuns</span>
             <img src="https://i.imgur.com/fE2V9PL.jpeg" alt="HO Platinum Black">
@@ -422,7 +428,7 @@ function sincronizarCatalogo() {
         'pg-gmt-blue-sky', 'pg-gmt-red', 'pg-gmt-gray',
         'pg-nautilus-moss', 'pg-nautilus-dark-blue', 'pg-nautilus-rose-b',
         'pg-nautilus-white', 'pg-nautilus-bs', 'pg-nautilus-rose-brown',
-        'pg-rose-line', 'pg-rose-line-w'
+        'pg-rose-line', 'pg-rose-line-w', 'pg-rose-line-b'
     ];
     produtosIds.forEach(id => {
         const info = BANCO_DE_DADOS[id];
