@@ -17,11 +17,11 @@ const BANCO_DE_DADOS = {
         imagem: "https://i.imgur.com/JzTWQDM.jpeg",
         link: "marcas/addiesdive/h3_black_silver.html"
     },
-    "h3-blue-silver": {
-    nome: "Blue Silver",
+    "h3-blue": {
+    nome: "Blue",
     preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/qC1nrKP.jpeg",
-    link: "marcas/addiesdive/h3_blue_silver.html",
+    imagem: "https://i.imgur.com/0FbpC0W.jpeg",
+    link: "marcas/addiesdive/h3_blue.html",
     marca: "addiesdive"
     },
     "h3-zenturion-green": {
