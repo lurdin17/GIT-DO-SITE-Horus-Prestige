@@ -32,7 +32,7 @@ const BANCO_DE_DADOS = {
     "marca": "addiesdive"
     },
     "pg-pepsi": {
-    "nome": "PG Pepsi GMT",
+    "nome": "PG GMT Pepsi",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/o37Q581.jpeg", 
     "link": "marcas/pagani/pg_pepsi.html",
@@ -158,7 +158,7 @@ const BANCO_DE_DADOS = {
     "marca": "pagani"
      },
                        "pg-black-rose": {
-    "nome": "PG Black Rose",
+    "nome": "PG Black Rosé",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/cX9AzZe.jpeg",
     "link": "marcas/pagani/pg_black_rose.html",
