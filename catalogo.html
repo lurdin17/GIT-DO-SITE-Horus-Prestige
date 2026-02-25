@@ -109,63 +109,33 @@ nav a:hover { background: #fff; color: #000; }
 .product-card .brand-tag { font-size: 0.7rem; color: #aaa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
 .product-card .price { font-size: 1.1rem; font-weight: 700; color: #fff; }
 
-/* CARROSSEL MOBILE — escondido no desktop */
+/* CARROSSEL MOBILE */
 .mobile-carousel-section { display: none; }
 
 @media (max-width: 768px) {
     nav { display: none; }
     .hamburger { display: flex; }
     .cart-mobile { display: flex; }
-
     .brand-filters { gap: 8px; margin: 20px 0 5px 0; padding: 0 10px; flex-wrap: wrap; }
     .brand-btn { padding: 7px 14px; font-size: 11px; }
     .sub-filters { gap: 8px; padding: 0 10px; flex-wrap: wrap; }
     .sub-btn { padding: 5px 12px; font-size: 10px; }
-
-    /* Esconde grid desktop */
     .catalog-section { display: none; }
-
-    /* Mostra carrossel mobile */
     .mobile-carousel-section {
         display: flex; align-items: center;
         position: relative; z-index: 1;
         padding: 10px 0 30px 0; width: 100%;
     }
-
-   /* Setas com fundo preto sólido */
-.car-arrow {
-    flex-shrink: 0; 
-    width: 40px;          /* Aumentei um pouco para facilitar o toque */
-    height: 40px;
-    background: #000000;  /* PRETO TOTAL E SÓLIDO */
-    border: 1px solid #444; /* Borda cinza escura sutil para não sumir no fundo */
-    color: #ffffff;       /* Seta branca para dar contraste */
-    font-size: 24px; 
-    border-radius: 50%; 
-    cursor: pointer;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    transition: 0.3s; 
-    z-index: 10; 
-    margin: 0 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para destacar do fundo */
-}
-
-/* Efeito ao passar o mouse ou tocar */
-.car-arrow:hover { 
-    background: #333333; /* Fica um cinza bem escuro ao interagir */
-}
-
-    /* Track */
-    .car-outer { overflow: hidden; flex: 1; }
-    .car-track {
-        display: flex; gap: 12px;
-        transition: transform 0.35s ease;
-        will-change: transform;
+    .car-arrow {
+        flex-shrink: 0; width: 40px; height: 40px;
+        background: #000000; border: 1px solid #444; color: #ffffff;
+        font-size: 24px; border-radius: 50%; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: 0.3s; z-index: 10; margin: 0 6px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-
-    /* Card mobile — 58vw para mostrar pedaço do próximo */
+    .car-outer { overflow: hidden; flex: 1; }
+    .car-track { display: flex; gap: 12px; transition: transform 0.35s ease; will-change: transform; }
     .mobile-card {
         min-width: 58vw; max-width: 58vw; flex-shrink: 0;
         background: rgba(10,10,10,0.85); border-radius: 15px; padding: 12px;
@@ -218,14 +188,12 @@ nav a:hover { background: #fff; color: #000; }
     </nav>
 </header>
 
-<!-- FILTROS PRINCIPAIS -->
 <div class="brand-filters">
     <button class="brand-btn active" onclick="filtrar('addiesdive')">Addiesdive</button>
     <button class="brand-btn" onclick="filtrar('pagani')">Pagani</button>
     <button class="brand-btn" onclick="filtrar('holuns')">Holuns</button>
 </div>
 
-<!-- SUB-FILTROS DA PAGANI -->
 <div class="sub-filters" id="pagani-sub">
     <button class="sub-btn active" onclick="filtrarSub('gmt')">GMT</button>
     <button class="sub-btn" onclick="filtrarSub('datejust')">DateJust</button>
@@ -233,11 +201,10 @@ nav a:hover { background: #fff; color: #000; }
 </div>
 
 <div class="sub-filters" id="addiesdive-sub">
-    <button class="sub-btn active" onclick="filtrarSub('gmt')">H3</button>
-    <button class="sub-btn" onclick="filtrarSub('datejust')">AD GMT</button>
+    <button class="sub-btn active" onclick="filtrarSub('h3')">H3</button>
+    <button class="sub-btn" onclick="filtrarSub('gmt')">AD GMT</button>
 </div>
 
-<!-- GRID DESKTOP -->
 <section class="catalog-section">
     <div class="catalog-grid">
         <a href="#" id="link-h3-black" class="product-card" data-brand="addiesdive" data-linha="h3">
@@ -246,30 +213,31 @@ nav a:hover { background: #fff; color: #000; }
             <h3>H3 Black Edition</h3>
             <div class="price" id="price-h3-black">R$ 0,00</div>
         </a>
-        <a href="#" id="link-h3-silver" class="product-card" data-brand="addiesdive">
+        <a href="#" id="link-h3-silver" class="product-card" data-brand="addiesdive" data-linha="h3">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/uY3FHOw.jpeg" alt="H3 Silver">
             <h3>H3 Silver Classic</h3>
             <div class="price" id="price-h3-silver">R$ 0,00</div>
         </a>
-        <a href="#" id="link-h3-black-silver" class="product-card" data-brand="addiesdive">
+        <a href="#" id="link-h3-black-silver" class="product-card" data-brand="addiesdive" data-linha="h3">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/JzTWQDM.jpeg" alt="H3 Black Silver">
             <h3>H3 Black Silver</h3>
             <div class="price" id="price-h3-black-silver">R$ 0,00</div>
         </a>
-        <a href="#" id="link-h3-blue-silver" class="product-card" data-brand="addiesdive">
+        <a href="#" id="link-h3-blue-silver" class="product-card" data-brand="addiesdive" data-linha="h3">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/qC1nrKP.jpeg" alt="H3 Blue Silver">
             <h3>H3 Blue Silver</h3>
             <div class="price" id="price-h3-blue-silver">R$ 0,00</div>
         </a>
-        <a href="#" id="link-h3-zenturion-green" class="product-card" data-brand="addiesdive">
+        <a href="#" id="link-h3-zenturion-green" class="product-card" data-brand="addiesdive" data-linha="h3">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/tp0iKgm.jpeg" alt="H3 Zenturion Green">
             <h3>H3 Zenturion Green</h3>
             <div class="price" id="price-h3-zenturion-green">R$ 0,00</div>
         </a>
+
         <a href="#" id="link-pg-pepsi" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/o37Q581.jpeg" alt="PG Pepsi">
@@ -312,6 +280,7 @@ nav a:hover { background: #fff; color: #000; }
             <h3>GMT Blue</h3>
             <div class="price" id="price-pg-gmt-blue">R$ 0,00</div>
         </a>
+
         <a href="#" id="link-pg-bright-blue" class="product-card" data-brand="pagani" data-linha="datejust">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/5suF4aT.jpeg" alt="PG Bright Blue">
@@ -324,6 +293,55 @@ nav a:hover { background: #fff; color: #000; }
             <h3>Wimbledon</h3>
             <div class="price" id="price-pg-wimbledon">R$ 0,00</div>
         </a>
+        <a href="#" id="link-pg-rose-line" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/2pqB5Z0.jpeg" alt="PG Rosé Line">
+            <h3>Rosé Line</h3>
+            <div class="price" id="price-pg-rose-line">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-rose-line-w" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/EvjTfIK.jpeg" alt="PG Rosé Line W">
+            <h3>Rosé Line W</h3>
+            <div class="price" id="price-pg-rose-line-w">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-rose-line-b" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/oNrwx5q.jpeg" alt="PG Rosé Line B">
+            <h3>Rosé Line B</h3>
+            <div class="price" id="price-pg-rose-line-b">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-green" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/pclH2f8.jpeg" alt="PG Green">
+            <h3> Green</h3>
+            <div class="price" id="price-pg-green">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-olive-rose" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/lBiYjbs.jpeg" alt="PG Olive Rosé">
+            <h3> Olive Rosé</h3>
+            <div class="price" id="price-pg-olive-rose">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-dark-blue" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/bF5MVFj.jpeg" alt="PG Dark Blue">
+            <h3> Dark Blue</h3>
+            <div class="price" id="price-pg-dark-blue">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-black-rose" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/cX9AzZe.jpeg" alt="PG Black Rose">
+            <h3> Black Rosé</h3>
+            <div class="price" id="price-pg-black-rose">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-rose-line-dkb" class="product-card" data-brand="pagani" data-linha="datejust">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/SXSiRlK.jpeg" alt="PG Rosé Line DKB">
+            <h3>Rosé Line DKB</h3>
+            <div class="price" id="price-pg-rose-line-dkb">R$ 0,00</div>
+        </a>
+
         <a href="#" id="link-pg-nautilus-moss" class="product-card" data-brand="pagani" data-linha="nautilus">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/wa9ohjj.jpeg" alt="PG Nautilus Moss">
@@ -360,54 +378,7 @@ nav a:hover { background: #fff; color: #000; }
             <h3>Nautilus Rosé Brown</h3>
             <div class="price" id="price-pg-nautilus-rose-brown">R$ 0,00</div>
         </a>
-                <a href="#" id="link-pg-rose-line" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/2pqB5Z0.jpeg" alt="PG Rosé Line">
-            <h3>Rosé Line</h3>
-            <div class="price" id="price-pg-rose-line">R$ 0,00</div>
-        </a>
-             <a href="#" id="link-pg-rose-line-w" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/EvjTfIK.jpeg" alt="PG Rosé Line W">
-            <h3>Rosé Line W</h3>
-            <div class="price" id="price-pg-rose-line-w">R$ 0,00</div>
-        </a>
-                    <a href="#" id="link-pg-rose-line-b" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/oNrwx5q.jpeg" alt="PG Rosé Line B">
-            <h3>Rosé Line B</h3>
-            <div class="price" id="price-pg-rose-line-b">R$ 0,00</div>
-        </a>
-                    <a href="#" id="link-pg-green" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/pclH2f8.jpeg" alt="PG Green">
-            <h3> Green</h3>
-            <div class="price" id="price-pg-green">R$ 0,00</div>
-        </a>
-               <a href="#" id="link-pg-olive-rose" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/lBiYjbs.jpeg" alt="PG Olive Rosé">
-            <h3> Olive Rosé</h3>
-            <div class="price" id="price-pg-olive-rose">R$ 0,00</div>
-        </a>
-            <a href="#" id="link-pg-dark-blue" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/bF5MVFj.jpeg" alt="PG Dark Blue">
-            <h3> Dark Blue</h3>
-            <div class="price" id="price-pg-dark-blue">R$ 0,00</div>
-        </a>
-                   <a href="#" id="link-pg-black-rose" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/cX9AzZe.jpeg" alt="PG Black Rose">
-            <h3> Black Rosé</h3>
-            <div class="price" id="price-pg-black-rose">R$ 0,00</div>
-        </a>
-                 <a href="#" id="link-pg-rose-line-dkb" class="product-card" data-brand="pagani" data-linha="datejust">
-            <span class="brand-tag">Pagani</span>
-            <img src="https://i.imgur.com/SXSiRlK.jpeg" alt="PG Rosé Line DKB">
-            <h3>Rosé Line DKB</h3>
-            <div class="price" id="price-pg-rose-line-dkb">R$ 0,00</div>
-        </a>
+
         <a href="#" id="link-ho-platinum-black" class="product-card" data-brand="holuns">
             <span class="brand-tag">Holuns</span>
             <img src="https://i.imgur.com/fE2V9PL.jpeg" alt="HO Platinum Black">
@@ -423,7 +394,6 @@ nav a:hover { background: #fff; color: #000; }
     </div>
 </section>
 
-<!-- CARROSSEL MOBILE (só aparece no celular) -->
 <div class="mobile-carousel-section" id="mobile-carousel-section">
     <button class="car-arrow" onclick="moverCar(-1)">&#8249;</button>
     <div class="car-outer">
@@ -478,7 +448,7 @@ function sincronizarCatalogo() {
 }
 
 let marcaAtual = 'addiesdive';
-let linhaAtual = 'gmt';
+let linhaAtual = 'h3';
 let carSlide = 0;
 let carTotal = 0;
 
@@ -488,12 +458,20 @@ function filtrar(marca) {
         btn.classList.remove('active');
         if (btn.innerText.toLowerCase() === marca.toLowerCase()) btn.classList.add('active');
     });
-    const subFiltros = document.getElementById('pagani-sub');
+
+    const subPagani = document.getElementById('pagani-sub');
+    const subAddies = document.getElementById('addiesdive-sub');
+
+    subPagani.classList.remove('visible');
+    subAddies.classList.remove('visible');
+
     if (marca === 'pagani') {
-        subFiltros.classList.add('visible');
-        filtrarSub(linhaAtual);
+        subPagani.classList.add('visible');
+        filtrarSub('gmt');
+    } else if (marca === 'addiesdive') {
+        subAddies.classList.add('visible');
+        filtrarSub('h3');
     } else {
-        subFiltros.classList.remove('visible');
         document.querySelectorAll('.product-card').forEach(card => {
             card.style.display = card.getAttribute('data-brand') === marca ? 'block' : 'none';
         });
@@ -503,18 +481,25 @@ function filtrar(marca) {
 
 function filtrarSub(linha) {
     linhaAtual = linha;
-    document.querySelectorAll('.sub-btn').forEach(btn => {
+    document.querySelectorAll('.sub-filters.visible .sub-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.innerText.toLowerCase() === linha.toLowerCase()) btn.classList.add('active');
+        if (btn.innerText.toLowerCase() === linha.toLowerCase() || 
+            (linha === 'h3' && btn.innerText === 'H3') || 
+            (linha === 'gmt' && btn.innerText === 'AD GMT') ||
+            (linha === 'gmt' && btn.innerText === 'GMT')) {
+            btn.classList.add('active');
+        }
     });
+
     document.querySelectorAll('.product-card').forEach(card => {
-        if (card.getAttribute('data-brand') === 'pagani') {
-            card.style.display = card.getAttribute('data-linha') === linha ? 'block' : 'none';
+        if (card.getAttribute('data-brand') === marcaAtual) {
+            const cardLinha = card.getAttribute('data-linha');
+            card.style.display = cardLinha === linha ? 'block' : 'none';
         } else {
             card.style.display = 'none';
         }
     });
-    construirCarMobile('pagani', linha);
+    construirCarMobile(marcaAtual, linha);
 }
 
 function construirCarMobile(marca, linha) {
@@ -526,7 +511,8 @@ function construirCarMobile(marca, linha) {
     document.querySelectorAll('.product-card').forEach(card => {
         const cardMarca = card.getAttribute('data-brand');
         const cardLinha = card.getAttribute('data-linha');
-        const visivel = linha === null ? cardMarca === marca : (cardMarca === marca && cardLinha === linha);
+        const visivel = (linha === null) ? (cardMarca === marca) : (cardMarca === marca && cardLinha === linha);
+        
         if (!visivel) return;
 
         const img = card.querySelector('img');
@@ -551,27 +537,25 @@ function construirCarMobile(marca, linha) {
 }
 
 function moverCar(dir) {
-    if (carTotal === 0) return;
+    if (carTotal <= 1) return;
     carSlide = (carSlide + dir + carTotal) % carTotal;
     atualizarCarMobile();
 }
 
 function atualizarCarMobile() {
     const track = document.getElementById('car-track');
-    // 58vw card + 12px gap
     const cardW = window.innerWidth * 0.58 + 12;
     track.style.transform = `translateX(-${carSlide * cardW}px)`;
 }
 
-// Swipe no mobile
 let touchStartX = 0;
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('car-track');
-    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive: true});
     track.addEventListener('touchend', e => {
         const diff = touchStartX - e.changedTouches[0].clientX;
         if (Math.abs(diff) > 40) moverCar(diff > 0 ? 1 : -1);
-    });
+    }, {passive: true});
 });
 
 window.onload = function() {
