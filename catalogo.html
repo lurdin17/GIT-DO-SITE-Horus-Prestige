@@ -132,15 +132,30 @@ nav a:hover { background: #fff; color: #000; }
         padding: 10px 0 30px 0; width: 100%;
     }
 
-    /* Setas */
-    .car-arrow {
-        flex-shrink: 0; width: 36px; height: 36px;
-        background: rgba(0,0,0,0.7); border: 2px solid #fff;
-        color: #fff; font-size: 22px; border-radius: 50%; cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        transition: 0.3s; z-index: 10; margin: 0 6px;
-    }
-    .car-arrow:hover { background: rgba(255,255,255,0.2); }
+   /* Setas com fundo preto sólido */
+.car-arrow {
+    flex-shrink: 0; 
+    width: 40px;          /* Aumentei um pouco para facilitar o toque */
+    height: 40px;
+    background: #000000;  /* PRETO TOTAL E SÓLIDO */
+    border: 1px solid #444; /* Borda cinza escura sutil para não sumir no fundo */
+    color: #ffffff;       /* Seta branca para dar contraste */
+    font-size: 24px; 
+    border-radius: 50%; 
+    cursor: pointer;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: 0.3s; 
+    z-index: 10; 
+    margin: 0 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para destacar do fundo */
+}
+
+/* Efeito ao passar o mouse ou tocar */
+.car-arrow:hover { 
+    background: #333333; /* Fica um cinza bem escuro ao interagir */
+}
 
     /* Track */
     .car-outer { overflow: hidden; flex: 1; }
