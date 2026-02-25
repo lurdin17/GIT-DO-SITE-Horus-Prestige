@@ -136,6 +136,7 @@ nav a:hover { background: #fff; color: #000; }
     nav { display: none; }
     .hamburger { display: flex; }
     .cart-mobile { display: flex; }
+    #btn-voltar { display: block !important; }
     .product-page { flex-direction: column; margin: 15px; padding: 20px; }
     .product-info h1 { font-size: 1.5rem; }
     .price { font-size: 1.3rem; }
@@ -171,6 +172,24 @@ nav a:hover { background: #fff; color: #000; }
         Carrinho <span id="cart-count-mobile"></span>
     </a>
 </header>
+
+<!-- BOTÃO VOLTAR (só aparece no mobile) -->
+<a href="../../catalogo.html" id="btn-voltar" style="
+    display: none;
+    position: fixed;
+    top: 105px;
+    left: 15px;
+    z-index: 998;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+">← Catálogo</a>
 
 <div class="mobile-menu" id="mobile-menu">
     <a href="../../index.html">Início</a>
