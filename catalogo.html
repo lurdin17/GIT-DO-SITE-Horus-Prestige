@@ -508,24 +508,33 @@ function filtrar(marca) {
 
 function filtrarSub(linha) {
     linhaAtual = linha;
+
+    // 1. Gerencia a aparência dos botões
     document.querySelectorAll('.sub-filters.visible .sub-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText.toLowerCase() === linha.toLowerCase() || 
-            (linha === 'h3' && btn.innerText === 'H3') || 
-            (linha === 'gmt' && btn.innerText === 'AD GMT') ||
-            (linha === 'gmt' && btn.innerText === 'GMT')) {
+        // Pega o valor que está no onclick do botão para comparar
+        const onclickAttr = btn.getAttribute('onclick');
+        
+        // Se o texto do botão ou o valor passado na função baterem, ele fica ativo
+        if (onclickAttr.includes(`'${linha}'`)) {
             btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
         }
     });
 
+    // 2. Filtra os produtos na Grid
     document.querySelectorAll('.product-card').forEach(card => {
-        if (card.getAttribute('data-brand') === marcaAtual) {
-            const cardLinha = card.getAttribute('data-linha');
-            card.style.display = cardLinha === linha ? 'block' : 'none';
+        const cardMarca = card.getAttribute('data-brand');
+        const cardLinha = card.getAttribute('data-linha');
+
+        if (cardMarca === marcaAtual && cardLinha === linha) {
+            card.style.display = 'block';
         } else {
             card.style.display = 'none';
         }
     });
+
+    // 3. Reconstrói o carrossel mobile
     construirCarMobile(marcaAtual, linha);
 }
 
