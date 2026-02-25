@@ -24,6 +24,13 @@ const BANCO_DE_DADOS = {
     link: "marcas/addiesdive/h3_blue.html",
     marca: "addiesdive"
     },
+        "h3-green": {
+    nome: "Green",
+    preco: 0.00, // Defina o preço que desejar
+    imagem: "https://i.imgur.com/ALlI1EJ.jpeg",
+    link: "marcas/addiesdive/h3_green.html",
+    marca: "addiesdive"
+    },
     "h3-zenturion-green": {
     "nome": "Zenturion Green",
     "preco": 0.00,
