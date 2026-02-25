@@ -97,7 +97,7 @@ const BANCO_DE_DADOS = {
               "pg-nautilus-rose-b": {
     "nome": "PG Nautilus Rosé B",
     "preco": 0.00,
-    "imagem": "https://i.imgur.com/807321c.jpeg",
+    "imagem": "https://i.imgur.com/UvO7u71.jpeg",
     "link": "marcas/pagani/pg_nautilus_rose_b.html",
     "marca": "pagani"
      },
