@@ -133,13 +133,13 @@ nav a:hover { background: #fff; color: #000; }
     }
 
     /* Setas */
-   .car-arrow {
-    background: rgba(255, 255, 255, 0.9); /* Fundo branco quase opaco */
-    color: #000;                          /* Seta preta */
-    border: 1px solid rgba(0,0,0,0.1);
-    backdrop-filter: blur(5px);           /* Desfoque atrás */
-    /* ... mantenha o restante das propriedades ... */
-}
+    .car-arrow {
+        flex-shrink: 0; width: 36px; height: 36px;
+        background: rgba(0,0,0,0.7); border: 2px solid #fff;
+        color: #fff; font-size: 22px; border-radius: 50%; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: 0.3s; z-index: 10; margin: 0 6px;
+    }
     .car-arrow:hover { background: rgba(255,255,255,0.2); }
 
     /* Track */
