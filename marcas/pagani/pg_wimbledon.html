@@ -10,15 +10,14 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Albert Sans', sans-serif; }
 body {
-    color: #EAEAEA;
-    overflow-x: hidden;
-    padding-top: 110px;
+    color: #EAEAEA; overflow-x: hidden; padding-top: 90px;
     background: url('https://i.imgur.com/eWN4AWr.jpeg') no-repeat center center fixed;
     background-size: cover;
 }
 #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .particle { position: absolute; border-radius: 50%; }
 
+/* HEADER */
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 90px;
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://i.imgur.com/9swFJOL.png') center/cover no-repeat;
@@ -29,104 +28,260 @@ header {
 
 nav { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; }
 nav a {
-    text-decoration: none; font-size: 13px; font-weight: 500;
-    padding: 10px 20px; border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+    text-decoration: none; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 12px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
     transition: 0.3s ease; position: relative;
 }
 nav a:hover { background: #fff; color: #000; }
+.social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
+.social-icon:hover svg { fill: #000; }
+#cart-count { position: absolute; top: -5px; right: -2px; background: #ff4d4d; color: white; font-size: 10px; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: none; align-items: center; justify-content: center; }
 
-.social-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: #fff;
-    display: block;
-    transition: 0.3s;
+.hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+    z-index: 1100; padding: 5px;
+}
+.hamburger span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+    display: none; position: fixed; top: 90px; left: 0; width: 100%;
+    background: rgba(0,0,0,0.97); backdrop-filter: blur(10px);
+    flex-direction: column; gap: 0; z-index: 999;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+    text-decoration: none; color: #fff; font-size: 15px; font-weight: 500;
+    padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+}
+.mobile-menu a:hover { background: rgba(255,255,255,0.05); }
+.mobile-menu .social-row { display: flex; gap: 15px; padding: 18px 25px; }
+.mobile-menu .social-row a {
+    padding: 10px; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
 }
 
-.social-icon:hover svg {
-    fill: #000;
+.cart-mobile {
+    display: none; align-items: center;
+    position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+    text-decoration: none; color: #fff; font-size: 13px; font-weight: 500;
+    padding: 8px 16px; border-radius: 12px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+}
+#cart-count-mobile {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #ff4d4d; color: white; font-size: 10px; font-weight: bold;
+    width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
 }
 
-#cart-count {
-    position: absolute; top: -5px; right: -2px; background: #ff4d4d; color: white;
-    font-size: 10px; font-weight: bold; width: 18px; height: 18px;
-    border-radius: 50%; display: none; align-items: center; justify-content: center;
+.toast-aviso {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.95); color: #000; padding: 15px 30px;
+    border-radius: 50px; font-weight: 600; z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none; animation: slideUp 0.5s forwards;
+}
+@keyframes slideUp {
+    from { bottom: -50px; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
 }
 
 .product-page {
-    position: relative; z-index: 1; display: flex; max-width: 900px;
-    margin: 40px auto; gap: 40px; padding: 40px;
-    background: rgba(10, 10, 10, 0.85); border-radius: 30px;
+    position: relative; z-index: 1; display: flex;
+    max-width: 900px; margin: 40px auto; gap: 35px; padding: 30px;
+    background: rgba(10,10,10,0.85); border-radius: 25px;
     border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
 }
-.product-image { flex: 0.8; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.product-image img { width: 100%; display: block; transition: 0.5s; }
-.product-image:hover img { transform: scale(1.05); }
-
 .product-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.brand-name { color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px; }
-.product-info h1 { font-size: 2.rem; margin-bottom: 15px; letter-spacing: 2px; }
-.price { font-size: 1.6rem; color: #fff; font-weight: 700; margin-bottom: 30px; }
-.description-box { margin-bottom: 40px; line-height: 1.8; color: #ccc; font-size: 0.95rem; }
+.brand-name { color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 5px; }
+.product-info h1 { font-size: 2rem; margin-bottom: 12px; letter-spacing: 1px; }
+.price { font-size: 1.6rem; color: #fff; font-weight: 700; margin-bottom: 20px; }
 
 .btn-add-cart {
     padding: 15px; background: #fff; color: #000; text-align: center; border: none;
-    cursor: pointer; font-weight: 700; border-radius: 15px; transition: 0.4s;
-    letter-spacing: 1px; text-transform: uppercase; font-size: 1rem;
+    cursor: pointer; font-weight: 700; border-radius: 12px; transition: 0.4s;
+    letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; width: 100%;
 }
-.btn-add-cart:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255,255,255,0.1); }
+.btn-add-cart:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
 
-@media (max-width: 900px) { .product-page { flex-direction: column; margin: 20px; padding: 20px; } }
+.desc-container {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto 60px auto; padding: 40px 50px;
+    background: rgba(10,10,10,0.85); border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+    line-height: 1.9; color: #ccc; font-size: 0.95rem;
+}
+.desc-container h2 { color: #fff; letter-spacing: 2px; margin-bottom: 20px; font-size: 1.3rem; }
+.desc-container p { margin-bottom: 15px; }
+.desc-container p:last-child { margin-bottom: 0; }
+
+/* SETAS DO CARROSSEL */
+.car-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.25);
+    color: #fff; font-size: 22px; width: 38px; height: 38px;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10; transition: 0.3s;
+}
+.car-btn:hover { background: rgba(255,255,255,0.2); }
+.car-btn.prev { left: 8px; }
+.car-btn.next { right: 8px; }
+
+@media (max-width: 768px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+    .cart-mobile { display: flex; }
+    .product-page { flex-direction: column; margin: 15px; padding: 20px; }
+    .product-info h1 { font-size: 1.5rem; }
+    .price { font-size: 1.3rem; }
+    .desc-wrapper { flex-direction: column !important; margin: 0 15px 40px 15px !important; }
+    .desc-wrapper .desc-container { margin: 0 !important; padding: 25px !important; }
+    .desc-wrapper .desc-img { flex: none !important; width: 100% !important; }
+}
 </style>
 <script src="../../produtos.js"></script>
 </head>
 <body>
+
 <div id="particles-container"></div>
+<div id="toast" class="toast-aviso">Produto adicionado ao carrinho!</div>
+
 <header>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
     <a href="../../index.html"><img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo"></a>
     <nav>
         <a href="../../index.html">Início</a>
         <a href="../../catalogo.html">Catálogo</a>
-        <a href="../../carrinho.html">Carrinho <span id="cart-count">0</span></a>
-         </a>
-        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon shimmer-effect">
+        <a href="../../carrinho.html">Carrinho <span id="cart-count"></span></a>
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon shimmer-effect">
+        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
         </a>
     </nav>
+    <a href="../../carrinho.html" class="cart-mobile">
+        Carrinho <span id="cart-count-mobile"></span>
+    </a>
 </header>
 
-<main class="product-page">
-    <div class="product-image">
-        <img id="product-img" src="https://i.imgur.com/W2qBP2r.jpeg" alt="PG Wimbledon">
+<div class="mobile-menu" id="mobile-menu">
+    <a href="../../index.html">Início</a>
+    <a href="../../catalogo.html">Catálogo</a>
+    <div class="social-row">
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </a>
     </div>
+</div>
+
+<main class="product-page">
+    <!-- GALERIA -->
+    <div style="flex: 0.8; display: flex; flex-direction: column; gap: 10px;">
+
+        <!-- FOTO PRINCIPAL COM SETAS -->
+        <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%;">
+            <div id="car-track" style="display: flex; transition: transform 0.4s ease; width: 100%;">
+                <img src="https://i.imgur.com/DAItmgm.jpeg" style="min-width: 100%; width: 100%; display: block; object-fit: cover;">
+                <img src="https://i.imgur.com/KtLQPrR.jpeg" style="min-width: 100%; width: 100%; display: block; object-fit: cover;">
+            </div>
+            <button class="car-btn prev" onclick="moverCar(-1)">&#8249;</button>
+            <button class="car-btn next" onclick="moverCar(1)">&#8250;</button>
+        </div>
+
+        <!-- MINIATURAS -->
+        <div style="display: flex; gap: 10px;">
+            <img src="https://i.imgur.com/DAItmgm.jpeg" onclick="irParaCar(0)" id="thumb-0" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid #fff;opacity:1;transition:0.3s;">
+            <img src="https://i.imgur.com/KtLQPrR.jpeg" onclick="irParaCar(1)" id="thumb-1" style="width:20%;border-radius:10px;cursor:pointer;border:2px solid rgba(255,255,255,0.2);opacity:0.6;transition:0.3s;">
+        </div>
+    </div>
+
     <div class="product-info">
         <span class="brand-name">Pagani</span>
         <h1 id="product-name">PG Wimbledon</h1>
         <div class="price" id="product-price">R$ 0,00</div>
-        <div class="description-box">
-            <p><strong>Descrição:</strong></p>
-            <p>teste</p>
-        </div>
         <button class="btn-add-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
     </div>
 </main>
+
+<div class="desc-wrapper" style="max-width: 900px; margin: 0 auto 60px auto; display: flex; gap: 20px; align-items: center;">
+    <div class="desc-container" style="margin: 0; flex: 1;">
+        <h2>PAGANI DESIGN DD36 Date Just – Automático Clássico </h2>
+        <p>Traz elegância atemporal inspirada em um dos designs mais icônicos da relojoaria, com exibição de dia da semana às 12h e calendário no mostrador.</p>
+        <p>Conta com <strong style="color:#fff">movimento automático Seagull ST16</strong>, oferecendo até 40 horas de reserva de energia. Funciona sem bateria e pode ser carregado automaticamente pelo uso ou manualmente pela coroa.</p>
+        <p>Sua pulseira sólida em aço inoxidável garante resistência, conforto e acabamento refinado, reforçando sua presença sofisticada no pulso.</p>
+        <p>Possui <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>,  adequado para uso diário e natação <strong style="color:#fff">(não recomendado para mergulho ou água quente).</strong></p>
+        <p>Um relógio clássico, preciso e feito para quem valoriza <strong style="color:#fff">tradição e estilo.</strong>.</p>
+    </div>
+    <div class="desc-img" style="flex: 0 0 280px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <img src="https://i.imgur.com/Qtwltqi.jpeg" style="width: 100%; display: block;">
+    </div>
+</div>
 
 <footer style="text-align: center; padding: 40px 0; color: #000000; font-size: 16px; width: 100%; background: transparent; margin-top: 50px; font-weight: 600;">
     © 2026 Horus Prestige — Todos os direitos reservados.
 </footer>
 
 <script>
-const idProduto = 'pg-wimbledon'; // ID conforme configurado no produtos.js
+const idProduto = 'pg-wimbledon';
+
+// CARROSSEL
+const carTotal = 2;
+let carSlide = 0;
+
+function moverCar(dir) {
+    carSlide = (carSlide + dir + carTotal) % carTotal;
+    atualizarCar();
+}
+function irParaCar(index) {
+    carSlide = index;
+    atualizarCar();
+}
+function atualizarCar() {
+    document.getElementById('car-track').style.transform = `translateX(-${carSlide * 100}%)`;
+    for (let i = 0; i < carTotal; i++) {
+        const thumb = document.getElementById(`thumb-${i}`);
+        thumb.style.border = i === carSlide ? '2px solid #fff' : '2px solid rgba(255,255,255,0.2)';
+        thumb.style.opacity = i === carSlide ? '1' : '0.6';
+    }
+}
+
+// SWIPE mobile
+let touchStartX = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('car-track');
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+    track.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) moverCar(diff > 0 ? 1 : -1);
+    });
+});
+
+function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+}
+
+function mostrarToast() {
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2500);
+}
 
 function carregarDados() {
     const info = BANCO_DE_DADOS[idProduto];
-    if(info) {
+    if (info) {
         document.getElementById('product-price').innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-        document.getElementById('product-img').src = info.imagem;
         document.getElementById('product-name').innerText = info.nome;
     }
     atualizarContadorCarrinho();
@@ -134,16 +289,14 @@ function carregarDados() {
 
 function adicionarAoCarrinho() {
     const info = BANCO_DE_DADOS[idProduto];
+    if (!info) return;
     let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const index = carrinho.findIndex(item => item.nome === info.nome);
-    if (index > -1) { 
-        carrinho[index].quantidade += 1; 
-    } else { 
-        carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); 
-    }
+    if (index > -1) { carrinho[index].quantidade += 1; }
+    else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
     atualizarContadorCarrinho();
-    mostrarAvisoLuxo("Produto adicionado à sua coleção!");
+    mostrarToast();
 }
 
 function atualizarContadorCarrinho() {
@@ -151,26 +304,26 @@ function atualizarContadorCarrinho() {
     const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
     const contador = document.getElementById('cart-count');
     if (contador) {
-        if (totalItens > 0) { 
-            contador.innerText = totalItens; 
-            contador.style.display = 'flex'; 
-        } else { 
-            contador.style.display = 'none'; 
-        }
+        contador.innerText = totalItens;
+        contador.style.display = totalItens > 0 ? 'flex' : 'none';
+    }
+    const contadorMobile = document.getElementById('cart-count-mobile');
+    if (contadorMobile) {
+        contadorMobile.innerText = totalItens > 0 ? totalItens : '';
+        contadorMobile.style.display = totalItens > 0 ? 'inline-flex' : 'none';
     }
 }
 
 window.onload = carregarDados;
 
-// Efeito de Partículas
 const container = document.getElementById('particles-container');
-for(let i=0; i<35; i++){
+for (let i = 0; i < 30; i++) {
     const p = document.createElement('div');
     p.classList.add('particle');
     const s = Math.random() * 2 + 1;
     p.style.width = p.style.height = `${s}px`;
     p.style.background = `rgba(255,255,255,0.2)`;
-    p.style.top = `${Math.random() * 100}%`; 
+    p.style.top = `${Math.random() * 100}%`;
     p.style.left = `${Math.random() * 100}%`;
     container.appendChild(p);
 }
