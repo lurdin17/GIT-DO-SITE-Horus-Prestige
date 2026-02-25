@@ -157,6 +157,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/pagani/pg_dark_blue.html",
     "marca": "pagani"
      },
+                       "pg-black-rose": {
+    "nome": "PG Black Rose",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/cX9AzZe.jpeg",
+    "link": "marcas/pagani/pg_black_rose.html",
+    "marca": "pagani"
+     },
                   "pg-rose-line-b": {
     "nome": "PG Rosé Line B",
     "preco": 0.00,
