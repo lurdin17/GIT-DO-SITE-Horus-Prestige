@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Horus Prestige</title>
 <link rel="icon" type="image/png" href="horus_perfil_cerca_2.png">
-<!-- FONTE OTIMIZADA: não bloqueia renderização -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
@@ -16,7 +15,6 @@ body {
     background: url('https://i.imgur.com/eWN4AWr.jpeg') no-repeat center center fixed;
     background-size: cover;
 }
-/* BACKGROUND FIXO DESLIGADO NO MOBILE (melhora performance) */
 @media (max-width: 768px) {
     body { background-attachment: scroll; }
 }
@@ -121,16 +119,24 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 }
 .floating-symbol:hover { transform: translateY(-45px) scale(1.1); filter: drop-shadow(0 40px 50px rgba(255,255,255,0.15)); }
 
-/* DESKTOP: 3 imagens */
+/* DESKTOP: 3 imagens com brilho */
 .triple-img-container {
     display: flex; align-items: center; gap: 20px;
     width: 90%; max-width: 1200px; margin: 60px auto;
 }
 .triple-img-container img {
     width: 33.33%; border-radius: 20px; object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* BRILHO EM REPOUSO */
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
+    transition: 0.4s;
 }
-.triple-img-container img:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
+.triple-img-container img:hover {
+    transform: translateY(-8px);
+    /* BRILHO INTENSO NO HOVER */
+    filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.35));
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
 
 /* CARROSSEL MOBILE */
 .carrossel-mobile { display: none; position: relative; width: 90%; margin: 40px auto; }
@@ -205,7 +211,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </div>
 </div>
 
-<!-- LAZY LOADING em todas as imagens abaixo do fold -->
 <div class="img-container">
     <img src="https://i.imgur.com/VkcQyFd.png" alt="Nossa História" loading="lazy">
 </div>
@@ -247,7 +252,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </div>
 </section>
 
-<!-- DESKTOP: 3 imagens lado a lado -->
+<!-- DESKTOP: 3 imagens com efeito de brilho -->
 <div class="triple-img-container">
     <img src="https://i.imgur.com/6CFWEnw.png" alt="Imagem 1" loading="lazy">
     <img src="https://i.imgur.com/fJDfm1Q.png" alt="Selo Qualidade Horus" loading="lazy">
@@ -322,7 +327,6 @@ track.addEventListener('touchend', e => {
     if (Math.abs(diff) > 50) moverCarrossel(diff > 0 ? 1 : -1);
 });
 
-// PARTÍCULAS REDUZIDAS NO MOBILE
 const isMobile = window.innerWidth <= 768;
 const numParticles = isMobile ? 15 : 35;
 const container = document.getElementById('particles-container');
