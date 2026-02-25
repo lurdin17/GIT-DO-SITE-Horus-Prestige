@@ -24,6 +24,13 @@ const BANCO_DE_DADOS = {
     link: "marcas/addiesdive/h3_blue.html",
     marca: "addiesdive"
     },
+        "ad-pepsi-black": {
+    nome: "Pepsi Black",
+    preco: 0.00, // Defina o preço que desejar
+    imagem: "https://i.imgur.com/PrqRWAt.jpeg",
+    link: "marcas/addiesdive/ad_pepsi_black.html",
+    marca: "addiesdive"
+    },
         "h3-gray-black": {
     nome: "Gray Black",
     preco: 0.00, // Defina o preço que desejar
