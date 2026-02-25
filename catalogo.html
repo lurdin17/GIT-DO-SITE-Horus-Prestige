@@ -373,6 +373,13 @@ nav a:hover { background: #fff; color: #000; }
     <div class="price" id="price-pg-nautilus-moss">R$ 0,00</div>
 </a>
 
+         <a href="#" id="link-pg-nautilus-dark-blue" class="product-card" data-brand="pagani" data-linha="nautilus">
+    <span class="brand-tag">Pagani</span>
+    <img src="https://i.imgur.com/RpIc3Qd.jpeg" alt="PG Nautilus Dark Blue">
+    <h3>Nautilus Dark Blue</h3>
+    <div class="price" id="price-pg-nautilus-dark-blue">R$ 0,00</div>
+</a>
+
         <!-- HOLUNS -->
         <a href="#" id="link-ho-platinum-black" class="product-card" data-brand="holuns">
             <span class="brand-tag">Holuns</span>
@@ -423,7 +430,7 @@ function sincronizarCatalogo() {
     const produtosIds = [
         'h3-black', 'h3-silver', 'h3-black-silver', 'h3-blue-silver', 'h3-zenturion-green',
         'pg-pepsi', 'pg-bright-blue', 'pg-wimbledon', 'pg-gmt-gold',
-        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue', 'pg-gmt-blue-sky', 'pg-gmt-red', 'pg-gmt-gray', 'pg-nautilus-moss'
+        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue', 'pg-gmt-blue-sky', 'pg-gmt-red', 'pg-gmt-gray', 'pg-nautilus-moss', 'pg-nautilus-dark-blue'
     ];
     produtosIds.forEach(id => {
         const info = BANCO_DE_DADOS[id];
