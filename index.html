@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Horus Prestige</title>
 <link rel="icon" type="image/png" href="horus_perfil_cerca_2.png">
-<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- FONTE OTIMIZADA: não bloqueia renderização -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Albert Sans', sans-serif; }
 body {
@@ -13,15 +16,13 @@ body {
     background: url('https://i.imgur.com/eWN4AWr.jpeg') no-repeat center center fixed;
     background-size: cover;
 }
+/* BACKGROUND FIXO DESLIGADO NO MOBILE (melhora performance) */
+@media (max-width: 768px) {
+    body { background-attachment: scroll; }
+}
+
 #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .particle { position: absolute; border-radius: 50%; }
-.shimmer-effect { position: relative; overflow: hidden; }
-.shimmer-effect::after {
-    content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transform: skewX(-25deg); transition: 0.7s;
-}
-.shimmer-effect:hover::after { left: 150%; }
 
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 90px;
@@ -58,16 +59,10 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     flex-direction: column; z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .mobile-menu.open { display: flex; }
-.mobile-menu a {
-    text-decoration: none; color: #fff; font-size: 15px; font-weight: 500;
-    padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
-}
+.mobile-menu a { text-decoration: none; color: #fff; font-size: 15px; font-weight: 500; padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
 .mobile-menu a:hover { background: rgba(255,255,255,0.05); }
 .mobile-menu .social-row { display: flex; gap: 15px; padding: 18px 25px; }
-.mobile-menu .social-row a {
-    padding: 10px; border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 10px; display: flex; align-items: center; justify-content: center;
-}
+.mobile-menu .social-row a { padding: 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
 .cart-mobile {
     display: none; align-items: center;
     position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
@@ -82,8 +77,10 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 }
 .social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
+
 .img-container { width: 90%; max-width: 1200px; margin: 40px auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .img-container img { width: 100%; height: auto; display: block; }
+
 .collection-section {
     width: 90%; max-width: 1200px; margin: 60px auto; padding: 80px 40px;
     background: url('https://i.imgur.com/SvWvJOa.png') no-repeat center center;
@@ -94,6 +91,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .collection-item { transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; }
 .collection-item:hover { transform: translateY(-15px) scale(1.03); }
 .collection-item img { width: 100%; height: auto; border-radius: 25px; }
+
 .banner-wrapper { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
 .banner-container {
     position: relative; width: 90%; max-width: 1200px; height: 500px;
@@ -108,19 +106,13 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     transition: 0.4s; display: flex; align-items: center; gap: 10px;
 }
 .banner-cta:hover { background: #fff; color: #000; }
+
 .description-section {
     width: 92%; max-width: 1300px; margin: 100px auto; padding: 110px 60px; border-radius: 40px;
     background: linear-gradient(rgba(10,10,10,0.96), rgba(10,10,10,0.96));
     text-align: center; position: relative; z-index: 1;
     border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 40px 80px rgba(0,0,0,0.9); overflow: visible;
 }
-.shimmer-trigger-left { position: absolute; top: 0; left: 0; width: 60%; height: 100%; z-index: 2; border-radius: 40px 0 0 40px; }
-.description-section::before {
-    content: ''; position: absolute; top: 0; left: -150%; width: 40%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transform: skewX(-25deg); transition: 0.8s; z-index: 1; pointer-events: none;
-}
-.description-section:has(.shimmer-trigger-left:hover)::before { left: 150%; }
 .description-section p { font-size: 1.4rem; line-height: 2; margin-bottom: 30px; color: #ffffff; letter-spacing: 0.8px; }
 .floating-symbol {
     position: absolute; bottom: -60px; right: -30px; width: 220px; z-index: 10;
@@ -188,13 +180,13 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </a>
     <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
     <nav>
-        <a href="index.html" class="shimmer-effect">Início</a>
-        <a href="catalogo.html" class="shimmer-effect">Catálogo</a>
-        <a href="carrinho.html" class="shimmer-effect">Carrinho <span id="cart-count">0</span></a>
-        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon shimmer-effect">
+        <a href="index.html">Início</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="carrinho.html">Carrinho <span id="cart-count"></span></a>
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon shimmer-effect">
+        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
         </a>
     </nav>
@@ -213,8 +205,9 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </div>
 </div>
 
-<div class="img-container shimmer-effect">
-    <img src="https://i.imgur.com/VkcQyFd.png" alt="Nossa História">
+<!-- LAZY LOADING em todas as imagens abaixo do fold -->
+<div class="img-container">
+    <img src="https://i.imgur.com/VkcQyFd.png" alt="Nossa História" loading="lazy">
 </div>
 
 <section class="banner-wrapper">
@@ -226,49 +219,48 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     </div>
 </section>
 
-<div class="img-container shimmer-effect">
-    <img src="https://i.imgur.com/Zvooq4Y.png" alt="Destaque Horus">
+<div class="img-container">
+    <img src="https://i.imgur.com/Zvooq4Y.png" alt="Destaque Horus" loading="lazy">
 </div>
 
 <section class="description-section">
-    <div class="shimmer-trigger-left"></div>
     <div class="shimmer-content-wrapper">
         <p>Na <strong>Horus Prestige</strong>, cada relógio é escolhido com extremo cuidado e precisão, unindo <strong>estilo, sofisticação e desempenho</strong> em cada detalhe.</p>
         <p>Nossos modelos são pensados para quem valoriza <strong>design, funcionalidade e precisão</strong>. Descubra a coleção perfeita para marcar momentos únicos com elegância.</p>
         <p style="font-size: 1.6rem; color: #fff; margin-top: 40px;"><strong>Horus Prestige</strong> — A elegância e a precisão que você merece no seu pulso.</p>
     </div>
-    <img src="https://i.imgur.com/A9cRQtS.png" class="floating-symbol" alt="Selo Horus">
+    <img src="https://i.imgur.com/A9cRQtS.png" class="floating-symbol" alt="Selo Horus" loading="lazy">
 </section>
 
 <section class="collection-section">
     <h2>Nossa Coleção</h2>
     <div class="collection-grid">
-        <a href="marcas/addiesdive/h3_black.html" class="collection-item shimmer-effect">
-            <img src="https://i.imgur.com/4y5JZvJ.png" alt="H3 Black">
+        <a href="marcas/addiesdive/h3_black.html" class="collection-item">
+            <img src="https://i.imgur.com/4y5JZvJ.png" alt="H3 Black" loading="lazy">
         </a>
-        <a href="marcas/addiesdive/h3_silver.html" class="collection-item shimmer-effect">
-            <img src="https://i.imgur.com/6DtB4RE.png" alt="H3 Silver">
+        <a href="marcas/addiesdive/h3_silver.html" class="collection-item">
+            <img src="https://i.imgur.com/6DtB4RE.png" alt="H3 Silver" loading="lazy">
         </a>
-        <a href="marcas/addiesdive/h3_black_silver.html" class="collection-item shimmer-effect">
-            <img src="https://i.imgur.com/OAcw6WQ.png" alt="H3 Black Silver">
+        <a href="marcas/addiesdive/h3_black_silver.html" class="collection-item">
+            <img src="https://i.imgur.com/OAcw6WQ.png" alt="H3 Black Silver" loading="lazy">
         </a>
     </div>
 </section>
 
 <!-- DESKTOP: 3 imagens lado a lado -->
 <div class="triple-img-container">
-    <img src="https://i.imgur.com/6CFWEnw.png" alt="Imagem 1">
-    <img src="https://i.imgur.com/fJDfm1Q.png" alt="Selo Qualidade Horus">
-    <img src="https://i.imgur.com/h8beDZE.png" alt="Imagem 2">
+    <img src="https://i.imgur.com/6CFWEnw.png" alt="Imagem 1" loading="lazy">
+    <img src="https://i.imgur.com/fJDfm1Q.png" alt="Selo Qualidade Horus" loading="lazy">
+    <img src="https://i.imgur.com/h8beDZE.png" alt="Imagem 2" loading="lazy">
 </div>
 
 <!-- MOBILE: carrossel -->
 <div class="carrossel-mobile">
     <div class="carrossel-overflow">
         <div class="carrossel-track" id="carrossel-track">
-            <img src="https://i.imgur.com/fJDfm1Q.png" alt="Imagem 1">
-            <img src="https://i.imgur.com/6CFWEnw.png" alt="Selo Qualidade Horus">
-            <img src="https://i.imgur.com/h8beDZE.png" alt="Imagem 2">
+            <img src="https://i.imgur.com/fJDfm1Q.png" alt="Imagem 1" loading="lazy">
+            <img src="https://i.imgur.com/6CFWEnw.png" alt="Selo Qualidade Horus" loading="lazy">
+            <img src="https://i.imgur.com/h8beDZE.png" alt="Imagem 2" loading="lazy">
         </div>
     </div>
     <button class="carrossel-btn prev" onclick="moverCarrossel(-1)">&#8249;</button>
@@ -330,8 +322,11 @@ track.addEventListener('touchend', e => {
     if (Math.abs(diff) > 50) moverCarrossel(diff > 0 ? 1 : -1);
 });
 
+// PARTÍCULAS REDUZIDAS NO MOBILE
+const isMobile = window.innerWidth <= 768;
+const numParticles = isMobile ? 15 : 35;
 const container = document.getElementById('particles-container');
-for(let i=0;i<35;i++){
+for(let i=0;i<numParticles;i++){
     const p=document.createElement('div');
     p.classList.add('particle');
     const s=Math.random()*2+1;
