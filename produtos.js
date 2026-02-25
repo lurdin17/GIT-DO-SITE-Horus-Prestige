@@ -1,31 +1,31 @@
 const BANCO_DE_DADOS = {
     "h3-black": {
-        nome: "H3 Black",
+        nome: "Black",
         preco: 0.00,
         imagem: "https://i.imgur.com/ORlGCxO.jpeg",
         link: "marcas/addiesdive/h3_black.html"
     },
     "h3-silver": {
-        nome: "H3 Silver",
+        nome: "Silver",
         preco: 0.00,
         imagem: "https://i.imgur.com/uY3FHOw.jpeg",
         link: "marcas/addiesdive/h3_silver.html"
     },
     "h3-black-silver": {
-        nome: "H3 Black Silver",
+        nome: "Black Silver",
         preco: 0.00,
         imagem: "https://i.imgur.com/JzTWQDM.jpeg",
         link: "marcas/addiesdive/h3_black_silver.html"
     },
     "h3-blue-silver": {
-    nome: "H3 Blue Silver",
+    nome: "Blue Silver",
     preco: 0.00, // Defina o preço que desejar
     imagem: "https://i.imgur.com/qC1nrKP.jpeg",
     link: "marcas/addiesdive/h3_blue_silver.html",
     marca: "addiesdive"
     },
     "h3-zenturion-green": {
-    "nome": "H3 Zenturion Green",
+    "nome": "Zenturion Green",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/tp0iKgm.jpeg",
     "link": "marcas/addiesdive/h3_zenturion_green.html",
@@ -67,14 +67,14 @@ const BANCO_DE_DADOS = {
     "marca": "pagani" 
      },
      "pg-bright-blue": {
-    "nome": "PBright Blue",
+    "nome": "Bright Blue",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/5suF4aT.jpeg",
     "link": "marcas/pagani/pg_bright_blue.html",
     "marca": "pagani"
      },
      "pg-wimbledon": {
-    "nome": "PWimbledon",
+    "nome": "Wimbledon",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/W2qBP2r.jpeg",
     "link": "marcas/pagani/pg_wimbledon.html",
