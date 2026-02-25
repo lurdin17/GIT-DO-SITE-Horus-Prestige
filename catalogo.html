@@ -55,17 +55,13 @@ nav {
 nav a {
     text-decoration: none; font-size: 13px; font-weight: 500;
     padding: 10px 20px; border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1); color: #fff;
-    transition: 0.3s ease;
-    position: relative;
+    transition: 0.3s ease; position: relative;
 }
 nav a:hover { background: #fff; color: #000; }
 
-.social-icon svg {
-    width: 20px; height: 20px;
-    fill: #fff; display: block; transition: 0.3s;
-}
+.social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
 
 .hamburger {
@@ -74,10 +70,7 @@ nav a:hover { background: #fff; color: #000; }
     position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
     z-index: 1100; padding: 5px;
 }
-.hamburger span {
-    display: block; width: 25px; height: 2px;
-    background: #fff; border-radius: 2px; transition: 0.3s;
-}
+.hamburger span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -92,21 +85,17 @@ nav a:hover { background: #fff; color: #000; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
     text-decoration: none; color: #fff; font-size: 15px; font-weight: 500;
-    padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
+    padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
 }
 .mobile-menu a:hover { background: rgba(255,255,255,0.05); }
-.mobile-menu .social-row {
-    display: flex; gap: 15px; padding: 18px 25px;
-}
+.mobile-menu .social-row { display: flex; gap: 15px; padding: 18px 25px; }
 .mobile-menu .social-row a {
     padding: 10px; border: 1px solid rgba(255,255,255,0.2);
     border-radius: 10px; display: flex; align-items: center; justify-content: center;
 }
 
 .cart-mobile {
-    display: none;
-    align-items: center;
+    display: none; align-items: center;
     position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
     text-decoration: none; color: #fff; font-size: 13px; font-weight: 500;
     padding: 8px 16px; border-radius: 12px;
@@ -116,12 +105,6 @@ nav a:hover { background: #fff; color: #000; }
     display: inline-flex; align-items: center; justify-content: center;
     background: #ff4d4d; color: white; font-size: 10px; font-weight: bold;
     width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
-}
-
-@media (max-width: 768px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .cart-mobile { display: flex; }
 }
 
 #cart-count {
@@ -136,21 +119,18 @@ nav a:hover { background: #fff; color: #000; }
     position: relative; z-index: 1;
 }
 .brand-btn {
-    padding: 10px 25px; background: rgba(10, 10, 10, 0.8);
+    padding: 10px 25px; background: rgba(10,10,10,0.8);
     border: 1px solid rgba(255,255,255,0.2); color: #fff;
     border-radius: 50px; cursor: pointer; font-weight: 600;
     transition: 0.4s; text-transform: uppercase; font-size: 12px;
 }
 .brand-btn.active { background: #fff; color: #000; }
 
-/* SUB-FILTROS (linha/coleção) */
+/* SUB-FILTROS */
 .sub-filters {
-    display: none;
-    justify-content: center;
-    gap: 12px;
-    margin: 15px 0 30px 0;
-    position: relative;
-    z-index: 1;
+    display: none; justify-content: center;
+    gap: 12px; margin: 15px 0 30px 0;
+    position: relative; z-index: 1;
 }
 .sub-filters.visible { display: flex; }
 .sub-btn {
@@ -161,14 +141,12 @@ nav a:hover { background: #fff; color: #000; }
 }
 .sub-btn.active { background: #fff; color: #000; border-color: #fff; }
 
-/* GRID */
+/* GRID DESKTOP */
 .catalog-section {
-    width: 95%;
-    max-width: 1100px;
+    width: 95%; max-width: 1100px;
     margin: 0 auto 100px auto;
     position: relative; z-index: 1;
 }
-
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -177,32 +155,50 @@ nav a:hover { background: #fff; color: #000; }
 
 .product-card {
     background: rgba(10,10,10,0.85);
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
+    border-radius: 15px; padding: 15px; text-align: center;
     border: 1px solid rgba(255,255,255,0.05);
     transition: 0.4s ease-out;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    text-decoration: none; color: inherit; display: block;
 }
-.product-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255,255,255,0.2);
-}
-.product-card img {
-    width: 100%; border-radius: 12px; margin-bottom: 12px;
-}
-.product-card h3 {
-    font-size: 1rem; margin-bottom: 8px; color: #fff;
-}
+.product-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.2); }
+.product-card img { width: 100%; border-radius: 12px; margin-bottom: 12px; }
+.product-card h3 { font-size: 1rem; margin-bottom: 8px; color: #fff; }
 .product-card .brand-tag {
     font-size: 0.7rem; color: #aaa;
     text-transform: uppercase; letter-spacing: 1.5px;
     margin-bottom: 8px; display: block;
 }
-.product-card .price {
-    font-size: 1.1rem; font-weight: 700; color: #fff;
+.product-card .price { font-size: 1.1rem; font-weight: 700; color: #fff; }
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 768px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+    .cart-mobile { display: flex; }
+
+    /* filtros menores no mobile */
+    .brand-filters { gap: 10px; margin: 20px 0 5px 0; flex-wrap: wrap; padding: 0 10px; }
+    .brand-btn { padding: 8px 16px; font-size: 11px; }
+    .sub-filters { gap: 8px; flex-wrap: wrap; padding: 0 10px; }
+    .sub-btn { padding: 6px 14px; font-size: 10px; }
+
+    /* CARROSSEL HORIZONTAL */
+    .catalog-section { width: 100%; }
+    .catalog-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 10px 20px 20px 20px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .catalog-grid::-webkit-scrollbar { display: none; }
+    .product-card {
+        min-width: 72vw;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
 }
 </style>
 <script src="produtos.js"></script>
@@ -213,25 +209,11 @@ nav a:hover { background: #fff; color: #000; }
 
 <header>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-</div>
-
-<a href="carrinho.html" class="cart-mobile">
-    Carrinho <span id="cart-count-mobile"></span>
-</a>
-
-<div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Início</a>
-    <a href="catalogo.html">Catálogo</a>
-    <div class="social-row">
-        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        </a>
+        <span></span><span></span><span></span>
     </div>
-</div>
+    <a href="carrinho.html" class="cart-mobile">
+        Carrinho <span id="cart-count-mobile"></span>
+    </a>
     <a href="index.html">
         <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
     </a>
@@ -246,6 +228,19 @@ nav a:hover { background: #fff; color: #000; }
         </a>
     </nav>
 </header>
+
+<div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Início</a>
+    <a href="catalogo.html">Catálogo</a>
+    <div class="social-row">
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </a>
+    </div>
+</div>
 
 <!-- FILTROS PRINCIPAIS -->
 <div class="brand-filters">
@@ -262,7 +257,7 @@ nav a:hover { background: #fff; color: #000; }
 </div>
 
 <section class="catalog-section">
-    <div class="catalog-grid">
+    <div class="catalog-grid" id="catalog-grid">
 
         <!-- ADDIESDIVE -->
         <a href="#" id="link-h3-black" class="product-card" data-brand="addiesdive">
@@ -271,28 +266,24 @@ nav a:hover { background: #fff; color: #000; }
             <h3>H3 Black Edition</h3>
             <div class="price" id="price-h3-black">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-h3-silver" class="product-card" data-brand="addiesdive">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/uY3FHOw.jpeg" alt="H3 Silver">
             <h3>H3 Silver Classic</h3>
             <div class="price" id="price-h3-silver">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-h3-black-silver" class="product-card" data-brand="addiesdive">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/JzTWQDM.jpeg" alt="H3 Black Silver">
             <h3>H3 Black Silver</h3>
             <div class="price" id="price-h3-black-silver">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-h3-blue-silver" class="product-card" data-brand="addiesdive">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/qC1nrKP.jpeg" alt="H3 Blue Silver">
             <h3>H3 Blue Silver</h3>
             <div class="price" id="price-h3-blue-silver">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-h3-zenturion-green" class="product-card" data-brand="addiesdive">
             <span class="brand-tag">Addiesdive</span>
             <img src="https://i.imgur.com/tp0iKgm.jpeg" alt="H3 Zenturion Green">
@@ -307,46 +298,40 @@ nav a:hover { background: #fff; color: #000; }
             <h3>GMT Pepsi</h3>
             <div class="price" id="price-pg-pepsi">R$ 0,00</div>
         </a>
-
-               <a href="#" id="link-pg-gmt-gray" class="product-card" data-brand="pagani" data-linha="gmt">
+        <a href="#" id="link-pg-gmt-gray" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/QKRLFaL.jpeg" alt="PG GMT Gray">
             <h3>GMT Gray</h3>
             <div class="price" id="price-pg-gmt-gray">R$ 0,00</div>
         </a>
-
-                <a href="#" id="link-pg-gmt-red" class="product-card" data-brand="pagani" data-linha="gmt">
+        <a href="#" id="link-pg-gmt-red" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/TOjG141.jpeg" alt="PG GMT Red">
             <h3>GMT Red</h3>
             <div class="price" id="price-pg-gmt-red">R$ 0,00</div>
         </a>
-
-                <a href="#" id="link-pg-gmt-blue-sky" class="product-card" data-brand="pagani" data-linha="gmt">
+        <a href="#" id="link-pg-gmt-blue-sky" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/QXbol96.jpeg" alt="PG GMT Blue Sky">
             <h3>GMT Blue Sky</h3>
             <div class="price" id="price-pg-gmt-blue-sky">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-pg-gmt-brown" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/SQElYEJ.jpeg" alt="PG GMT Brown">
-            <h3> GMT Brown</h3>
+            <h3>GMT Brown</h3>
             <div class="price" id="price-pg-gmt-brown">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-pg-gmt-gold" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/ElbXqJt.jpeg" alt="PG GMT Gold">
             <h3>GMT Gold</h3>
             <div class="price" id="price-pg-gmt-gold">R$ 0,00</div>
         </a>
-
-         <a href="#" id="link-pg-gmt-blue" class="product-card" data-brand="pagani" data-linha="gmt">
+        <a href="#" id="link-pg-gmt-blue" class="product-card" data-brand="pagani" data-linha="gmt">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/vRKb8Pc.jpeg" alt="PG GMT Blue">
-            <h3> GMT Blue</h3>
+            <h3>GMT Blue</h3>
             <div class="price" id="price-pg-gmt-blue">R$ 0,00</div>
         </a>
 
@@ -357,7 +342,6 @@ nav a:hover { background: #fff; color: #000; }
             <h3>Bright Blue</h3>
             <div class="price" id="price-pg-bright-blue">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-pg-wimbledon" class="product-card" data-brand="pagani" data-linha="datejust">
             <span class="brand-tag">Pagani</span>
             <img src="https://i.imgur.com/W2qBP2r.jpeg" alt="PG Wimbledon">
@@ -365,49 +349,43 @@ nav a:hover { background: #fff; color: #000; }
             <div class="price" id="price-pg-wimbledon">R$ 0,00</div>
         </a>
 
-        <!-- PAGANI NAUTILUS (vazio por enquanto) -->
-         <a href="#" id="link-pg-nautilus-moss" class="product-card" data-brand="pagani" data-linha="nautilus">
-    <span class="brand-tag">Pagani</span>
-    <img src="https://i.imgur.com/wa9ohjj.jpeg" alt="PG Nautilus Moss">
-    <h3>Nautilus Moss</h3>
-    <div class="price" id="price-pg-nautilus-moss">R$ 0,00</div>
-</a>
-
-         <a href="#" id="link-pg-nautilus-dark-blue" class="product-card" data-brand="pagani" data-linha="nautilus">
-    <span class="brand-tag">Pagani</span>
-    <img src="https://i.imgur.com/RpIc3Qd.jpeg" alt="PG Nautilus Dark Blue">
-    <h3>Nautilus Dark Blue</h3>
-    <div class="price" id="price-pg-nautilus-dark-blue">R$ 0,00</div>
-</a>
-
-         <a href="#" id="link-pg-nautilus-rose-b" class="product-card" data-brand="pagani" data-linha="nautilus">
-    <span class="brand-tag">Pagani</span>
-    <img src="https://i.imgur.com/UvO7u71.jpeg" alt="PG Nautilus Rosé B">
-    <h3>Nautilus Rosé B</h3>
-    <div class="price" id="price-pg-nautilus-rose-b">R$ 0,00</div>
-</a>
-
-
-         <a href="#" id="link-pg-nautilus-white" class="product-card" data-brand="pagani" data-linha="nautilus">
-    <span class="brand-tag">Pagani</span>
-    <img src="https://i.imgur.com/Omv9THG.jpeg" alt="PG Nautilus White">
-    <h3>Nautilus White</h3>
-    <div class="price" id="price-pg-nautilus-white">R$ 0,00</div>
-</a>
-
-         <a href="#" id="link-pg-nautilus-bs" class="product-card" data-brand="pagani" data-linha="nautilus">
-    <span class="brand-tag">Pagani</span>
-    <img src="https://i.imgur.com/z8JC9KE.jpeg" alt="PG Nautilus BS">
-    <h3>Nautilus BS</h3>
-    <div class="price" id="price-pg-nautilus-bs">R$ 0,00</div>
-</a>
-
-         <a href="#" id="link-pg-nautilus-rose-brown" class="product-card" data-brand="pagani" data-linha="nautilus">
-    <span class="brand-tag">Pagani</span>
-    <img src="https://i.imgur.com/wXKX0cI.jpeg" alt="PG Nautilus Rosé Brown">
-    <h3>Nautilus Rosé Brown</h3>
-    <div class="price" id="price-pg-nautilus-rose-brown">R$ 0,00</div>
-</a>
+        <!-- PAGANI NAUTILUS -->
+        <a href="#" id="link-pg-nautilus-moss" class="product-card" data-brand="pagani" data-linha="nautilus">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/wa9ohjj.jpeg" alt="PG Nautilus Moss">
+            <h3>Nautilus Moss</h3>
+            <div class="price" id="price-pg-nautilus-moss">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-nautilus-dark-blue" class="product-card" data-brand="pagani" data-linha="nautilus">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/RpIc3Qd.jpeg" alt="PG Nautilus Dark Blue">
+            <h3>Nautilus Dark Blue</h3>
+            <div class="price" id="price-pg-nautilus-dark-blue">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-nautilus-rose-b" class="product-card" data-brand="pagani" data-linha="nautilus">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/UvO7u71.jpeg" alt="PG Nautilus Rosé B">
+            <h3>Nautilus Rosé B</h3>
+            <div class="price" id="price-pg-nautilus-rose-b">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-nautilus-white" class="product-card" data-brand="pagani" data-linha="nautilus">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/Omv9THG.jpeg" alt="PG Nautilus White">
+            <h3>Nautilus White</h3>
+            <div class="price" id="price-pg-nautilus-white">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-nautilus-bs" class="product-card" data-brand="pagani" data-linha="nautilus">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/z8JC9KE.jpeg" alt="PG Nautilus BS">
+            <h3>Nautilus BS</h3>
+            <div class="price" id="price-pg-nautilus-bs">R$ 0,00</div>
+        </a>
+        <a href="#" id="link-pg-nautilus-rose-brown" class="product-card" data-brand="pagani" data-linha="nautilus">
+            <span class="brand-tag">Pagani</span>
+            <img src="https://i.imgur.com/wXKX0cI.jpeg" alt="PG Nautilus Rosé Brown">
+            <h3>Nautilus Rosé Brown</h3>
+            <div class="price" id="price-pg-nautilus-rose-brown">R$ 0,00</div>
+        </a>
 
         <!-- HOLUNS -->
         <a href="#" id="link-ho-platinum-black" class="product-card" data-brand="holuns">
@@ -416,7 +394,6 @@ nav a:hover { background: #fff; color: #000; }
             <h3>HO Platinum Black</h3>
             <div class="price" id="price-ho-platinum-black">R$ 0,00</div>
         </a>
-
         <a href="#" id="link-ho-platinum-gold" class="product-card" data-brand="holuns">
             <span class="brand-tag">Holuns</span>
             <img src="https://i.imgur.com/E46EzJc.jpeg" alt="HO Platinum Gold">
@@ -432,22 +409,17 @@ nav a:hover { background: #fff; color: #000; }
 </footer>
 
 <script>
-    function toggleMenu() {
+function toggleMenu() {
     document.getElementById('mobile-menu').classList.toggle('open');
     document.getElementById('hamburger').classList.toggle('open');
 }
+
 function atualizarContador() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const total = carrinho.reduce((sum, item) => sum + (item.quantidade || 1), 0);
     const countEl = document.getElementById('cart-count');
-    if (total > 0) {
-        countEl.innerText = total;
-        countEl.style.display = 'flex';
-    } else {
-        countEl.style.display = 'none';
-    }
-
-    // ADICIONA ISSO:
+    if (total > 0) { countEl.innerText = total; countEl.style.display = 'flex'; }
+    else { countEl.style.display = 'none'; }
     const contadorMobile = document.getElementById('cart-count-mobile');
     if (contadorMobile) {
         contadorMobile.innerText = total > 0 ? total : '';
@@ -459,20 +431,18 @@ function sincronizarCatalogo() {
     const produtosIds = [
         'h3-black', 'h3-silver', 'h3-black-silver', 'h3-blue-silver', 'h3-zenturion-green',
         'pg-pepsi', 'pg-bright-blue', 'pg-wimbledon', 'pg-gmt-gold',
-        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue', 'pg-gmt-blue-sky', 'pg-gmt-red', 'pg-gmt-gray', 'pg-nautilus-moss', 'pg-nautilus-dark-blue',
-        'pg-nautilus-rose-b', 'pg-nautilus-white', 'pg-nautilus-bs', 'pg-nautilus-rose-brown',
+        'ho-platinum-black', 'ho-platinum-gold', 'pg-gmt-brown', 'pg-gmt-blue',
+        'pg-gmt-blue-sky', 'pg-gmt-red', 'pg-gmt-gray',
+        'pg-nautilus-moss', 'pg-nautilus-dark-blue', 'pg-nautilus-rose-b',
+        'pg-nautilus-white', 'pg-nautilus-bs', 'pg-nautilus-rose-brown'
     ];
     produtosIds.forEach(id => {
         const info = BANCO_DE_DADOS[id];
         if (info) {
-            const precoElement = document.getElementById(`price-${id}`);
-            if (precoElement) {
-                precoElement.innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-            }
-            const linkElement = document.getElementById(`link-${id}`);
-            if (linkElement) {
-                linkElement.href = info.link;
-            }
+            const precoEl = document.getElementById(`price-${id}`);
+            if (precoEl) precoEl.innerText = info.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+            const linkEl = document.getElementById(`link-${id}`);
+            if (linkEl) linkEl.href = info.link;
         }
     });
 }
@@ -491,7 +461,9 @@ function filtrar(marca) {
         if (btn.innerText.toLowerCase() === marca.toLowerCase()) btn.classList.add('active');
     });
 
-    // Mostra ou esconde sub-filtros
+    // Reseta scroll do grid no mobile ao trocar filtro
+    document.getElementById('catalog-grid').scrollLeft = 0;
+
     if (marca === 'pagani') {
         subFiltros.classList.add('visible');
         filtrarSub(linhaAtual);
@@ -513,6 +485,9 @@ function filtrarSub(linha) {
         if (btn.innerText.toLowerCase() === linha.toLowerCase()) btn.classList.add('active');
     });
 
+    // Reseta scroll do grid no mobile ao trocar sub-filtro
+    document.getElementById('catalog-grid').scrollLeft = 0;
+
     cards.forEach(card => {
         if (card.getAttribute('data-brand') === 'pagani') {
             card.style.display = card.getAttribute('data-linha') === linha ? 'block' : 'none';
@@ -524,7 +499,7 @@ function filtrarSub(linha) {
 
 window.onload = function() {
     sincronizarCatalogo();
-    atualizarContador(); // ← nome certo
+    atualizarContador();
     filtrar('addiesdive');
 };
 
