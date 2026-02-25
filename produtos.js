@@ -6,7 +6,7 @@ const BANCO_DE_DADOS = {
         link: "marcas/addiesdive/h3_black.html"
     },
     "h3-silver": {
-        nome: "H3 Silver Classic",
+        nome: "H3 Silver",
         preco: 0.00,
         imagem: "https://i.imgur.com/uY3FHOw.jpeg",
         link: "marcas/addiesdive/h3_silver.html"
