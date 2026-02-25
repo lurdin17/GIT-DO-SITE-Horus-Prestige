@@ -140,6 +140,7 @@ nav a:hover { background: #fff; color: #000; }
 @media (max-width: 768px) {
     nav { display: none; }
     .hamburger { display: flex; }
+    #btn-voltar { display: block !important; }
 
     .cart-mobile {
         display: flex; align-items: center;
@@ -193,6 +194,24 @@ nav a:hover { background: #fff; color: #000; }
         Carrinho <span id="cart-count-mobile"></span>
     </a>
 </header>
+
+<!-- BOTÃO VOLTAR (só aparece no mobile) -->
+<a href="../../catalogo.html" id="btn-voltar" style="
+    display: none;
+    position: fixed;
+    top: 105px;
+    left: 15px;
+    z-index: 998;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+">← Catálogo</a>
 
 <!-- MENU MOBILE -->
 <div class="mobile-menu" id="mobile-menu">
