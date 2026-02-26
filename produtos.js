@@ -228,14 +228,14 @@ const BANCO_DE_DADOS = {
     "marca": "holuns"
     },
     "ho-platinum-black": {
-    "nome": "HO Platinum Black",
+    "nome": "Platinum Black",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/fE2V9PL.jpeg",
     "link": "marcas/holuns/ho_platinum_black.html",
     "marca": "holuns"
      },
      "ho-platinum-gold": {
-    "nome": "HO Platinum Gold",
+    "nome": "Platinum Gold",
     "preco": 0.00,
     "imagem": "https://i.imgur.com/E46EzJc.jpeg",
     "link": "marcas/holuns/ho_platinum_gold.html",
