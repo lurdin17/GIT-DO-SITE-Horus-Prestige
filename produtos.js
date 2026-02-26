@@ -269,6 +269,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/holuns/ho_white_gold.html",
     "marca": "holuns"
      },
+                "ho-gold": {
+    "nome": "Gold",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/35Fvq9x.jpeg",
+    "link": "marcas/holuns/ho_gold.html",
+    "marca": "holuns"
+     },
      "pg-gmt-blue": {
     "nome": "GMT Blue",
     "preco": 0.00,
