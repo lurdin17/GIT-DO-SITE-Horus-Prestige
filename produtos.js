@@ -255,6 +255,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/holuns/ho_gold_line.html",
     "marca": "holuns"
      },
+                  "ho-black-gold": {
+    "nome": "Black Gold",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/6vCW4WX.jpeg",
+    "link": "marcas/holuns/ho_black_gold.html",
+    "marca": "holuns"
+     },
      "pg-gmt-blue": {
     "nome": "GMT Blue",
     "preco": 0.00,
