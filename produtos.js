@@ -220,13 +220,6 @@ const BANCO_DE_DADOS = {
     "link": "marcas/pagani/pg_nautilus_dark_blue.html",
     "marca": "pagani"
      },
-     "ho-oyster-platinum": {
-    "nome": "HO Oyster Platinum",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/SUUc3kg.jpeg",
-    "link": "marcas/holuns/ho_oyster_platinum.html",
-    "marca": "holuns"
-    },
     "ho-platinum-black": {
     "nome": "Platinum Black",
     "preco": 0.00,
