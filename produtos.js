@@ -227,6 +227,13 @@ const BANCO_DE_DADOS = {
     "link": "marcas/holuns/ho_platinum_black.html",
     "marca": "holuns"
      },
+         "ho-platinum-oyster": {
+    "nome": "Platinum Oyster",
+    "preco": 0.00,
+    "imagem": "https://i.imgur.com/Z2Ud07O.jpeg",
+    "link": "marcas/holuns/ho_platinum_oyster.html",
+    "marca": "holuns"
+     },
      "ho-platinum-gold": {
     "nome": "Platinum Gold",
     "preco": 0.00,
