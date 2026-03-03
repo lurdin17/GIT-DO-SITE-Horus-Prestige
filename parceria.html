@@ -81,20 +81,23 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     margin: 50px auto 80px auto;
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER PRINCIPAL (COM FUNDO DE IMAGEM) */
 .parceria-card {
-    background: rgba(10,10,10,0.88);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: url('https://i.imgur.com/BdtxNJu.png') center center no-repeat;
+    background-size: cover;
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 28px;
     padding: 40px 35px;
     backdrop-filter: blur(12px);
     box-shadow: 0 30px 60px rgba(0,0,0,0.8);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* LOGO PARCEIRO */
+/* LOGO PARCEIRO (Reduzida) */
 .parceria-logo {
-    width: 180px;
+    width: 140px;
     margin: 0 auto 28px auto;
     display: block;
     filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
@@ -105,8 +108,17 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     width: 100%;
     border-radius: 18px;
     object-fit: cover;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* DESCRIÇÃO SOB A SEGUNDA FOTO */
+.parceria-info-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    padding: 0 10px;
 }
 
 /* DIVISOR */
@@ -124,7 +136,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 }
 .cupom-box {
     display: inline-flex; align-items: center; gap: 12px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.3);
     border: 1px dashed rgba(255,255,255,0.25);
     border-radius: 12px; padding: 12px 22px;
     margin-bottom: 10px;
@@ -161,7 +173,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .parceria-link:hover svg { fill: #000; }
 .parceria-link svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; transition: 0.3s; }
 
-/* CARROSSEL DE RELÓGIOS */
+/* CARROSSEL DE RELÓGIOS (Ajustado para ser um pouco maior) */
 .relogios-label {
     font-size: 0.75rem; color: #888;
     text-transform: uppercase; letter-spacing: 2px;
@@ -169,13 +181,13 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 }
 .relogios-carrossel {
     position: relative; overflow: hidden;
-    border-radius: 16px; width: 200px; margin: 0 auto;
+    border-radius: 16px; width: 260px; margin: 0 auto;
 }
 .relogios-track {
     display: flex; transition: transform 0.5s ease;
 }
 .relogios-track img {
-    min-width: 200px; width: 200px; height: 200px;
+    min-width: 260px; width: 260px; height: 260px;
     object-fit: cover; border-radius: 16px;
 }
 .relogios-dots {
@@ -192,7 +204,9 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     .hamburger { display: flex; }
     .cart-mobile { display: flex; }
     .parceria-card { padding: 30px 20px; }
-    .parceria-logo { width: 140px; }
+    .parceria-logo { width: 120px; }
+    .relogios-carrossel { width: 240px; }
+    .relogios-track img { min-width: 240px; width: 240px; height: 240px; }
 }
 </style>
 </head>
@@ -240,15 +254,16 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 <div class="parceria-wrapper">
     <div class="parceria-card">
 
-        <!-- LOGO -->
         <img src="https://i.imgur.com/pYcSKjt.png" class="parceria-logo" alt="Chrono Mods Logo" loading="lazy">
 
-        <!-- IMAGEM BANNER -->
         <img src="https://i.imgur.com/RNxOW1c.jpeg" class="parceria-banner" alt="Chrono Mods Banner" loading="lazy">
+
+        <p class="parceria-info-text">
+            Descubra a grande variedade de modelos e peças únicas para montar o seu relógio 100% personalizado.
+        </p>
 
         <div class="divisor"></div>
 
-        <!-- CUPOM -->
         <p class="cupom-label">Cupom de desconto</p>
         <div class="cupom-box">
             <span class="cupom-code">HORUS5</span>
@@ -259,7 +274,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
         <div class="divisor"></div>
 
-        <!-- LINKS -->
         <div class="parceria-links">
             <a href="https://chronomods.com.br" target="_blank" class="parceria-link">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
@@ -273,7 +287,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
         <div class="divisor"></div>
 
-        <!-- CARROSSEL DE RELÓGIOS -->
         <p class="relogios-label">Alguns modelos da Chrono Mods</p>
         <div class="relogios-carrossel">
             <div class="relogios-track" id="relogios-track">
@@ -329,21 +342,23 @@ function copiarCupom() {
 // CARROSSEL RELÓGIOS AUTO
 let slideAtual = 0;
 const totalSlides = 3;
+// O valor aqui deve bater com o width definido no CSS (260px)
+const slideWidth = 260; 
 
 function irParaSlide(index) {
     slideAtual = index;
-    document.getElementById('relogios-track').style.transform = `translateX(-${slideAtual * 200}px)`;
+    // Ajuste dinâmico para mobile se necessário
+    const currentWidth = window.innerWidth <= 768 ? 240 : 260;
+    document.getElementById('relogios-track').style.transform = `translateX(-${slideAtual * currentWidth}px)`;
     document.querySelectorAll('#relogios-dots span').forEach((dot, i) => {
         dot.classList.toggle('active', i === slideAtual);
     });
 }
 
-// Auto-passa a cada 2.5s
 setInterval(() => {
     irParaSlide((slideAtual + 1) % totalSlides);
 }, 2500);
 
-// Dots clicáveis
 document.querySelectorAll('#relogios-dots span').forEach((dot, i) => {
     dot.onclick = () => irParaSlide(i);
 });
