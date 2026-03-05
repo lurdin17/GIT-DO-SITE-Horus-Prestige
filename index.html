@@ -72,7 +72,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     display: inline-flex; align-items: center; justify-content: center;
     background: #ff4d4d; color: white; font-size: 10px; font-weight: bold;
     width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
-}
+}a
 .social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
 
@@ -86,28 +86,9 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 }
 .collection-section h2 { font-size: 2.2rem; margin-bottom: 50px; color: #fff; letter-spacing: 2px; }
 .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-
-/* ============================================================
-   FIX: Alinhamento do topo do bracelete
-   - overflow:hidden esconde o topo desalinhado
-   - padding-top cria espaço que é cortado, empurrando a imagem
-     para baixo e ocultando o defeito no topo
-   ============================================================ */
-.collection-item {
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: block;
-    border-radius: 25px;
-    overflow: hidden;
-}
+.collection-item { transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; }
 .collection-item:hover { transform: translateY(-15px) scale(1.03); }
-.collection-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* Empurra a imagem para baixo, escondendo o topo desalinhado */
-    margin-top: 6%;
-    border-radius: 0;
-}
+.collection-item img { width: 100%; height: auto; border-radius: 25px; }
 
 .banner-wrapper { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
 .banner-container {
@@ -146,11 +127,13 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .triple-img-container img {
     width: 33.33%; border-radius: 20px; object-fit: cover;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* BRILHO EM REPOUSO */
     filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
     transition: 0.4s;
 }
 .triple-img-container img:hover {
     transform: translateY(-8px);
+    /* BRILHO INTENSO NO HOVER */
     filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.35));
     box-shadow: 0 20px 40px rgba(0,0,0,0.7);
 }
@@ -295,6 +278,8 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
         <span onclick="irParaSlide(2)"></span>
     </div>
 </div>
+
+
 
 <script src="produtos.js"></script>
 <script>
