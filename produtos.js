@@ -18,271 +18,271 @@ const BANCO_DE_DADOS = {
         link: "marcas/addiesdive/h3_black_silver.html"
     },
     "h3-blue": {
-    nome: "Blue",
-    preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/0FbpC0W.jpeg",
-    link: "marcas/addiesdive/h3_blue.html",
-    marca: "addiesdive"
+        nome: "Blue",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/0FbpC0W.jpeg",
+        link: "marcas/addiesdive/h3_blue.html",
+        marca: "addiesdive"
     },
-        "ad-pepsi-black": {
-    nome: "Pepsi Black",
-    preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/PrqRWAt.jpeg",
-    link: "marcas/addiesdive/ad_pepsi_black.html",
-    marca: "addiesdive"
+    "ad-pepsi-black": {
+        nome: "Pepsi Black",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/PrqRWAt.jpeg",
+        link: "marcas/addiesdive/ad_pepsi_black.html",
+        marca: "addiesdive"
     },
-            "ad-pepsi-white": {
-    nome: "Pepsi White",
-    preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/T1lcO6L.jpeg",
-    link: "marcas/addiesdive/ad_pepsi_white.html",
-    marca: "addiesdive"
+    "ad-pepsi-white": {
+        nome: "Pepsi White",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/T1lcO6L.jpeg",
+        link: "marcas/addiesdive/ad_pepsi_white.html",
+        marca: "addiesdive"
     },
-        "h3-gray-black": {
-    nome: "Gray Black",
-    preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/NtkIzeX.jpeg",
-    link: "marcas/addiesdive/h3_gray_black.html",
-    marca: "addiesdive"
+    "h3-gray-black": {
+        nome: "Gray Black",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/NtkIzeX.jpeg",
+        link: "marcas/addiesdive/h3_gray_black.html",
+        marca: "addiesdive"
     },
-        "h3-white": {
-    nome: "White",
-    preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/4btqUUA.jpeg",
-    link: "marcas/addiesdive/h3_white.html",
-    marca: "addiesdive"
+    "h3-white": {
+        nome: "White",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/4btqUUA.jpeg",
+        link: "marcas/addiesdive/h3_white.html",
+        marca: "addiesdive"
     },
-        "h3-green": {
-    nome: "Green",
-    preco: 0.00, // Defina o preço que desejar
-    imagem: "https://i.imgur.com/ALlI1EJ.jpeg",
-    link: "marcas/addiesdive/h3_green.html",
-    marca: "addiesdive"
+    "h3-green": {
+        nome: "Green",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/ALlI1EJ.jpeg",
+        link: "marcas/addiesdive/h3_green.html",
+        marca: "addiesdive"
     },
     "h3-zenturion-green": {
-    "nome": "Zenturion Green",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/tp0iKgm.jpeg",
-    "link": "marcas/addiesdive/h3_zenturion_green.html",
-    "marca": "addiesdive"
+        nome: "Zenturion Green",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/tp0iKgm.jpeg",
+        link: "marcas/addiesdive/h3_zenturion_green.html",
+        marca: "addiesdive"
     },
     "pg-pepsi": {
-    "nome": " GMT Pepsi",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/o37Q581.jpeg", 
-    "link": "marcas/pagani/pg_pepsi.html",
-    "marca": "pagani" 
-     },
-     "pg-gmt-blue-sky": {
-    "nome": " GMT Blue Sky",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/QXbol96.jpeg", 
-    "link": "marcas/pagani/pg_gmt_blue_sky.html",
-    "marca": "pagani" 
-     },
-          "pg-gmt-red": {
-    "nome": " GMT Red",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/TOjG141.jpeg", 
-    "link": "marcas/pagani/pg_gmt_red.html",
-    "marca": "pagani" 
-     },
-               "pg-gmt-gray": {
-    "nome": "GMT Gray",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/QKRLFaL.jpeg", 
-    "link": "marcas/pagani/pg_gmt_gray.html",
-    "marca": "pagani" 
-     },
-    "pg-gmt-brown": {
-    "nome": "GMT Brown",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/SQElYEJ.jpeg",
-    "link": "marcas/pagani/pg_gmt_brown.html",
-    "marca": "pagani" 
-     },
-     "pg-bright-blue": {
-    "nome": "Bright Blue",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/5suF4aT.jpeg",
-    "link": "marcas/pagani/pg_bright_blue.html",
-    "marca": "pagani"
-     },
-     "pg-wimbledon": {
-    "nome": "Wimbledon",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/W2qBP2r.jpeg",
-    "link": "marcas/pagani/pg_wimbledon.html",
-    "marca": "pagani"
+        nome: " GMT Pepsi",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/o37Q581.jpeg",
+        link: "marcas/pagani/pg_pepsi.html",
+        marca: "pagani"
     },
-         "pg-olive-rose": {
-    "nome": "Olive Rosé",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/lBiYjbs.jpeg",
-    "link": "marcas/pagani/pg_olive_rose.html",
-    "marca": "pagani"
+    "pg-gmt-blue-sky": {
+        nome: " GMT Blue Sky",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/QXbol96.jpeg",
+        link: "marcas/pagani/pg_gmt_blue_sky.html",
+        marca: "pagani"
+    },
+    "pg-gmt-red": {
+        nome: " GMT Red",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/TOjG141.jpeg",
+        link: "marcas/pagani/pg_gmt_red.html",
+        marca: "pagani"
+    },
+    "pg-gmt-gray": {
+        nome: "GMT Gray",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/QKRLFaL.jpeg",
+        link: "marcas/pagani/pg_gmt_gray.html",
+        marca: "pagani"
+    },
+    "pg-gmt-brown": {
+        nome: "GMT Brown",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/SQElYEJ.jpeg",
+        link: "marcas/pagani/pg_gmt_brown.html",
+        marca: "pagani"
+    },
+    "pg-bright-blue": {
+        nome: "Bright Blue",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/5suF4aT.jpeg",
+        link: "marcas/pagani/pg_bright_blue.html",
+        marca: "pagani"
+    },
+    "pg-wimbledon": {
+        nome: "Wimbledon",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/W2qBP2r.jpeg",
+        link: "marcas/pagani/pg_wimbledon.html",
+        marca: "pagani"
+    },
+    "pg-olive-rose": {
+        nome: "Olive Rosé",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/lBiYjbs.jpeg",
+        link: "marcas/pagani/pg_olive_rose.html",
+        marca: "pagani"
     },
     "pg-gmt-gold": {
-    "nome": "PGMT Gold",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/ElbXqJt.jpeg",
-    "link": "marcas/pagani/pg_gmt_gold.html",
-    "marca": "pagani"
-     },
-         "pg-nautilus-moss": {
-    "nome": "Nautilus Moss",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/wa9ohjj.jpeg",
-    "link": "marcas/pagani/pg_nautilus_moss.html",
-    "marca": "pagani"
-     },
-              "pg-nautilus-rose-b": {
-    "nome": "Nautilus Rosé B",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/UvO7u71.jpeg",
-    "link": "marcas/pagani/pg_nautilus_rose_b.html",
-    "marca": "pagani"
-     },
-                   "pg-nautilus-white": {
-    "nome": "Nautilus White",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/Omv9THG.jpeg",
-    "link": "marcas/pagani/pg_nautilus_white.html",
-    "marca": "pagani"
-     },
-            "pg-nautilus-bs": {
-    "nome": "Nautilus BS",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/z8JC9KE.jpeg",
-    "link": "marcas/pagani/pg_nautilus_bs.html",
-    "marca": "pagani"
-     },
-                "pg-nautilus-rose-brown": {
-    "nome": "Nautilus Rosé Brown",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/wXKX0cI.jpeg",
-    "link": "marcas/pagani/pg_nautilus_rose_brown.html",
-    "marca": "pagani"
-     },
-        "pg-rose-line": {
-    "nome": "Rosé Line",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/2pqB5Z0.jpeg",
-    "link": "marcas/pagani/pg_rose_line.html",
-    "marca": "pagani"
-     },
-             "pg-rose-line-w": {
-    "nome": "Rosé Line W",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/EvjTfIK.jpeg",
-    "link": "marcas/pagani/pg_rose_line_w.html",
-    "marca": "pagani"
-     },
-             "pg-rose-line-dkb": {
-    "nome": "Rosé Line DKB",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/SXSiRlK.jpeg",
-    "link": "marcas/pagani/pg_rose_line_dkb.html",
-    "marca": "pagani"
-     },
-                 "pg-green": {
-    "nome": "Green",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/pclH2f8.jpeg",
-    "link": "marcas/pagani/pg_green.html",
-    "marca": "pagani"
-     },
-                   "pg-dark-blue": {
-    "nome": "Dark Blue",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/bF5MVFj.jpeg",
-    "link": "marcas/pagani/pg_dark_blue.html",
-    "marca": "pagani"
-     },
-                       "pg-black-rose": {
-    "nome": "Black Rosé",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/cX9AzZe.jpeg",
-    "link": "marcas/pagani/pg_black_rose.html",
-    "marca": "pagani"
-     },
-                  "pg-rose-line-b": {
-    "nome": "Rosé Line B",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/oNrwx5q.jpeg",
-    "link": "marcas/pagani/pg_rose_line_b.html",
-    "marca": "pagani"
-     },
-              "pg-nautilus-dark-blue": {
-    "nome": "Nautilus Dark Blue",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/RpIc3Qd.jpeg",
-    "link": "marcas/pagani/pg_nautilus_dark_blue.html",
-    "marca": "pagani"
-     },
+        nome: "PGMT Gold",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/ElbXqJt.jpeg",
+        link: "marcas/pagani/pg_gmt_gold.html",
+        marca: "pagani"
+    },
+    "pg-nautilus-moss": {
+        nome: "Nautilus Moss",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/wa9ohjj.jpeg",
+        link: "marcas/pagani/pg_nautilus_moss.html",
+        marca: "pagani"
+    },
+    "pg-nautilus-rose-b": {
+        nome: "Nautilus Rosé B",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/UvO7u71.jpeg",
+        link: "marcas/pagani/pg_nautilus_rose_b.html",
+        marca: "pagani"
+    },
+    "pg-nautilus-white": {
+        nome: "Nautilus White",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/Omv9THG.jpeg",
+        link: "marcas/pagani/pg_nautilus_white.html",
+        marca: "pagani"
+    },
+    "pg-nautilus-bs": {
+        nome: "Nautilus BS",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/z8JC9KE.jpeg",
+        link: "marcas/pagani/pg_nautilus_bs.html",
+        marca: "pagani"
+    },
+    "pg-nautilus-rose-brown": {
+        nome: "Nautilus Rosé Brown",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/wXKX0cI.jpeg",
+        link: "marcas/pagani/pg_nautilus_rose_brown.html",
+        marca: "pagani"
+    },
+    "pg-rose-line": {
+        nome: "Rosé Line",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/2pqB5Z0.jpeg",
+        link: "marcas/pagani/pg_rose_line.html",
+        marca: "pagani"
+    },
+    "pg-rose-line-w": {
+        nome: "Rosé Line W",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/EvjTfIK.jpeg",
+        link: "marcas/pagani/pg_rose_line_w.html",
+        marca: "pagani"
+    },
+    "pg-rose-line-dkb": {
+        nome: "Rosé Line DKB",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/SXSiRlK.jpeg",
+        link: "marcas/pagani/pg_rose_line_dkb.html",
+        marca: "pagani"
+    },
+    "pg-green": {
+        nome: "Green",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/pclH2f8.jpeg",
+        link: "marcas/pagani/pg_green.html",
+        marca: "pagani"
+    },
+    "pg-dark-blue": {
+        nome: "Dark Blue",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/bF5MVFj.jpeg",
+        link: "marcas/pagani/pg_dark_blue.html",
+        marca: "pagani"
+    },
+    "pg-black-rose": {
+        nome: "Black Rosé",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/cX9AzZe.jpeg",
+        link: "marcas/pagani/pg_black_rose.html",
+        marca: "pagani"
+    },
+    "pg-rose-line-b": {
+        nome: "Rosé Line B",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/oNrwx5q.jpeg",
+        link: "marcas/pagani/pg_rose_line_b.html",
+        marca: "pagani"
+    },
+    "pg-nautilus-dark-blue": {
+        nome: "Nautilus Dark Blue",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/RpIc3Qd.jpeg",
+        link: "marcas/pagani/pg_nautilus_dark_blue.html",
+        marca: "pagani"
+    },
     "ho-platinum-black": {
-    "nome": "Platinum Black",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/fE2V9PL.jpeg",
-    "link": "marcas/holuns/ho_platinum_black.html",
-    "marca": "holuns"
-     },
-         "ho-platinum-oyster": {
-    "nome": "Platinum Oyster",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/Z2Ud07O.jpeg",
-    "link": "marcas/holuns/ho_platinum_oyster.html",
-    "marca": "holuns"
-     },
-     "ho-platinum-gold": {
-    "nome": "Platinum Gold",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/E46EzJc.jpeg",
-    "link": "marcas/holuns/ho_platinum_gold.html",
-    "marca": "holuns"
-     },
-          "ho-gold-line-b": {
-    "nome": "Gold Line B",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/Ze60CwG.jpeg",
-    "link": "marcas/holuns/ho_gold_line_b.html",
-    "marca": "holuns"
-     },
-             "ho-gold-line": {
-    "nome": "Gold Line",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/SPDgSBe.jpeg",
-    "link": "marcas/holuns/ho_gold_line.html",
-    "marca": "holuns"
-     },
-                  "ho-black-gold": {
-    "nome": "Black Gold",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/6vCW4WX.jpeg",
-    "link": "marcas/holuns/ho_black_gold.html",
-    "marca": "holuns"
-     },
-                      "ho-white-gold": {
-    "nome": "White Gold",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/xNUwMnI.jpeg",
-    "link": "marcas/holuns/ho_white_gold.html",
-    "marca": "holuns"
-     },
-                "ho-gold": {
-    "nome": "Gold",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/35Fvq9x.jpeg",
-    "link": "marcas/holuns/ho_gold.html",
-    "marca": "holuns"
-     },
-     "pg-gmt-blue": {
-    "nome": "GMT Blue",
-    "preco": 0.00,
-    "imagem": "https://i.imgur.com/vRKb8Pc.jpeg",
-    "link": "marcas/pagani/pg_gmt_blue.html",
-    "marca": "pagani"
-     }
+        nome: "Platinum Black",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/fE2V9PL.jpeg",
+        link: "marcas/holuns/ho_platinum_black.html",
+        marca: "holuns"
+    },
+    "ho-platinum-oyster": {
+        nome: "Platinum Oyster",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/Z2Ud07O.jpeg",
+        link: "marcas/holuns/ho_platinum_oyster.html",
+        marca: "holuns"
+    },
+    "ho-platinum-gold": {
+        nome: "Platinum Gold",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/E46EzJc.jpeg",
+        link: "marcas/holuns/ho_platinum_gold.html",
+        marca: "holuns"
+    },
+    "ho-gold-line-b": {
+        nome: "Gold Line B",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/Ze60CwG.jpeg",
+        link: "marcas/holuns/ho_gold_line_b.html",
+        marca: "holuns"
+    },
+    "ho-gold-line": {
+        nome: "Gold Line",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/SPDgSBe.jpeg",
+        link: "marcas/holuns/ho_gold_line.html",
+        marca: "holuns"
+    },
+    "ho-black-gold": {
+        nome: "Black Gold",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/6vCW4WX.jpeg",
+        link: "marcas/holuns/ho_black_gold.html",
+        marca: "holuns"
+    },
+    "ho-white-gold": {
+        nome: "White Gold",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/xNUwMnI.jpeg",
+        link: "marcas/holuns/ho_white_gold.html",
+        marca: "holuns"
+    },
+    "ho-gold": {
+        nome: "Gold",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/35Fvq9x.jpeg",
+        link: "marcas/holuns/ho_gold.html",
+        marca: "holuns"
+    },
+    "pg-gmt-blue": {
+        nome: "GMT Blue",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/vRKb8Pc.jpeg",
+        link: "marcas/pagani/pg_gmt_blue.html",
+        marca: "pagani"
+    }
 };
 
 /**
@@ -324,3 +324,98 @@ function adicionarAoCarrinhoPeloId(id) {
 
     window.location.href = prefixo + "carrinho.html";
 }
+
+// =====================================================
+// BOTÃO VOLTAR AUTOMÁTICO
+// Detecta o idProduto de cada página e cria o botão
+// apontando para a aba certa do catálogo.
+// =====================================================
+(function() {
+    const MAPA_VOLTAR = {
+        // Addiesdive H3
+        'h3-black':           { marca: 'addiesdive', linha: 'h3' },
+        'h3-silver':          { marca: 'addiesdive', linha: 'h3' },
+        'h3-black-silver':    { marca: 'addiesdive', linha: 'h3' },
+        'h3-blue':            { marca: 'addiesdive', linha: 'h3' },
+        'h3-green':           { marca: 'addiesdive', linha: 'h3' },
+        'h3-zenturion-green': { marca: 'addiesdive', linha: 'h3' },
+        'h3-white':           { marca: 'addiesdive', linha: 'h3' },
+        'h3-gray-black':      { marca: 'addiesdive', linha: 'h3' },
+        // Addiesdive AD GMT
+        'ad-pepsi-black':     { marca: 'addiesdive', linha: 'ad-gmt' },
+        'ad-pepsi-white':     { marca: 'addiesdive', linha: 'ad-gmt' },
+        // Pagani GMT
+        'pg-pepsi':           { marca: 'pagani', linha: 'gmt' },
+        'pg-gmt-gray':        { marca: 'pagani', linha: 'gmt' },
+        'pg-gmt-red':         { marca: 'pagani', linha: 'gmt' },
+        'pg-gmt-blue-sky':    { marca: 'pagani', linha: 'gmt' },
+        'pg-gmt-brown':       { marca: 'pagani', linha: 'gmt' },
+        'pg-gmt-gold':        { marca: 'pagani', linha: 'gmt' },
+        'pg-gmt-blue':        { marca: 'pagani', linha: 'gmt' },
+        // Pagani DateJust
+        'pg-bright-blue':     { marca: 'pagani', linha: 'datejust' },
+        'pg-wimbledon':       { marca: 'pagani', linha: 'datejust' },
+        'pg-rose-line':       { marca: 'pagani', linha: 'datejust' },
+        'pg-rose-line-w':     { marca: 'pagani', linha: 'datejust' },
+        'pg-rose-line-b':     { marca: 'pagani', linha: 'datejust' },
+        'pg-rose-line-dkb':   { marca: 'pagani', linha: 'datejust' },
+        'pg-green':           { marca: 'pagani', linha: 'datejust' },
+        'pg-olive-rose':      { marca: 'pagani', linha: 'datejust' },
+        'pg-dark-blue':       { marca: 'pagani', linha: 'datejust' },
+        'pg-black-rose':      { marca: 'pagani', linha: 'datejust' },
+        // Pagani Nautilus
+        'pg-nautilus-moss':       { marca: 'pagani', linha: 'nautilus' },
+        'pg-nautilus-dark-blue':  { marca: 'pagani', linha: 'nautilus' },
+        'pg-nautilus-rose-b':     { marca: 'pagani', linha: 'nautilus' },
+        'pg-nautilus-white':      { marca: 'pagani', linha: 'nautilus' },
+        'pg-nautilus-bs':         { marca: 'pagani', linha: 'nautilus' },
+        'pg-nautilus-rose-brown': { marca: 'pagani', linha: 'nautilus' },
+        // Holuns (sem sublinha)
+        'ho-platinum-black':  { marca: 'holuns' },
+        'ho-platinum-oyster': { marca: 'holuns' },
+        'ho-platinum-gold':   { marca: 'holuns' },
+        'ho-gold-line-b':     { marca: 'holuns' },
+        'ho-gold-line':       { marca: 'holuns' },
+        'ho-black-gold':      { marca: 'holuns' },
+        'ho-white-gold':      { marca: 'holuns' },
+        'ho-gold':            { marca: 'holuns' },
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Só age se a página tiver um idProduto declarado
+        if (typeof idProduto === 'undefined') return;
+
+        const info = MAPA_VOLTAR[idProduto];
+        if (!info) return;
+
+        // Monta a URL do catálogo com os parâmetros certos
+        const url = '../../catalogo.html?marca=' + info.marca + (info.linha ? '&linha=' + info.linha : '');
+
+        // Cria o botão e injeta no body
+        const btn = document.createElement('a');
+        btn.id = 'btn-voltar';
+        btn.href = url;
+        btn.innerText = '← Catálogo';
+        btn.style.cssText = `
+            display: block;
+            position: fixed;
+            top: 105px;
+            left: 15px;
+            z-index: 998;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 7px 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: background 0.3s, color 0.3s;
+        `;
+        btn.onmouseover = () => { btn.style.background = '#fff'; btn.style.color = '#000'; };
+        btn.onmouseout  = () => { btn.style.background = 'rgba(0,0,0,0.7)'; btn.style.color = '#fff'; };
+
+        document.body.appendChild(btn);
+    });
+})();
