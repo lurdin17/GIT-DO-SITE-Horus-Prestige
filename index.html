@@ -72,7 +72,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     display: inline-flex; align-items: center; justify-content: center;
     background: #ff4d4d; color: white; font-size: 10px; font-weight: bold;
     width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
-}a
+}
 .social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
 
@@ -89,6 +89,27 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .collection-item { transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; }
 .collection-item:hover { transform: translateY(-15px) scale(1.03); }
 .collection-item img { width: 100%; height: auto; border-radius: 25px; }
+
+/* BOTÃO VER MAIS OPÇÕES */
+.btn-ver-mais {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 36px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+}
+.btn-ver-mais:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
 
 .banner-wrapper { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
 .banner-container {
@@ -127,13 +148,11 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .triple-img-container img {
     width: 33.33%; border-radius: 20px; object-fit: cover;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    /* BRILHO EM REPOUSO */
     filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
     transition: 0.4s;
 }
 .triple-img-container img:hover {
     transform: translateY(-8px);
-    /* BRILHO INTENSO NO HOVER */
     filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.35));
     box-shadow: 0 20px 40px rgba(0,0,0,0.7);
 }
@@ -252,6 +271,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
             <img src="https://i.imgur.com/hiLDJOi.jpeg" alt="H3 Black Silver" loading="lazy">
         </a>
     </div>
+    <a href="catalogo.html" class="btn-ver-mais">Ver mais opções →</a>
 </section>
 
 <!-- DESKTOP: 3 imagens com efeito de brilho -->
@@ -278,8 +298,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
         <span onclick="irParaSlide(2)"></span>
     </div>
 </div>
-
-
 
 <script src="produtos.js"></script>
 <script>
