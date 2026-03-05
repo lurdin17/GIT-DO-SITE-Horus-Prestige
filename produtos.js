@@ -395,7 +395,7 @@ function adicionarAoCarrinhoPeloId(id) {
         const btn = document.createElement('a');
         btn.id = 'btn-voltar';
         btn.href = url;
-        btn.innerText = '← Catálogo';
+        btn.innerText = '← Voltar ao Catálogo';
         btn.style.cssText = `
             display: block;
             position: fixed;
