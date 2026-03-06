@@ -81,21 +81,9 @@ nav a:hover { background: #fff; color: #000; }
     position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
     z-index: 1100; padding: 5px;
 }
-
-/* Transição suave */
-.hamburger span { 
-    display: block; width: 25px; height: 2px; background: #fff; 
-    border-radius: 2px; transition: all 0.3s ease-in-out; 
-}
-
-/* X Perfeito: A linha do meio encolhe até sumir (scale: 0) */
+.hamburger span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-
-.hamburger.open span:nth-child(2) { 
-    opacity: 0; 
-    transform: scale(0); /* Isso faz a linha sumir do centro para dentro */
-}
-
+.hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .mobile-menu {
@@ -165,104 +153,14 @@ nav a:hover { background: #fff; color: #000; }
 .mobile-carousel-section { display: none; }
 
 @media (max-width: 768px) {
-    /* 1. ORGANIZA O CABEÇALHO MOBILE E DÁ ESPAÇO */
-    header {
-        justify-content: space-between !important; /* Pontas: hambúrguer <-> carrinho */
-        padding: 0 20px !important;
-        display: flex !important;
-        z-index: 1000;
-        /* Dá um respiro para o conteúdo não grudar */
-        margin-bottom: 30px !important; 
-    }
-
-    /* 2. CENTRALIZA O LOGO MATEMATICAMENTE NO MOBILE */
-    .logo-header-wrap {
-        position: absolute !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        display: flex !important;
-        z-index: 10;
-        top: 50%; /* Ajuda na centralização vertical */
-        transform: translate(-50%, -50%) !important;
-    }
-
-    /* 3. AJUSTA OS BOTÕES DAS PONTAS */
-    .hamburger, .cart-mobile {
-        display: flex !important;
-        position: static !important; /* Libera do posicionamento absoluto do PC */
-        transform: none !important;
-        z-index: 11;
-    }
-
-    /* 4. SOME COM A DUPLICATA VISUAL DO LOGO NO MOBILE (Por segurança) */
-    header > a:not(.cart-mobile):not(.logo-header-wrap a) {
-        display: none !important;
-    }
-
-    /* 5. CORRIGE O "X" DO MENU (SEM PONTINHOS NO CENTRO) */
-    .hamburger.open span:nth-child(2) { 
-        opacity: 0 !important; 
-        width: 0 !important;
-        display: none !important; /* Remove fisicamente a linha do meio */
-    }
-
-    /* --- RESTANTE DO SEU CÓDIGO --- */
     .nav-center, .nav-right { display: none; }
+    .hamburger { display: flex; }
+    .cart-mobile { display: flex; }
+    .brand-filters { gap: 8px; margin: 20px 0 5px 0; padding: 0 10px; flex-wrap: wrap; }
+    .brand-btn { padding: 7px 14px; font-size: 11px; }
+    .sub-filters { gap: 8px; padding: 0 10px; flex-wrap: wrap; }
+    .sub-btn { padding: 5px 12px; font-size: 10px; }
     .catalog-section { display: none; }
-
-    /* FILTROS E CARROSSEL COM ESPAÇO CORRIGIDO */
-    .brand-filters { 
-        gap: 8px; 
-        margin: 30px 0 10px 0 !important; /* Dá espaço abaixo do header */
-        padding: 0 10px; 
-        flex-wrap: wrap; 
-        position: relative; 
-        z-index: 5;
-    }
-
-    /* APLICA O EFEITO VIDRO (GLASS) NOS BOTÕES DE MARCA */
-    .brand-btn { 
-        padding: 8px 16px; 
-        font-size: 11px;
-        /* Efeito de Vidro */
-        background: rgba(255, 255, 255, 0.05) !important;
-        backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        color: #fff !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
-    }
-    
-    .brand-btn.active { 
-        background: #fff !important; 
-        color: #000 !important; 
-        backdrop-filter: none !important;
-    }
-
-    .sub-filters { 
-        gap: 8px; 
-        padding: 0 10px; 
-        flex-wrap: wrap; 
-        margin: 15px 0 30px 0 !important;
-    }
-    
-    /* APLICA O EFEITO VIDRO NOS BOTÕES DE SUB-MARCA TAMBÉM */
-    .sub-btn { 
-        padding: 6px 12px; 
-        font-size: 10px;
-        /* Efeito de Vidro */
-        background: rgba(255, 255, 255, 0.03) !important;
-        backdrop-filter: blur(8px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        color: #EAEAEA !important;
-    }
-    
-    .sub-btn.active { 
-        background: rgba(255, 255, 255, 0.9) !important; 
-        color: #000 !important;
-        backdrop-filter: none !important;
-    }
-
-    /* Estilos do Carrossel (MANTIDOS) */
     .mobile-carousel-section {
         display: flex; align-items: center;
         position: relative; z-index: 1;
@@ -300,7 +198,6 @@ nav a:hover { background: #fff; color: #000; }
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
     </div>
-
     <div class="logo-header-wrap">
         <a href="index.html">
             <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
@@ -310,7 +207,6 @@ nav a:hover { background: #fff; color: #000; }
     <a href="carrinho.html" class="cart-mobile">
         Carrinho <span id="cart-count-mobile"></span>
     </a>
-
     <div class="mobile-menu" id="mobile-menu">
         <a href="index.html">Início</a>
         <a href="catalogo.html">Catálogo</a>
@@ -325,8 +221,10 @@ nav a:hover { background: #fff; color: #000; }
             </a>
         </div>
     </div>
-
-    <nav class="nav-center">
+    <a href="index.html">
+        <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
+    </a>
+   <nav class="nav-center">
         <a href="index.html">Início</a>
         <a href="catalogo.html">Catálogo</a>
         <a href="parceria.html">Parceria</a>
@@ -335,6 +233,7 @@ nav a:hover { background: #fff; color: #000; }
 
     <div class="nav-right">
         <a href="carrinho.html">Carrinho <span id="cart-count">0</span></a>
+        
         <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon shimmer-effect">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
