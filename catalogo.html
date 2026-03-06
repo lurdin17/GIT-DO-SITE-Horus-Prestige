@@ -183,10 +183,11 @@ nav a:hover { background: #fff; color: #000; }
     }
 
     /* 5. CORRIGE O "X" DO MENU (SEM PONTINHOS) */
-    .hamburger.open span:nth-child(2) { 
-        opacity: 0; 
-        width: 0; 
-    }
+.hamburger.open span:nth-child(2) { 
+    opacity: 0; 
+    width: 0;      /* Mata a existência física da linha */
+    margin: 0;     /* Remove qualquer espaçamento que sobrasse */
+}
 
     /* --- RESTANTE DO SEU CÓDIGO DE FILTROS E CARROSSEL (MANTIDO) --- */
     .nav-center, .nav-right { display: none; }
