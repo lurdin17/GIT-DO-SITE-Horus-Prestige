@@ -88,21 +88,21 @@ nav a:hover { background: #fff; color: #000; }
     border-radius: 2px; transition: all 0.3s ease-in-out; 
 }
 
-/* Linha de cima desce e gira */
-.hamburger.open span:nth-child(1) { 
-    transform: translateY(7px) rotate(45deg); 
-}
-
-/* LINHA DO MEIO: some, encolhe e sai da frente */
+/* 5. CORRIGE O "X" DO MENU (SEM PONTINHOS NO CENTRO) */
 .hamburger.open span:nth-child(2) { 
-    opacity: 0; 
-    width: 0; 
-    transform: translateX(-10px); 
+    opacity: 0 !important; 
+    width: 0 !important;
+    display: none !important; /* Isso deleta os pontos da tela */
+    margin: 0 !important;
 }
 
-/* Linha de baixo sobe e gira */
+/* Garante que o X fique centralizado e firme */
+.hamburger.open span:nth-child(1) { 
+    transform: translateY(7px) rotate(45deg) !important; 
+}
+
 .hamburger.open span:nth-child(3) { 
-    transform: translateY(-7px) rotate(-45deg); 
+    transform: translateY(-7px) rotate(-45deg) !important; 
 }
 
 .mobile-menu {
