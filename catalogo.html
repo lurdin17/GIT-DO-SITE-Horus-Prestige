@@ -172,53 +172,104 @@ nav a:hover { background: #fff; color: #000; }
 .mobile-carousel-section { display: none; }
 
 @media (max-width: 768px) {
-    /* 1. ORGANIZA O HEADER MOBILE */
+    /* 1. ORGANIZA O CABEÇALHO MOBILE E DÁ ESPAÇO */
     header {
-        justify-content: space-between !important; /* Empurra hambúrguer e carrinho para as pontas */
+        justify-content: space-between !important; /* Pontas: hambúrguer <-> carrinho */
         padding: 0 20px !important;
         display: flex !important;
+        z-index: 1000;
+        /* Dá um respiro para o conteúdo não grudar */
+        margin-bottom: 30px !important; 
     }
 
-    /* 2. CENTRALIZA O LOGO (ESSE É O SEGREDO) */
+    /* 2. CENTRALIZA O LOGO MATEMATICAMENTE NO MOBILE */
     .logo-header-wrap {
         position: absolute !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         display: flex !important;
         z-index: 10;
+        top: 50%; /* Ajuda na centralização vertical */
+        transform: translate(-50%, -50%) !important;
     }
 
     /* 3. AJUSTA OS BOTÕES DAS PONTAS */
     .hamburger, .cart-mobile {
         display: flex !important;
-        position: static !important; /* Libera do posicionamento fixo do PC */
+        position: static !important; /* Libera do posicionamento absoluto do PC */
         transform: none !important;
         z-index: 11;
     }
 
-    /* 4. SOME COM A DUPLICATA (Caso você não tenha apagado no HTML ainda) */
+    /* 4. SOME COM A DUPLICATA VISUAL DO LOGO NO MOBILE (Por segurança) */
     header > a:not(.cart-mobile):not(.logo-header-wrap a) {
         display: none !important;
     }
 
-/* 5. CORRIGE O "X" DO MENU (SUMIÇO TOTAL DOS PONTOS) */
+    /* 5. CORRIGE O "X" DO MENU (SEM PONTINHOS NO CENTRO) */
     .hamburger.open span:nth-child(2) { 
         opacity: 0 !important; 
         width: 0 !important;
-        display: none !important; /* ISSO AQUI MATA OS PONTOS */
+        display: none !important; /* Remove fisicamente a linha do meio */
     }
 
-    /* Ajuste extra para o X não ficar torto no mobile */
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
-
-    /* --- RESTANTE DO SEU CÓDIGO DE FILTROS E CARROSSEL (MANTIDO) --- */
+    /* --- RESTANTE DO SEU CÓDIGO --- */
     .nav-center, .nav-right { display: none; }
-    .brand-filters { gap: 8px; margin: 20px 0 5px 0; padding: 0 10px; flex-wrap: wrap; }
-    .brand-btn { padding: 7px 14px; font-size: 11px; }
-    .sub-filters { gap: 8px; padding: 0 10px; flex-wrap: wrap; }
-    .sub-btn { padding: 5px 12px; font-size: 10px; }
     .catalog-section { display: none; }
+
+    /* FILTROS E CARROSSEL COM ESPAÇO CORRIGIDO */
+    .brand-filters { 
+        gap: 8px; 
+        margin: 30px 0 10px 0 !important; /* Dá espaço abaixo do header */
+        padding: 0 10px; 
+        flex-wrap: wrap; 
+        position: relative; 
+        z-index: 5;
+    }
+
+    /* APLICA O EFEITO VIDRO (GLASS) NOS BOTÕES DE MARCA */
+    .brand-btn { 
+        padding: 8px 16px; 
+        font-size: 11px;
+        /* Efeito de Vidro */
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #fff !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+    }
+    
+    .brand-btn.active { 
+        background: #fff !important; 
+        color: #000 !important; 
+        backdrop-filter: none !important;
+    }
+
+    .sub-filters { 
+        gap: 8px; 
+        padding: 0 10px; 
+        flex-wrap: wrap; 
+        margin: 15px 0 30px 0 !important;
+    }
+    
+    /* APLICA O EFEITO VIDRO NOS BOTÕES DE SUB-MARCA TAMBÉM */
+    .sub-btn { 
+        padding: 6px 12px; 
+        font-size: 10px;
+        /* Efeito de Vidro */
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(8px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        color: #EAEAEA !important;
+    }
+    
+    .sub-btn.active { 
+        background: rgba(255, 255, 255, 0.9) !important; 
+        color: #000 !important;
+        backdrop-filter: none !important;
+    }
+
+    /* Estilos do Carrossel (MANTIDOS) */
     .mobile-carousel-section {
         display: flex; align-items: center;
         position: relative; z-index: 1;
