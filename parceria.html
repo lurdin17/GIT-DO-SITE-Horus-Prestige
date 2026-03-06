@@ -21,20 +21,41 @@ body {
 #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .particle { position: absolute; border-radius: 50%; }
 
+/* ── HEADER IGUAL AO INDEX ── */
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 90px;
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://i.imgur.com/9swFJOL.png') center/cover no-repeat;
-    display: flex; justify-content: center; align-items: center;
+    display: flex; align-items: center;
     z-index: 1000; box-shadow: 0 4px 25px rgba(0,0,0,0.9); backdrop-filter: blur(8px);
+    padding: 0 40px;
 }
-.logo-header { width: 110px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
-nav { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; }
-nav a {
-    text-decoration: none; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 12px;
+.logo-header-wrap { display: flex; align-items: center; flex-shrink: 0; }
+.logo-header { width: 115px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); display: block; }
+
+nav.nav-center {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 12px;
+}
+nav.nav-center a {
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    padding: 10px 20px; border-radius: 12px;
     background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
     transition: 0.3s ease; display: flex; align-items: center; justify-content: center; position: relative;
 }
-nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
+nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2px); }
+nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.35); }
+
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.nav-right a {
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    padding: 10px 20px; border-radius: 12px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+    transition: 0.3s ease; display: flex; align-items: center; justify-content: center; position: relative;
+}
+.nav-right a:hover { background: #fff; color: #000; transform: translateY(-2px); }
+.nav-right .social-icon { padding: 10px 12px; }
+.nav-right .social-icon:hover svg { fill: #000; }
+
 #cart-count {
     position: absolute; top: -5px; right: -2px; background: #ff4d4d;
     color: white; font-size: 10px; font-weight: bold; width: 18px; height: 18px;
@@ -74,257 +95,82 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
 
-/* PÁGINA */
+@media (max-width: 768px) {
+    nav.nav-center { display: none; }
+    .nav-right { display: none; }
+    .hamburger { display: flex; }
+    .cart-mobile { display: flex; }
+    .logo-header-wrap { position: absolute; left: 50%; transform: translateX(-50%); }
+}
+
+/* ── RESTO DA PÁGINA (sem alterações) ── */
 .parceria-wrapper {
     position: relative; z-index: 1;
     width: 90%; max-width: 550px;
     margin: 50px auto 80px auto;
 }
-
-/* CONTAINER PRINCIPAL */
 .parceria-card {
     background: url('https://i.imgur.com/6D4KSAP.jpeg') center center no-repeat;
     background-size: cover;
     border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 28px;
-    padding: 40px 35px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    border-radius: 28px; padding: 40px 35px;
+    backdrop-filter: blur(12px); box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    text-align: center; position: relative; overflow: hidden;
 }
-
-.parceria-logo {
-    width: 140px;
-    margin: 0 auto 28px auto;
-    display: block;
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
-}
-
-.parceria-banner {
-    width: 100%;
-    border-radius: 18px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-.parceria-info-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #e0e0e0;
-    margin-bottom: 22px;
-    padding: 0 10px;
-}
-
-/* MURAL DE IMAGENS */
-.mural-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 28px;
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-.mural-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-.mural-grid img:hover {
-    transform: scale(1.04);
-    filter: brightness(1.1);
-}
-
-
-
-.divisor {
-    width: 50px; height: 1px;
-    background: rgba(255,255,255,0.15);
-    margin: 0 auto 28px auto;
-}
-
-.cupom-label {
-    font-size: 0.75rem; color: #888;
-    text-transform: uppercase; letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-.cupom-box {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: rgba(0,0,0,0.3);
-    border: 1px dashed rgba(255,255,255,0.25);
-    border-radius: 12px; padding: 12px 22px;
-    margin-bottom: 10px;
-}
-.cupom-code {
-    font-size: 1.5rem; font-weight: 700; letter-spacing: 3px; color: #fff;
-}
-.cupom-desc {
-    font-size: 0.8rem; color: #888; margin-bottom: 18px;
-}
-
-.btn-copiar {
-    background: #fff; color: #000;
-    border: none; border-radius: 12px;
-    padding: 12px 30px; font-weight: 700;
-    font-size: 0.9rem; cursor: pointer;
-    letter-spacing: 1px; text-transform: uppercase;
-    transition: 0.3s; width: 100%; margin-bottom: 28px;
-}
+.parceria-logo { width: 140px; margin: 0 auto 28px auto; display: block; filter: drop-shadow(0 0 15px rgba(255,255,255,0.1)); }
+.parceria-banner { width: 100%; border-radius: 18px; object-fit: cover; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+.parceria-info-text { font-size: 0.95rem; line-height: 1.5; color: #e0e0e0; margin-bottom: 22px; padding: 0 10px; }
+.mural-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; border-radius: 18px; overflow: hidden; }
+.mural-grid img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.4s ease, filter 0.4s ease; cursor: pointer; border-radius: 12px; }
+.mural-grid img:hover { transform: scale(1.04); filter: brightness(1.1); }
+.divisor { width: 50px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 28px auto; }
+.cupom-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+.cupom-box { display: inline-flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.3); border: 1px dashed rgba(255,255,255,0.25); border-radius: 12px; padding: 12px 22px; margin-bottom: 10px; }
+.cupom-code { font-size: 1.5rem; font-weight: 700; letter-spacing: 3px; color: #fff; }
+.cupom-desc { font-size: 0.8rem; color: #888; margin-bottom: 18px; }
+.btn-copiar { background: #fff; color: #000; border: none; border-radius: 12px; padding: 12px 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; width: 100%; margin-bottom: 28px; }
 .btn-copiar:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
 .btn-copiar.copiado { background: #4caf50; color: #fff; }
-
 .parceria-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-.parceria-link {
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    text-decoration: none; color: #fff; font-size: 0.95rem; font-weight: 500;
-    padding: 13px 20px; border-radius: 14px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
-}
+.parceria-link { display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; color: #fff; font-size: 0.95rem; font-weight: 500; padding: 13px 20px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
 .parceria-link:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .parceria-link:hover svg { fill: #000; }
 .parceria-link svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; transition: 0.3s; }
-
-.relogios-label {
-    font-size: 0.75rem; color: #888;
-    text-transform: uppercase; letter-spacing: 2px;
-    margin-bottom: 16px;
-}
-.relogios-carrossel {
-    position: relative; overflow: hidden;
-    border-radius: 16px; width: 260px; margin: 0 auto;
-}
-.relogios-track {
-    display: flex; transition: transform 0.5s ease;
-}
-.relogios-track img {
-    min-width: 260px; width: 260px; height: 260px;
-    object-fit: cover; border-radius: 16px;
-}
-.relogios-dots {
-    display: flex; justify-content: center; gap: 7px; margin-top: 12px;
-}
-.relogios-dots span {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: rgba(255,255,255,0.25); cursor: pointer; transition: 0.3s;
-}
+.relogios-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+.relogios-carrossel { position: relative; overflow: hidden; border-radius: 16px; width: 260px; margin: 0 auto; }
+.relogios-track { display: flex; transition: transform 0.5s ease; }
+.relogios-track img { min-width: 260px; width: 260px; height: 260px; object-fit: cover; border-radius: 16px; }
+.relogios-dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.relogios-dots span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.25); cursor: pointer; transition: 0.3s; }
 .relogios-dots span.active { background: #fff; transform: scale(1.3); }
 
-/* ===== FOOTER ===== */
 footer {
-    position: relative;
-    z-index: 1;
-    width: 100%;
+    position: relative; z-index: 1; width: 100%;
     background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)), url('https://i.imgur.com/9swFJOL.png') center/cover no-repeat;
-    box-shadow: 0 -4px 25px rgba(0,0,0,0.9);
-    backdrop-filter: blur(8px);
+    box-shadow: 0 -4px 25px rgba(0,0,0,0.9); backdrop-filter: blur(8px);
     border-top: 1px solid rgba(255,255,255,0.08);
 }
-
-.footer-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px 40px;
-    gap: 20px;
-}
-
-.footer-logo img {
-    width: 90px;
-    filter: drop-shadow(0 0 8px rgba(255,255,255,0.25));
-    display: block;
-}
-
-.footer-center {
-    text-align: center;
-    flex: 1;
-}
-
-.footer-copy {
-    color: #aaa;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 8px;
-}
-
-.footer-links a {
-    color: #666;
-    font-size: 11px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding: 28px 40px; gap: 20px; }
+.footer-logo img { width: 90px; filter: drop-shadow(0 0 8px rgba(255,255,255,0.25)); display: block; }
+.footer-center { text-align: center; flex: 1; }
+.footer-copy { color: #aaa; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; }
+.footer-links { display: flex; gap: 20px; justify-content: center; margin-top: 8px; }
+.footer-links a { color: #666; font-size: 11px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; transition: color 0.3s; }
 .footer-links a:hover { color: #fff; }
-
-.footer-socials {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.footer-social-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; height: 40px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-social-btn:hover {
-    background: #fff;
-    transform: translateY(-2px);
-}
-
+.footer-socials { display: flex; gap: 10px; align-items: center; }
+.footer-social-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: 0.3s; }
+.footer-social-btn:hover { background: #fff; transform: translateY(-2px); }
 .footer-social-btn:hover svg { fill: #000; }
 .footer-social-btn svg { width: 18px; height: 18px; fill: #fff; transition: 0.3s; }
-
-.footer-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(255,255,255,0.06);
-}
+.footer-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.06); }
 
 @media (max-width: 768px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .cart-mobile { display: flex; }
     .parceria-card { padding: 30px 20px; }
     .parceria-logo { width: 120px; }
     .relogios-carrossel { width: 240px; }
     .relogios-track img { min-width: 240px; width: 240px; height: 240px; }
-
-    /* Imagens do mural no mobile */
     .mural-grid img { height: 100px; }
-
-    .footer-main {
-        flex-direction: column;
-        align-items: center;
-        padding: 24px 20px;
-        gap: 18px;
-        text-align: center;
-    }
+    .footer-main { flex-direction: column; align-items: center; padding: 24px 20px; gap: 18px; text-align: center; }
     .footer-logo img { width: 75px; }
     .footer-links { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 14px; }
 }
@@ -340,14 +186,21 @@ footer {
     <a href="carrinho.html" class="cart-mobile">
         Carrinho <span id="cart-count-mobile"></span>
     </a>
-    <a href="index.html">
-        <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
-    </a>
-    <nav>
+
+    <div class="logo-header-wrap">
+        <a href="index.html">
+            <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
+        </a>
+    </div>
+
+    <nav class="nav-center">
         <a href="index.html">Início</a>
         <a href="catalogo.html">Catálogo</a>
-        <a href="parceria.html">Parceria</a>
+        <a href="parceria.html" class="active">Parceria</a>
         <a href="informacoes.html">Informações</a>
+    </nav>
+
+    <div class="nav-right">
         <a href="carrinho.html">Carrinho <span id="cart-count"></span></a>
         <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -355,14 +208,14 @@ footer {
         <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
         </a>
-    </nav>
+    </div>
 </header>
 
 <div class="mobile-menu" id="mobile-menu">
     <a href="index.html">Início</a>
     <a href="catalogo.html">Catálogo</a>
     <a href="parceria.html">Parceria</a>
-        <a href="informacoes.html">Informações</a>
+    <a href="informacoes.html">Informações</a>
     <div class="social-row">
         <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
             <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -375,35 +228,25 @@ footer {
 
 <div class="parceria-wrapper">
     <div class="parceria-card">
-
         <img src="https://i.imgur.com/Yzqh28S.png" class="parceria-banner" alt="Chrono Mods Banner" loading="lazy">
-
         <img src="https://i.imgur.com/vZTFoaw.png" class="parceria-banner" alt="Chrono Mods Banner" loading="lazy">
-
         <p class="parceria-info-text">
             Descubra a grande variedade de modelos e peças únicas para montar o seu relógio 100% personalizado.
         </p>
-
-        <!-- MURAL DE IMAGENS -->
         <div class="mural-grid">
             <img src="https://i.imgur.com/5BNcJCD.png" alt="Chrono Mods 2" loading="lazy">
             <img src="https://i.imgur.com/PYJ41xV.png" alt="Chrono Mods 3" loading="lazy">
             <img src="https://i.imgur.com/ypMy4OV.png" alt="Chrono Mods 4" loading="lazy">
             <img src="https://i.imgur.com/3AF7Wsg.png" alt="Chrono Mods 5" loading="lazy">
         </div>
-
         <div class="divisor"></div>
-
         <p class="cupom-label">Cupom de desconto</p>
         <div class="cupom-box">
             <span class="cupom-code">HORUS5</span>
         </div>
         <p class="cupom-desc">5% de desconto em relógios da Chrono Mods</p>
-
         <button class="btn-copiar" id="btn-copiar" onclick="copiarCupom()">Copiar Cupom</button>
-
         <div class="divisor"></div>
-
         <div class="parceria-links">
             <a href="https://chronomods.com.br" target="_blank" class="parceria-link">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
@@ -414,9 +257,7 @@ footer {
                 @_chronomods
             </a>
         </div>
-
         <div class="divisor"></div>
-
         <p class="relogios-label">Alguns modelos da Chrono Mods</p>
         <div class="relogios-carrossel">
             <div class="relogios-track" id="relogios-track">
@@ -430,20 +271,16 @@ footer {
             <span></span>
             <span></span>
         </div>
-
     </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer>
     <div class="footer-main">
-
         <div class="footer-logo">
             <a href="index.html">
                 <img src="https://i.imgur.com/cCq52ps.png" alt="Horus Prestige">
             </a>
         </div>
-
         <div class="footer-center">
             <p class="footer-copy">© 2026 Horus Prestige — Todos os direitos reservados.</p>
             <div class="footer-links">
@@ -451,16 +288,14 @@ footer {
                 <a href="privacidade.html">Política de Privacidade</a>
             </div>
         </div>
-
         <div class="footer-socials">
-            <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="footer-social-btn" aria-label="Instagram">
+            <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="footer-social-btn">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href="https://wa.me/5511943032667" target="_blank" class="footer-social-btn" aria-label="WhatsApp">
+            <a href="https://wa.me/5511943032667" target="_blank" class="footer-social-btn">
                 <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
             </a>
         </div>
-
     </div>
 </footer>
 
@@ -488,10 +323,7 @@ function copiarCupom() {
         const btn = document.getElementById('btn-copiar');
         btn.innerText = 'Copiado!';
         btn.classList.add('copiado');
-        setTimeout(() => {
-            btn.innerText = 'Copiar Cupom';
-            btn.classList.remove('copiado');
-        }, 2000);
+        setTimeout(() => { btn.innerText = 'Copiar Cupom'; btn.classList.remove('copiado'); }, 2000);
     });
 }
 
@@ -507,13 +339,8 @@ function irParaSlide(index) {
     });
 }
 
-setInterval(() => {
-    irParaSlide((slideAtual + 1) % totalSlides);
-}, 2500);
-
-document.querySelectorAll('#relogios-dots span').forEach((dot, i) => {
-    dot.onclick = () => irParaSlide(i);
-});
+setInterval(() => { irParaSlide((slideAtual + 1) % totalSlides); }, 2500);
+document.querySelectorAll('#relogios-dots span').forEach((dot, i) => { dot.onclick = () => irParaSlide(i); });
 
 const isMobile = window.innerWidth <= 768;
 const container = document.getElementById('particles-container');
