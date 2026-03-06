@@ -74,7 +74,7 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
     background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
 }
 #cart-count-mobile {
-    display: inline-flex; align-items: center; justify-content: center;
+    display: none; align-items: center; justify-content: center;
     background: #ff4d4d; color: white; font-size: 10px; font-weight: bold;
     width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
 }
@@ -135,7 +135,7 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
 
 @media (max-width: 768px) {
     nav.nav-center { display: none; }
-.nav-right { display: none; }
+    .nav-right { display: none; }
     .hamburger { display: flex; }
     #btn-voltar { display: block !important; }
     .cart-mobile { display: flex; }
@@ -157,7 +157,7 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
 <script src="../../header.js"></script>
 
 <!-- BOTÃO VOLTAR (só aparece no mobile) -->
-<a href="../../catalogo.html" id="btn-voltar" ...>← Catálogo</a>
+<a href="../../catalogo.html" id="btn-voltar" style="
     display: none;
     position: fixed;
     top: 105px;
@@ -173,8 +173,6 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
     text-decoration: none;
     backdrop-filter: blur(8px);
 ">← Catálogo</a>
-
-<script src="../../header.js"></script>
 
 <main class="product-page">
     <!-- GALERIA -->
@@ -207,24 +205,21 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
 
 <div class="desc-wrapper" style="max-width: 900px; margin: 0 auto 60px auto; display: flex; gap: 20px; align-items: center;">
     <div class="desc-container" style="margin: 0; flex: 1;">
-        <h2>PAGANI DESIGN DD36 Date Just – Automático Clássico </h2>
+        <h2>PAGANI DESIGN DD36 Date Just – Automático Clássico</h2>
         <p>Traz elegância atemporal inspirada em um dos designs mais icônicos da relojoaria, com exibição de dia da semana às 12h e calendário no mostrador.</p>
         <p>Conta com <strong style="color:#fff">movimento automático Seagull ST16</strong>, oferecendo até 40 horas de reserva de energia. Funciona sem bateria e pode ser carregado automaticamente pelo uso ou manualmente pela coroa.</p>
         <p>Sua pulseira sólida em aço inoxidável garante resistência, conforto e acabamento refinado, reforçando sua presença sofisticada no pulso.</p>
-        <p>Possui <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>,  adequado para uso diário e natação <strong style="color:#fff">(não recomendado para mergulho ou água quente).</strong></p>
-        <p>Um relógio clássico, preciso e feito para quem valoriza <strong style="color:#fff">tradição e estilo.</strong>.</p>
+        <p>Possui <strong style="color:#fff">resistência à água de 100 metros (10 BAR)</strong>, adequado para uso diário e natação <strong style="color:#fff">(não recomendado para mergulho ou água quente).</strong></p>
+        <p>Um relógio clássico, preciso e feito para quem valoriza <strong style="color:#fff">tradição e estilo.</strong></p>
     </div>
     <div class="desc-img" style="flex: 0 0 280px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         <img src="https://i.imgur.com/Qtwltqi.jpeg" style="width: 100%; display: block;">
     </div>
 </div>
 
-
-
 <script>
 const idProduto = 'pg-wimbledon';
 
-// CARROSSEL
 const carTotal = 2;
 let carSlide = 0;
 
@@ -245,7 +240,6 @@ function atualizarCar() {
     }
 }
 
-// SWIPE mobile
 let touchStartX = 0;
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('car-track');
@@ -255,11 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (Math.abs(diff) > 50) moverCar(diff > 0 ? 1 : -1);
     });
 });
-
-function toggleMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-}
 
 function mostrarToast() {
     const toast = document.getElementById('toast');
