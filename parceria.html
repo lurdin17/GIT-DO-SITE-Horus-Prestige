@@ -83,8 +83,7 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
 /* CONTAINER PRINCIPAL */
 .parceria-card {
-    background: url('https://i.imgur.com/6D4KSAP.jpeg') center center no-repeat;
-    background-size: cover;
+    background: rgba(0,0,0,0.4);
     border: 1px solid rgba(255,255,255,0.15);
     border-radius: 28px;
     padding: 40px 35px;
@@ -93,6 +92,14 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.card-topo-img {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .parceria-logo {
@@ -142,8 +149,6 @@ nav a:hover { background: #fff; color: #000; transform: translateY(-2px); }
     transform: scale(1.04);
     filter: brightness(1.1);
 }
-
-
 
 .divisor {
     width: 50px; height: 1px;
@@ -373,6 +378,9 @@ footer {
 
 <div class="parceria-wrapper">
     <div class="parceria-card">
+
+        <!-- IMAGEM COM LOGO NO TOPO -->
+        <img src="https://i.imgur.com/6D4KSAP.jpeg" class="card-topo-img" alt="Chrono Mods" loading="lazy">
 
         <img src="https://i.imgur.com/Yzqh28S.png" class="parceria-banner" alt="Chrono Mods Banner" loading="lazy">
 
