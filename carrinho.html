@@ -131,12 +131,41 @@ nav a:hover { background: #fff; color: #000; }
     width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
 }
 
+/* AJUSTE DO MOBILE - REGRAS CORRIGIDAS */
 @media (max-width: 768px) {
-    .nav-center, .nav-right { display: none; }
-    .hamburger { display: flex; }
-    .cart-mobile { display: flex; }
+    header {
+        justify-content: space-between; /* Empurra os itens para as extremidades */
+        padding: 0 20px;
+    }
+
+    .nav-center, .nav-right { 
+        display: none; 
+    }
+
+    /* Hambúrguer fixo na posição dele no fluxo */
+    .hamburger { 
+        display: flex; 
+        position: static; 
+        transform: none; 
+    }
+
+    /* Carrinho fixo na posição dele no fluxo */
+    .cart-mobile { 
+        display: flex; 
+        position: static; 
+        transform: none; 
+    }
+    
+    /* LOGO CENTRALIZADO NO MOBILE (Independente do resto) */
+    .logo-header-wrap {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+    }
 }
 
+/* Estilo do ícone que você mandou */
 .social-icon svg {
     width: 20px;
     height: 20px;
