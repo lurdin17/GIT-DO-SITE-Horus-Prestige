@@ -56,28 +56,28 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
 
 /* ── FAQ ── */
 .faq-wrapper {
-    width: 90%; 
-    max-width: 900px; 
+    width: 90%;
+    max-width: 900px;
     margin: 60px auto 100px;
-    position: relative; 
+    position: relative;
     z-index: 1;
     border-radius: 30px;
     padding: 40px;
-    overflow: hidden; /* IMPORTANTE: Deixe ativado para conter a imagem de fundo */
+    overflow: hidden;
 }
+
+/* ALTURA FIXA — impede o zoom ao expandir */
 .faq-bg {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
-    height: 100%;
-    /* O segredo está aqui: */
+    width: 100%;
+    height: 1500px;
     object-fit: cover;
-    object-position: center top; /* Garante que o topo da imagem fique preso */
-    z-index: -1;
+    object-position: center top;
+    z-index: 0;
     pointer-events: none;
     filter: brightness(0.4);
-    border-radius: 30px;
 }
 
 .faq-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
@@ -91,10 +91,7 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
 }
-.faq-item.open { 
-    border-color: rgba(255,255,255,0.3); 
-    box-shadow: none; 
-}
+.faq-item.open { border-color: rgba(255,255,255,0.3); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
 .faq-question { width: 100%; background: none; border: none; display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; cursor: pointer; color: #fff; font-family: 'Albert Sans', sans-serif; font-size: 1rem; font-weight: 600; text-align: left; gap: 16px; transition: background 0.2s ease; }
 .faq-question:hover { background: rgba(255,255,255,0.04); }
 .faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease; background: rgba(255,255,255,0.05); }
