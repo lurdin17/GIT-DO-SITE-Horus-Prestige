@@ -16,7 +16,6 @@ body {
     background-size: cover;
 }
 
-
 #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .particle { position: absolute; border-radius: 50%; }
 
@@ -27,76 +26,31 @@ header {
     z-index: 1000; box-shadow: 0 4px 25px rgba(0,0,0,0.9); backdrop-filter: blur(8px);
     padding: 0 40px;
 }
-
-/* LOGO À ESQUERDA */
 .logo-header-wrap { display: flex; align-items: center; flex-shrink: 0; }
 .logo-header { width: 115px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); display: block; }
-
-/* NAV CENTRALIZADO */
-nav.nav-center {
-    position: absolute; left: 50%; transform: translateX(-50%);
-    display: flex; align-items: center; gap: 12px;
-}
-nav.nav-center a {
-    text-decoration: none; font-size: 13px; font-weight: 500;
-    padding: 10px 20px; border-radius: 12px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
-    transition: 0.3s ease; display: flex; align-items: center; justify-content: center; position: relative;
-}
+nav.nav-center { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; }
+nav.nav-center a { text-decoration: none; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; transition: 0.3s ease; display: flex; align-items: center; justify-content: center; position: relative; }
 nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.35); }
-
-/* GRUPO DA DIREITA */
-.nav-right {
-    margin-left: auto;
-    display: flex; align-items: center; gap: 10px;
-}
-.nav-right a {
-    text-decoration: none; font-size: 13px; font-weight: 500;
-    padding: 10px 20px; border-radius: 12px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
-    transition: 0.3s ease; display: flex; align-items: center; justify-content: center; position: relative;
-}
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.nav-right a { text-decoration: none; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; transition: 0.3s ease; display: flex; align-items: center; justify-content: center; position: relative; }
 .nav-right a:hover { background: #fff; color: #000; transform: translateY(-2px); }
 .nav-right .social-icon { padding: 10px 12px; }
 .nav-right .social-icon:hover svg { fill: #000; }
-
-#cart-count {
-    position: absolute; top: -5px; right: -2px; background: #ff4d4d;
-    color: white; font-size: 10px; font-weight: bold; width: 18px; height: 18px;
-    border-radius: 50%; display: none; align-items: center; justify-content: center;
-}
-.hamburger {
-    display: none; flex-direction: column; gap: 5px; cursor: pointer;
-    position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
-    z-index: 1100; padding: 5px;
-}
+#cart-count { position: absolute; top: -5px; right: -2px; background: #ff4d4d; color: white; font-size: 10px; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: none; align-items: center; justify-content: center; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 1100; padding: 5px; }
 .hamburger span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu {
-    display: none; position: fixed; top: 90px; left: 0; width: 100%;
-    background: rgba(0,0,0,0.97); backdrop-filter: blur(10px);
-    flex-direction: column; z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1);
-}
+.mobile-menu { display: none; position: fixed; top: 90px; left: 0; width: 100%; background: rgba(0,0,0,0.97); backdrop-filter: blur(10px); flex-direction: column; z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { text-decoration: none; color: #fff; font-size: 15px; font-weight: 500; padding: 18px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
 .mobile-menu a:hover { background: rgba(255,255,255,0.05); }
 .mobile-menu .social-row { display: flex; gap: 15px; padding: 18px 25px; }
 .mobile-menu .social-row a { padding: 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-.cart-mobile {
-    display: none; align-items: center;
-    position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
-    text-decoration: none; color: #fff; font-size: 13px; font-weight: 500;
-    padding: 8px 16px; border-radius: 12px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-}
-#cart-count-mobile {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: #ff4d4d; color: white; font-size: 10px; font-weight: bold;
-    width: 18px; height: 18px; border-radius: 50%; margin-left: 4px;
-}
+.cart-mobile { display: none; align-items: center; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); text-decoration: none; color: #fff; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+#cart-count-mobile { display: inline-flex; align-items: center; justify-content: center; background: #ff4d4d; color: white; font-size: 10px; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; margin-left: 4px; }
 .social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
 
@@ -108,86 +62,43 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     padding: 40px;
     overflow: hidden;
 }
-.faq-wrapper::before {
-    content: '';
+
+.faq-bg {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/ICXwuLS.jpeg') center/cover no-repeat;
-    z-index: -1;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/ICXwuLS.jpeg') center center / cover no-repeat;
+    z-index: 0;
+    pointer-events: none;
 }
-.faq-header { text-align: center; margin-bottom: 60px; }
-.faq-header h1 {
-    font-size: 2.4rem; font-weight: 700; color: #ffffff;
-    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
-}
-.faq-header p {
-    font-size: 1rem; color: rgba(0, 0, 0, 0.7);
-    line-height: 1.7; max-width: 600px; margin: 0 auto;
-}
-.faq-header .divider {
-    width: 60px; height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5), transparent);
-    margin: 20px auto 0;
-}
+
+.faq-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
+.faq-header h1 { font-size: 2.4rem; font-weight: 700; color: #fff; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.faq-header .divider { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); margin: 20px auto 0; }
+
 .faq-item {
-    background: rgba(0,0,0,0.55);
-    border: 1px solid rgba(255,255,255,0.08);
+    position: relative; z-index: 1;
+    background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px; margin-bottom: 12px; overflow: hidden;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
 }
-.faq-item.open {
-    border-color: rgb(255, 255, 255);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-}
-.faq-question {
-    width: 100%; background: none; border: none;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 22px 28px; cursor: pointer;
-    color: #fff; font-family: 'Albert Sans', sans-serif;
-    font-size: 1rem; font-weight: 600; text-align: left;
-    gap: 16px; transition: background 0.2s ease;
-}
+.faq-item.open { border-color: rgb(255,255,255); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+.faq-question { width: 100%; background: none; border: none; display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; cursor: pointer; color: #fff; font-family: 'Albert Sans', sans-serif; font-size: 1rem; font-weight: 600; text-align: left; gap: 16px; transition: background 0.2s ease; }
 .faq-question:hover { background: rgba(255,255,255,0.04); }
-.faq-icon {
-    flex-shrink: 0; width: 28px; height: 28px;
-    border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease;
-    background: rgba(255,255,255,0.05);
-}
+.faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease; background: rgba(255,255,255,0.05); }
 .faq-icon svg { width: 12px; height: 12px; fill: #fff; transition: 0.3s; }
-.faq-item.open .faq-icon {
-    transform: rotate(45deg);
-    background: rgba(255,255,255,0.15);
-    border-color: rgba(255,255,255,0.4);
-}
-.faq-answer {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
-    padding: 0 28px;
-}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease; padding: 0 28px; }
 .faq-item.open .faq-answer { max-height: 600px; padding: 0 28px 26px; }
-.faq-answer p { font-size: 0.95rem; color: rgb(255, 255, 255); line-height: 1.85; margin-bottom: 10px; }
+.faq-answer p { font-size: 0.95rem; color: #fff; line-height: 1.85; margin-bottom: 10px; }
 .faq-answer p:last-child { margin-bottom: 0; }
 .faq-answer ul { list-style: none; margin: 10px 0 0; padding: 0; }
-.faq-answer ul li {
-    font-size: 0.95rem; color: rgb(255, 255, 255);
-    line-height: 1.85; padding-left: 18px; position: relative;
-}
+.faq-answer ul li { font-size: 0.95rem; color: #fff; line-height: 1.85; padding-left: 18px; position: relative; }
 .faq-answer ul li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
 
 @media (max-width: 768px) {
     body { background-image: none; }
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: url('https://i.imgur.com/q5ZgckE.jpeg') no-repeat center center / cover;
-        z-index: -1;
-    }
+    body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.imgur.com/q5ZgckE.jpeg') no-repeat center center / cover; z-index: -1; }
     nav.nav-center { display: none; }
     .nav-right { display: none; }
     .hamburger { display: flex; }
@@ -204,145 +115,90 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
 <div id="particles-container"></div>
 
 <header>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </div>
-    <a href="carrinho.html" class="cart-mobile">
-        Carrinho <span id="cart-count-mobile"></span>
-    </a>
-
-    <!-- LOGO À ESQUERDA -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <a href="carrinho.html" class="cart-mobile">Carrinho <span id="cart-count-mobile"></span></a>
     <div class="logo-header-wrap">
-        <a href="index.html">
-            <img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo">
-        </a>
+        <a href="index.html"><img src="https://i.imgur.com/cCq52ps.png" class="logo-header" alt="Horus Logo"></a>
     </div>
-
-    <!-- NAV CENTRALIZADO -->
     <nav class="nav-center">
         <a href="index.html">Início</a>
         <a href="catalogo.html">Catálogo</a>
         <a href="parceria.html">Parceria</a>
         <a href="informacoes.html" class="active">Informações</a>
     </nav>
-
-    <!-- GRUPO DIREITA: Carrinho, Instagram, WhatsApp -->
     <div class="nav-right">
         <a href="carrinho.html">Carrinho <span id="cart-count"></span></a>
-        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        </a>
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg></a>
     </div>
 </header>
 
-<!-- MENU MOBILE -->
 <div class="mobile-menu" id="mobile-menu">
     <a href="index.html">Início</a>
     <a href="catalogo.html">Catálogo</a>
     <a href="parceria.html">Parceria</a>
     <a href="informacoes.html">Informações</a>
     <div class="social-row">
-        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        </a>
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank" class="social-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://wa.me/5511943032667" target="_blank" class="social-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg></a>
     </div>
 </div>
 
-<!-- CONTEÚDO FAQ -->
 <div class="faq-wrapper">
+    <div class="faq-bg"></div>
+
     <div class="faq-header">
         <h1>Informações</h1>
         <div class="divider"></div>
     </div>
 
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Como funciona a compra?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Como funciona a compra?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>Na Horus Prestige, trabalhamos com um sistema de pedido sob encomenda. Após a confirmação do pagamento, seu relógio entra em nosso processo de preparação e envio.</p>
             <p>Esse modelo nos permite oferecer relógios com design sofisticado, materiais de qualidade e preços acessíveis, mantendo um alto padrão em cada peça.</p>
         </div>
     </div>
-
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Qual é o prazo de entrega?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Qual é o prazo de entrega?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>O prazo médio de entrega é de 15 a 30 dias após a confirmação do pagamento.</p>
             <p>Esse período inclui o processamento do pedido, preparação do produto e transporte até o endereço informado. Em alguns casos, o prazo pode variar de acordo com a região.</p>
             <p>Nosso objetivo é garantir que seu relógio chegue com segurança e em perfeitas condições.</p>
         </div>
     </div>
-
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Como posso acompanhar meu pedido?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Como posso acompanhar meu pedido?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>Assim que o pedido for enviado, você receberá um código de rastreamento.</p>
             <p>Com esse código, será possível acompanhar todas as etapas da entrega diretamente pelo sistema de transporte até a chegada ao seu endereço.</p>
         </div>
     </div>
-
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Os relógios são resistentes à água?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Os relógios são resistentes à água?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>Todos os relógios que trabalhamos possuem resistência à água, sendo adequados para uso cotidiano e contato moderado com água.</p>
             <p>A resistência específica pode variar entre os modelos, por isso recomendamos sempre verificar as especificações individuais de cada produto.</p>
         </div>
     </div>
-
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Quais materiais são utilizados?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Quais materiais são utilizados?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>Os relógios disponíveis na Horus Prestige são fabricados com materiais selecionados para garantir durabilidade e acabamento refinado. Entre as principais características estão:</p>
-            <ul>
-                <li>Estrutura em aço inoxidável</li>
-                <li>Movimentos quartzo ou automático</li>
-                <li>Design inspirado nos relógios mais icônicos do mercado</li>
-            </ul>
+            <ul><li>Estrutura em aço inoxidável</li><li>Movimentos quartzo ou automático</li><li>Design inspirado nos relógios mais icônicos do mercado</li></ul>
             <p style="margin-top:12px">Cada modelo é pensado para oferecer estilo, resistência e confiabilidade no dia a dia.</p>
         </div>
     </div>
-
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Quais formas de pagamento são aceitas?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Quais formas de pagamento são aceitas?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>Aceitamos os principais métodos de pagamento disponíveis em nossa plataforma, incluindo:</p>
-            <ul>
-                <li>Cartão de crédito</li>
-                <li>PIX</li>
-                <li>Outros meios digitais seguros</li>
-            </ul>
+            <ul><li>Cartão de crédito</li><li>PIX</li><li>Outros meios digitais seguros</li></ul>
             <p style="margin-top:12px">Todos os pagamentos são processados em ambiente protegido, garantindo segurança e tranquilidade durante a sua compra.</p>
         </div>
     </div>
-
     <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-            Como entrar em contato com o suporte?
-            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
+        <button class="faq-question" onclick="toggleFaq(this)">Como entrar em contato com o suporte?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
         <div class="faq-answer">
             <p>Caso tenha qualquer dúvida ou precise de assistência, você pode entrar em contato conosco através do WhatsApp ou Instagram, disponíveis aqui na própria página.</p>
             <p>Ao clicar nos ícones, você será redirecionado automaticamente para falar com nossa equipe.</p>
@@ -358,38 +214,28 @@ function toggleFaq(btn) {
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
 }
-
 function toggleMenu() {
     document.getElementById('mobile-menu').classList.toggle('open');
     document.getElementById('hamburger').classList.toggle('open');
 }
-
 function atualizarContador() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const total = carrinho.reduce((sum, item) => sum + (item.quantidade || 1), 0);
     const countEl = document.getElementById('cart-count');
-    if (total > 0) { countEl.innerText = total; countEl.style.display = 'flex'; }
-    else { countEl.style.display = 'none'; }
+    if (total > 0) { countEl.innerText = total; countEl.style.display = 'flex'; } else { countEl.style.display = 'none'; }
     const contadorMobile = document.getElementById('cart-count-mobile');
-    if (contadorMobile) {
-        contadorMobile.innerText = total > 0 ? total : '';
-        contadorMobile.style.display = total > 0 ? 'inline-flex' : 'none';
-    }
+    if (contadorMobile) { contadorMobile.innerText = total > 0 ? total : ''; contadorMobile.style.display = total > 0 ? 'inline-flex' : 'none'; }
 }
-
 const isMobile = window.innerWidth <= 768;
 const numParticles = isMobile ? 15 : 35;
 const container = document.getElementById('particles-container');
 for(let i=0;i<numParticles;i++){
-    const p=document.createElement('div');
-    p.classList.add('particle');
-    const s=Math.random()*2+1;
-    p.style.width=p.style.height=`${s}px`;
+    const p=document.createElement('div'); p.classList.add('particle');
+    const s=Math.random()*2+1; p.style.width=p.style.height=`${s}px`;
     p.style.background=`rgba(255,255,255,0.2)`;
     p.style.top=`${Math.random()*100}%`; p.style.left=`${Math.random()*100}%`;
     container.appendChild(p);
 }
-
 window.onload = atualizarContador;
 </script>
 <script src="footer.js"></script>
