@@ -102,6 +102,21 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
 .product-info h1 { font-size: 2rem; margin-bottom: 12px; letter-spacing: 1px; }
 .price { font-size: 1.6rem; color: #fff; font-weight: 700; margin-bottom: 20px; }
 
+/* SELETOR DE TAMANHO */
+.tamanho-label {
+    font-size: 0.8rem; color: #aaa; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 10px;
+}
+.tamanho-wrapper { display: flex; gap: 10px; margin-bottom: 20px; }
+.btn-tamanho {
+    padding: 10px 22px; border-radius: 10px; cursor: pointer; font-weight: 600;
+    font-size: 0.9rem; transition: 0.3s;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2); color: #fff;
+}
+.btn-tamanho.ativo { background: #fff; color: #000; border-color: #fff; }
+.btn-tamanho.erro { border-color: #ff4d4d !important; color: #ff4d4d !important; }
+
 .btn-add-cart {
     padding: 15px; background: #fff; color: #000; text-align: center; border: none;
     cursor: pointer; font-weight: 700; border-radius: 12px; transition: 0.4s;
@@ -212,13 +227,17 @@ nav.nav-center a:hover { background: #fff; color: #000; transform: translateY(-2
     </div>
 </div>
 
-
-
 <script>
 const idProduto = 'ho-white-gold';
 let tamanhSelecionado = '';
 
-
+function selecionarTamanho(btn, tamanho) {
+    tamanhSelecionado = tamanho;
+    document.querySelectorAll('.btn-tamanho').forEach(b => {
+        b.classList.remove('ativo', 'erro');
+    });
+    btn.classList.add('ativo');
+}
 
 const carTotal = 2;
 let carSlide = 0;
@@ -243,11 +262,13 @@ function atualizarCar() {
 let touchStartX = 0;
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('car-track');
-    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-    track.addEventListener('touchend', e => {
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) moverCar(diff > 0 ? 1 : -1);
-    });
+    if (track) {
+        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+        track.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) moverCar(diff > 0 ? 1 : -1);
+        });
+    }
 });
 
 function mostrarToast() {
@@ -266,12 +287,23 @@ function carregarDados() {
 }
 
 function adicionarAoCarrinho() {
+    if (!tamanhSelecionado) {
+        document.querySelectorAll('.btn-tamanho').forEach(b => b.classList.add('erro'));
+        setTimeout(() => {
+            document.querySelectorAll('.btn-tamanho').forEach(b => b.classList.remove('erro'));
+        }, 1000);
+        return;
+    }
+
     const info = BANCO_DE_DADOS[idProduto];
     if (!info) return;
+
     let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
-    const index = carrinho.findIndex(item => item.nome === info.nome);
+    const nomeComTamanho = info.nome + ' — ' + tamanhSelecionado;
+    const index = carrinho.findIndex(item => item.nome === nomeComTamanho);
     if (index > -1) { carrinho[index].quantidade += 1; }
-    else { carrinho.push({ nome: info.nome, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
+    else { carrinho.push({ nome: nomeComTamanho, preco: info.preco, imagem: info.imagem, quantidade: 1 }); }
+
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
     atualizarContadorCarrinho();
     mostrarToast();
