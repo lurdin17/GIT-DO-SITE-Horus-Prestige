@@ -243,7 +243,7 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     <div class="contato-form" id="contato-form">
         <div class="form-group">
             <label>Seu Nome</label>
-            <input type="text" id="nome" placeholder="Seu Nome Completo" />
+            <input type="text" id="nome" placeholder="Como podemos te chamar?" />
         </div>
         <div class="form-group">
             <label>Seu E-mail</label>
@@ -281,7 +281,7 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
 
 <script src="produtos.js"></script>
 <script>
-function enviarFormulario() {
+async function enviarFormulario() {
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const assunto = document.getElementById('assunto').value.trim();
@@ -292,18 +292,38 @@ function enviarFormulario() {
         return;
     }
 
-    const destinatario = 'luigimacaco.africano@gmail.com';
-    const subject = encodeURIComponent(assunto || 'Contato pelo site - ' + nome);
-    const body = encodeURIComponent(
-        'Nome: ' + nome + '\n' +
-        'E-mail: ' + email + '\n\n' +
-        'Mensagem:\n' + mensagem
-    );
+    const btn = document.querySelector('.btn-enviar');
+    btn.innerText = 'Enviando...';
+    btn.disabled = true;
 
-    window.open('mailto:' + destinatario + '?subject=' + subject + '&body=' + body);
+    const data = {
+        access_key: '6cd8aaa7-998c-4ce4-8f3b-3409e62be62b',
+        name: nome,
+        email: email,
+        subject: assunto || 'Contato pelo site - ' + nome,
+        message: mensagem
+    };
 
-    document.getElementById('contato-form').style.display = 'none';
-    document.getElementById('form-sucesso').style.display = 'block';
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (json.success) {
+            document.getElementById('contato-form').style.display = 'none';
+            document.getElementById('form-sucesso').style.display = 'block';
+        } else {
+            alert('Erro ao enviar. Tente novamente.');
+            btn.innerText = 'Enviar Mensagem →';
+            btn.disabled = false;
+        }
+    } catch (e) {
+        alert('Erro de conexão. Tente novamente.');
+        btn.innerText = 'Enviar Mensagem →';
+        btn.disabled = false;
+    }
 }
 
 function toggleMenu() {
