@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Informações – Horus Prestige</title>
+<title>Contato – Horus Prestige</title>
 <link rel="icon" type="image/png" href="horus_perfil_cerca_2.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -54,8 +54,8 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
 .social-icon svg { width: 20px; height: 20px; fill: #fff; display: block; transition: 0.3s; }
 .social-icon:hover svg { fill: #000; }
 
-/* ── FAQ ── */
-.faq-wrapper {
+/* ── CONTATO ── */
+.contato-wrapper {
     width: 90%;
     max-width: 900px;
     margin: 60px auto 100px;
@@ -66,11 +66,9 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     overflow: hidden;
 }
 
-/* ALTURA FIXA — impede o zoom ao expandir */
-.faq-bg {
+.contato-bg {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 1500px;
     object-fit: cover;
@@ -80,30 +78,106 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     filter: brightness(0.4);
 }
 
-.faq-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
-.faq-header h1 { font-size: 2.4rem; font-weight: 700; color: #fff; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-.faq-header .divider { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); margin: 20px auto 0; }
+.contato-header { text-align: center; margin-bottom: 40px; position: relative; z-index: 1; }
+.contato-header h1 { font-size: 2.4rem; font-weight: 700; color: #fff; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.contato-header p { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+.contato-header .divider { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); margin: 20px auto 0; }
 
-.faq-item {
-    position: relative; z-index: 1;
-    background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px; margin-bottom: 12px; overflow: hidden;
+/* ── FORMULÁRIO ── */
+.contato-form { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; }
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+
+.form-group input,
+.form-group textarea {
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 16px 20px;
+    color: #fff;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 0.95rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    backdrop-filter: blur(10px);
+    resize: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgba(255,255,255,0.4);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
+}
+
+.form-group textarea { height: 150px; }
+
+.btn-enviar {
+    margin-top: 8px;
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.btn-enviar:hover { background: #fff; color: #000; transform: translateY(-2px); }
+
+.form-sucesso {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+.form-sucesso p { color: #fff; font-size: 1rem; line-height: 1.7; }
+.form-sucesso .check { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+
+/* ── CONTATOS DIRETOS ── */
+.contato-direto {
+    position: relative; z-index: 1;
+    display: flex; gap: 12px;
+    margin-top: 20px;
+}
+.contato-direto a {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 16px;
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s ease;
     backdrop-filter: blur(10px);
 }
-.faq-item.open { border-color: rgba(255,255,255,0.3); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
-.faq-question { width: 100%; background: none; border: none; display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; cursor: pointer; color: #fff; font-family: 'Albert Sans', sans-serif; font-size: 1rem; font-weight: 600; text-align: left; gap: 16px; transition: background 0.2s ease; }
-.faq-question:hover { background: rgba(255,255,255,0.04); }
-.faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease; background: rgba(255,255,255,0.05); }
-.faq-icon svg { width: 12px; height: 12px; fill: #fff; transition: 0.3s; }
-.faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease; padding: 0 28px; }
-.faq-item.open .faq-answer { max-height: 600px; padding: 0 28px 26px; }
-.faq-answer p { font-size: 0.95rem; color: #fff; line-height: 1.85; margin-bottom: 10px; }
-.faq-answer p:last-child { margin-bottom: 0; }
-.faq-answer ul { list-style: none; margin: 10px 0 0; padding: 0; }
-.faq-answer ul li { font-size: 0.95rem; color: #fff; line-height: 1.85; padding-left: 18px; position: relative; }
-.faq-answer ul li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
+.contato-direto a:hover { background: #fff; color: #000; }
+.contato-direto a:hover svg { fill: #000; }
+.contato-direto svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; transition: 0.3s; }
+
+.divider-ou {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 16px;
+    margin: 24px 0 8px;
+}
+.divider-ou span { color: rgba(255,255,255,0.3); font-size: 0.85rem; white-space: nowrap; }
+.divider-ou::before, .divider-ou::after {
+    content: ''; flex: 1;
+    height: 1px; background: rgba(255,255,255,0.1);
+}
 
 @media (max-width: 768px) {
     body { background-image: none; }
@@ -113,10 +187,9 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     .hamburger { display: flex; }
     .cart-mobile { display: flex; }
     .logo-header-wrap { position: absolute; left: 50%; transform: translateX(-50%); }
-    .faq-header h1 { font-size: 1.7rem; }
-    .faq-question { font-size: 0.9rem; padding: 18px 20px; }
-    .faq-answer { padding: 0 20px; }
-    .faq-item.open .faq-answer { padding: 0 20px 20px; }
+    .contato-header h1 { font-size: 1.7rem; }
+    .contato-direto { flex-direction: column; }
+    .contato-wrapper { padding: 30px 20px; }
 }
 </style>
 </head>
@@ -133,9 +206,9 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
         <a href="index.html">Início</a>
         <a href="catalogo.html">Catálogo</a>
         <a href="parceria.html">Parceria</a>
-        <a href="informacoes.html" class="active">Informações</a>
+        <a href="informacoes.html">Informações</a>
         <a href="sobre.html">Sobre Nós</a>
-        <a href="contato.html">Contato</a>
+        <a href="contato.html" class="active">Contato</a>
     </nav>
     <div class="nav-right">
         <a href="carrinho.html">Carrinho <span id="cart-count"></span></a>
@@ -157,76 +230,82 @@ nav.nav-center a.active { background: rgba(255,255,255,0.15); border-color: rgba
     </div>
 </div>
 
-<div class="faq-wrapper">
-    <img class="faq-bg" src="https://i.imgur.com/ICXwuLS.jpeg" alt="">
+<!-- CONTEÚDO -->
+<div class="contato-wrapper">
+    <img class="contato-bg" src="https://i.imgur.com/ICXwuLS.jpeg" alt="">
 
-    <div class="faq-header">
-        <h1>Informações</h1>
+    <div class="contato-header">
+        <h1>Contato</h1>
         <div class="divider"></div>
+        <p>Tem alguma dúvida ou quer saber mais sobre nossos relógios? Envie uma mensagem e retornaremos em breve.</p>
     </div>
 
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Como funciona a compra?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>Na Horus Prestige, trabalhamos com um sistema de pedido sob encomenda. Após a confirmação do pagamento, seu relógio entra em nosso processo de preparação e envio.</p>
-            <p>Esse modelo nos permite oferecer relógios com design sofisticado, materiais de qualidade e preços acessíveis, mantendo um alto padrão em cada peça.</p>
+    <div class="contato-form" id="contato-form">
+        <div class="form-group">
+            <label>Seu Nome</label>
+            <input type="text" id="nome" placeholder="Seu Nome Completo" />
         </div>
+        <div class="form-group">
+            <label>Seu E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+        </div>
+        <div class="form-group">
+            <label>Assunto</label>
+            <input type="text" id="assunto" placeholder="Ex: Dúvida sobre pedido" />
+        </div>
+        <div class="form-group">
+            <label>Mensagem</label>
+            <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..."></textarea>
+        </div>
+        <button class="btn-enviar" onclick="enviarFormulario()">Enviar Mensagem →</button>
     </div>
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Qual é o prazo de entrega?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>O prazo médio de entrega é de 15 a 30 dias após a confirmação do pagamento.</p>
-            <p>Esse período inclui o processamento do pedido, preparação do produto e transporte até o endereço informado. Em alguns casos, o prazo pode variar de acordo com a região.</p>
-            <p>Nosso objetivo é garantir que seu relógio chegue com segurança e em perfeitas condições.</p>
-        </div>
+
+    <div class="form-sucesso" id="form-sucesso">
+        <span class="check">✓</span>
+        <p>Mensagem enviada com sucesso!<br>Retornaremos em breve para o seu e-mail.</p>
     </div>
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Como posso acompanhar meu pedido?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>Assim que o pedido for enviado, você receberá um código de rastreamento.</p>
-            <p>Com esse código, será possível acompanhar todas as etapas da entrega diretamente pelo sistema de transporte até a chegada ao seu endereço.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Os relógios são resistentes à água?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>Todos os relógios que trabalhamos possuem resistência à água, sendo adequados para uso cotidiano e contato moderado com água.</p>
-            <p>A resistência específica pode variar entre os modelos, por isso recomendamos sempre verificar as especificações individuais de cada produto.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Quais materiais são utilizados?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>Os relógios disponíveis na Horus Prestige são fabricados com materiais selecionados para garantir durabilidade e acabamento refinado. Entre as principais características estão:</p>
-            <ul><li>Estrutura em aço inoxidável</li><li>Movimentos quartzo ou automático</li><li>Design inspirado nos relógios mais icônicos do mercado</li></ul>
-            <p style="margin-top:12px">Cada modelo é pensado para oferecer estilo, resistência e confiabilidade no dia a dia.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Quais formas de pagamento são aceitas?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>Aceitamos os principais métodos de pagamento disponíveis em nossa plataforma, incluindo:</p>
-            <ul><li>Cartão de crédito</li><li>PIX</li><li>Outros meios digitais seguros</li></ul>
-            <p style="margin-top:12px">Todos os pagamentos são processados em ambiente protegido, garantindo segurança e tranquilidade durante a sua compra.</p>
-        </div>
-    </div>
-    <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Como entrar em contato com o suporte?<span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-answer">
-            <p>Caso tenha qualquer dúvida ou precise de assistência, você pode entrar em contato conosco através do WhatsApp ou Instagram, disponíveis aqui na própria página.</p>
-            <p>Ao clicar nos ícones, você será redirecionado automaticamente para falar com nossa equipe.</p>
-        </div>
+
+    <div class="divider-ou"><span>ou fale diretamente</span></div>
+
+    <div class="contato-direto">
+        <a href="https://wa.me/5511943032667" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            WhatsApp
+        </a>
+        <a href="https://www.instagram.com/horus.prestige/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+        </a>
     </div>
 </div>
 
 <script src="produtos.js"></script>
 <script>
-function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+function enviarFormulario() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const assunto = document.getElementById('assunto').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    if (!nome || !email || !mensagem) {
+        alert('Por favor, preencha pelo menos nome, e-mail e mensagem.');
+        return;
+    }
+
+    const destinatario = 'luigimacaco.africano@gmail.com';
+    const subject = encodeURIComponent(assunto || 'Contato pelo site - ' + nome);
+    const body = encodeURIComponent(
+        'Nome: ' + nome + '\n' +
+        'E-mail: ' + email + '\n\n' +
+        'Mensagem:\n' + mensagem
+    );
+
+    window.open('mailto:' + destinatario + '?subject=' + subject + '&body=' + body);
+
+    document.getElementById('contato-form').style.display = 'none';
+    document.getElementById('form-sucesso').style.display = 'block';
 }
+
 function toggleMenu() {
     document.getElementById('mobile-menu').classList.toggle('open');
     document.getElementById('hamburger').classList.toggle('open');
