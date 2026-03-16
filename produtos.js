@@ -108,6 +108,14 @@ const BANCO_DE_DADOS = {
         link: "marcas/pagani/pg_wimbledon.html",
         marca: "pagani"
     },
+    "pg-white-texture": {
+        nome: "White Texture",
+        preco: 0.00,
+        imagem: "https://i.imgur.com/NLww8GZ.jpeg",
+        link: "marcas/pagani/pg_white_texture.html",
+        marca: "pagani"
+    },
+
     "pg-olive-rose": {
         nome: "Olive Rosé",
         preco: 0.00,
@@ -347,6 +355,7 @@ function adicionarAoCarrinhoPeloId(id) {
         // Pagani DateJust
         'pg-bright-blue':     { marca: 'pagani', linha: 'datejust' },
         'pg-wimbledon':       { marca: 'pagani', linha: 'datejust' },
+        'pg-white-texture':   { marca: 'pagani', linha: 'datejust' },
         'pg-rose-line':       { marca: 'pagani', linha: 'datejust' },
         'pg-rose-line-w':     { marca: 'pagani', linha: 'datejust' },
         'pg-rose-line-b':     { marca: 'pagani', linha: 'datejust' },
