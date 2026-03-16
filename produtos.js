@@ -38,13 +38,6 @@ const BANCO_DE_DADOS = {
         link: "marcas/addiesdive/ad_pepsi_white.html",
         marca: "addiesdive"
     },
-    "h3-gray-black": {
-        nome: "Gray Black",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/NtkIzeX.jpeg",
-        link: "marcas/addiesdive/h3_gray_black.html",
-        marca: "addiesdive"
-    },
     "h3-white": {
         nome: "White",
         preco: 0.00,
@@ -340,7 +333,6 @@ function adicionarAoCarrinhoPeloId(id) {
         'h3-green':           { marca: 'addiesdive', linha: 'h3' },
         'h3-zenturion-green': { marca: 'addiesdive', linha: 'h3' },
         'h3-white':           { marca: 'addiesdive', linha: 'h3' },
-        'h3-gray-black':      { marca: 'addiesdive', linha: 'h3' },
         // Addiesdive AD GMT
         'ad-pepsi-black':     { marca: 'addiesdive', linha: 'ad-gmt' },
         'ad-pepsi-white':     { marca: 'addiesdive', linha: 'ad-gmt' },
