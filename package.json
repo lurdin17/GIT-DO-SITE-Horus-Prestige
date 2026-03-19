@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "vite": "^5.4.21"
+  },
+  "dependencies": {
+    "mercadopago": "^2.12.0"
   }
 }
