@@ -60,21 +60,21 @@ const BANCO_DE_DADOS = {
         marca: "addiesdive"
     },
     "pg-pepsi": {
-        nome: " GMT Pepsi",
+        nome: "GMT Pepsi",
         preco: 0.00,
         imagem: "https://i.imgur.com/o37Q581.jpeg",
         link: "marcas/pagani/pg_pepsi.html",
         marca: "pagani"
     },
     "pg-gmt-blue-sky": {
-        nome: " GMT Blue Sky",
+        nome: "GMT Blue Sky",
         preco: 0.00,
         imagem: "https://i.imgur.com/QXbol96.jpeg",
         link: "marcas/pagani/pg_gmt_blue_sky.html",
         marca: "pagani"
     },
     "pg-gmt-red": {
-        nome: " GMT Red",
+        nome: "GMT Red",
         preco: 0.00,
         imagem: "https://i.imgur.com/TOjG141.jpeg",
         link: "marcas/pagani/pg_gmt_red.html",
@@ -115,7 +115,6 @@ const BANCO_DE_DADOS = {
         link: "marcas/pagani/pg_white_texture.html",
         marca: "pagani"
     },
-
     "pg-olive-rose": {
         nome: "Olive Rosé",
         preco: 0.00,
@@ -124,7 +123,7 @@ const BANCO_DE_DADOS = {
         marca: "pagani"
     },
     "pg-gmt-gold": {
-        nome: "PGMT Gold",
+        nome: "GMT Gold",
         preco: 0.00,
         imagem: "https://i.imgur.com/ElbXqJt.jpeg",
         link: "marcas/pagani/pg_gmt_gold.html",
@@ -221,119 +220,154 @@ const BANCO_DE_DADOS = {
         link: "marcas/pagani/pg_nautilus_dark_blue.html",
         marca: "pagani"
     },
-    "ho-platinum-black": {
-        nome: "Platinum Black",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/fE2V9PL.jpeg",
-        link: "marcas/holuns/ho_platinum_black.html",
-        marca: "holuns"
-    },
-    "ho-platinum-oyster": {
-        nome: "Platinum Oyster",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/Z2Ud07O.jpeg",
-        link: "marcas/holuns/ho_platinum_oyster.html",
-        marca: "holuns"
-    },
-    "ho-platinum-gold": {
-        nome: "Platinum Gold",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/E46EzJc.jpeg",
-        link: "marcas/holuns/ho_platinum_gold.html",
-        marca: "holuns"
-    },
-    "ho-gold-line-b": {
-        nome: "Gold Line B",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/Ze60CwG.jpeg",
-        link: "marcas/holuns/ho_gold_line_b.html",
-        marca: "holuns"
-    },
-    "ho-gold-line": {
-        nome: "Gold Line",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/SPDgSBe.jpeg",
-        link: "marcas/holuns/ho_gold_line.html",
-        marca: "holuns"
-    },
-    "ho-black-gold": {
-        nome: "Black Gold",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/6vCW4WX.jpeg",
-        link: "marcas/holuns/ho_black_gold.html",
-        marca: "holuns"
-    },
-    "ho-white-gold": {
-        nome: "White Gold",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/xNUwMnI.jpeg",
-        link: "marcas/holuns/ho_white_gold.html",
-        marca: "holuns"
-    },
-    "ho-gold": {
-        nome: "Gold",
-        preco: 0.00,
-        imagem: "https://i.imgur.com/35Fvq9x.jpeg",
-        link: "marcas/holuns/ho_gold.html",
-        marca: "holuns"
-    },
     "pg-gmt-blue": {
         nome: "GMT Blue",
         preco: 0.00,
         imagem: "https://i.imgur.com/vRKb8Pc.jpeg",
         link: "marcas/pagani/pg_gmt_blue.html",
         marca: "pagani"
+    },
+
+    // =============================================
+    // HOLUNS — preços por tamanho (36mm / 41mm)
+    // =============================================
+    "ho-platinum-black-36mm": {
+        nome: "Platinum Black 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/fE2V9PL.jpeg",
+        link: "marcas/holuns/ho_platinum_black.html",
+        marca: "holuns"
+    },
+    "ho-platinum-black-41mm": {
+        nome: "Platinum Black 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/fE2V9PL.jpeg",
+        link: "marcas/holuns/ho_platinum_black.html",
+        marca: "holuns"
+    },
+    "ho-platinum-oyster-36mm": {
+        nome: "Platinum Oyster 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/Z2Ud07O.jpeg",
+        link: "marcas/holuns/ho_platinum_oyster.html",
+        marca: "holuns"
+    },
+    "ho-platinum-oyster-41mm": {
+        nome: "Platinum Oyster 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/Z2Ud07O.jpeg",
+        link: "marcas/holuns/ho_platinum_oyster.html",
+        marca: "holuns"
+    },
+    "ho-platinum-gold-36mm": {
+        nome: "Platinum Gold 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/E46EzJc.jpeg",
+        link: "marcas/holuns/ho_platinum_gold.html",
+        marca: "holuns"
+    },
+    "ho-platinum-gold-41mm": {
+        nome: "Platinum Gold 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/E46EzJc.jpeg",
+        link: "marcas/holuns/ho_platinum_gold.html",
+        marca: "holuns"
+    },
+    "ho-gold-line-b-36mm": {
+        nome: "Gold Line B 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/Ze60CwG.jpeg",
+        link: "marcas/holuns/ho_gold_line_b.html",
+        marca: "holuns"
+    },
+    "ho-gold-line-b-41mm": {
+        nome: "Gold Line B 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/Ze60CwG.jpeg",
+        link: "marcas/holuns/ho_gold_line_b.html",
+        marca: "holuns"
+    },
+    "ho-gold-line-36mm": {
+        nome: "Gold Line 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/SPDgSBe.jpeg",
+        link: "marcas/holuns/ho_gold_line.html",
+        marca: "holuns"
+    },
+    "ho-gold-line-41mm": {
+        nome: "Gold Line 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/SPDgSBe.jpeg",
+        link: "marcas/holuns/ho_gold_line.html",
+        marca: "holuns"
+    },
+    "ho-black-gold-36mm": {
+        nome: "Black Gold 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/6vCW4WX.jpeg",
+        link: "marcas/holuns/ho_black_gold.html",
+        marca: "holuns"
+    },
+    "ho-black-gold-41mm": {
+        nome: "Black Gold 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/6vCW4WX.jpeg",
+        link: "marcas/holuns/ho_black_gold.html",
+        marca: "holuns"
+    },
+    "ho-white-gold-36mm": {
+        nome: "White Gold 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/xNUwMnI.jpeg",
+        link: "marcas/holuns/ho_white_gold.html",
+        marca: "holuns"
+    },
+    "ho-white-gold-41mm": {
+        nome: "White Gold 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/xNUwMnI.jpeg",
+        link: "marcas/holuns/ho_white_gold.html",
+        marca: "holuns"
+    },
+    "ho-gold-36mm": {
+        nome: "Gold 36mm",
+        preco: 549.99,
+        imagem: "https://i.imgur.com/35Fvq9x.jpeg",
+        link: "marcas/holuns/ho_gold.html",
+        marca: "holuns"
+    },
+    "ho-gold-41mm": {
+        nome: "Gold 41mm",
+        preco: 579.99,
+        imagem: "https://i.imgur.com/35Fvq9x.jpeg",
+        link: "marcas/holuns/ho_gold.html",
+        marca: "holuns"
     }
 };
 
-/**
- * Adiciona um produto ao carrinho buscando os dados no BANCO_DE_DADOS
- * @param {string} id - O ID do produto (ex: 'h3-black-silver')
- */
 function adicionarAoCarrinhoPeloId(id) {
     const produto = BANCO_DE_DADOS[id];
-    
     if (!produto) {
         console.error("Produto não encontrado no banco de dados: " + id);
         alert("Erro ao encontrar o produto. Verifique o console.");
         return;
     }
-
     let carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const index = carrinho.findIndex(item => item.nome === produto.nome);
-
     if (index > -1) {
         carrinho[index].quantidade = (carrinho[index].quantidade || 1) + 1;
     } else {
-        carrinho.push({ 
-            nome: produto.nome, 
-            preco: produto.preco, 
-            imagem: produto.imagem, 
-            quantidade: 1 
-        });
+        carrinho.push({ nome: produto.nome, preco: produto.preco, imagem: produto.imagem, quantidade: 1 });
     }
-
     localStorage.setItem('horus_cart', JSON.stringify(carrinho));
-    
-    // Calcula o caminho correto para o carrinho.html
     const caminho = window.location.pathname;
     let prefixo = "";
-    
-    if (caminho.includes('/marcas/')) {
-        prefixo = "../../";
-    }
-
+    if (caminho.includes('/marcas/')) prefixo = "../../";
     window.location.href = prefixo + "carrinho.html";
 }
 
-// =====================================================
-// BOTÃO VOLTAR AUTOMÁTICO
-// Detecta o idProduto de cada página e cria o botão
-// apontando para a aba certa do catálogo.
-// =====================================================
 (function() {
     const MAPA_VOLTAR = {
-        // Addiesdive H3
         'h3-black':           { marca: 'addiesdive', linha: 'h3' },
         'h3-silver':          { marca: 'addiesdive', linha: 'h3' },
         'h3-black-silver':    { marca: 'addiesdive', linha: 'h3' },
@@ -341,10 +375,8 @@ function adicionarAoCarrinhoPeloId(id) {
         'h3-green':           { marca: 'addiesdive', linha: 'h3' },
         'h3-zenturion-green': { marca: 'addiesdive', linha: 'h3' },
         'h3-white':           { marca: 'addiesdive', linha: 'h3' },
-        // Addiesdive AD GMT
         'ad-pepsi-black':     { marca: 'addiesdive', linha: 'ad-gmt' },
         'ad-pepsi-white':     { marca: 'addiesdive', linha: 'ad-gmt' },
-        // Pagani GMT
         'pg-pepsi':           { marca: 'pagani', linha: 'gmt' },
         'pg-gmt-gray':        { marca: 'pagani', linha: 'gmt' },
         'pg-gmt-red':         { marca: 'pagani', linha: 'gmt' },
@@ -352,7 +384,6 @@ function adicionarAoCarrinhoPeloId(id) {
         'pg-gmt-brown':       { marca: 'pagani', linha: 'gmt' },
         'pg-gmt-gold':        { marca: 'pagani', linha: 'gmt' },
         'pg-gmt-blue':        { marca: 'pagani', linha: 'gmt' },
-        // Pagani DateJust
         'pg-bright-blue':     { marca: 'pagani', linha: 'datejust' },
         'pg-wimbledon':       { marca: 'pagani', linha: 'datejust' },
         'pg-white-texture':   { marca: 'pagani', linha: 'datejust' },
@@ -364,14 +395,12 @@ function adicionarAoCarrinhoPeloId(id) {
         'pg-olive-rose':      { marca: 'pagani', linha: 'datejust' },
         'pg-dark-blue':       { marca: 'pagani', linha: 'datejust' },
         'pg-black-rose':      { marca: 'pagani', linha: 'datejust' },
-        // Pagani Nautilus
         'pg-nautilus-moss':       { marca: 'pagani', linha: 'nautilus' },
         'pg-nautilus-dark-blue':  { marca: 'pagani', linha: 'nautilus' },
         'pg-nautilus-rose-b':     { marca: 'pagani', linha: 'nautilus' },
         'pg-nautilus-white':      { marca: 'pagani', linha: 'nautilus' },
         'pg-nautilus-bs':         { marca: 'pagani', linha: 'nautilus' },
         'pg-nautilus-rose-brown': { marca: 'pagani', linha: 'nautilus' },
-        // Holuns (sem sublinha)
         'ho-platinum-black':  { marca: 'holuns' },
         'ho-platinum-oyster': { marca: 'holuns' },
         'ho-platinum-gold':   { marca: 'holuns' },
@@ -383,40 +412,24 @@ function adicionarAoCarrinhoPeloId(id) {
     };
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Só age se a página tiver um idProduto declarado
         if (typeof idProduto === 'undefined') return;
-
-        const info = MAPA_VOLTAR[idProduto];
+        const baseId = idProduto.replace(/-36mm$|-41mm$/, '');
+        const info = MAPA_VOLTAR[baseId] || MAPA_VOLTAR[idProduto];
         if (!info) return;
-
-        // Monta a URL do catálogo com os parâmetros certos
         const url = '../../catalogo.html?marca=' + info.marca + (info.linha ? '&linha=' + info.linha : '');
-
-        // Cria o botão e injeta no body
         const btn = document.createElement('a');
         btn.id = 'btn-voltar';
         btn.href = url;
         btn.innerText = '← Voltar ao Catálogo';
         btn.style.cssText = `
-            display: block;
-            position: fixed;
-            top: 105px;
-            left: 15px;
-            z-index: 998;
-            background: rgba(0,0,0,0.7);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 7px 14px;
-            border-radius: 20px;
-            text-decoration: none;
-            backdrop-filter: blur(8px);
+            display: block; position: fixed; top: 105px; left: 15px; z-index: 998;
+            background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; font-size: 13px; font-weight: 500; padding: 7px 14px;
+            border-radius: 20px; text-decoration: none; backdrop-filter: blur(8px);
             transition: background 0.3s, color 0.3s;
         `;
         btn.onmouseover = () => { btn.style.background = '#fff'; btn.style.color = '#000'; };
         btn.onmouseout  = () => { btn.style.background = 'rgba(0,0,0,0.7)'; btn.style.color = '#fff'; };
-
         document.body.appendChild(btn);
     });
 })();
