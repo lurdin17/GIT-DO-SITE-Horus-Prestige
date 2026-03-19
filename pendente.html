@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamento Pendente | Horus Prestige</title>
+<link rel="icon" type="image/png" href="horus_perfil_cerca_2.png">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Albert Sans', sans-serif; }
+body {
+    color: #EAEAEA; overflow-x: hidden;
+    background: url('https://i.imgur.com/eWN4AWr.jpeg') no-repeat center center fixed;
+    background-size: cover; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) { body { background-attachment: scroll; } }
+
+#particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.particle { position: absolute; border-radius: 50%; }
+
+.card {
+    position: relative; z-index: 1;
+    background: rgba(10,10,10,0.9); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 30px; padding: 60px 50px; text-align: center;
+    max-width: 480px; width: 90%;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+    animation: aparecer 0.6s ease-out;
+}
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.icone {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(255,193,7,0.12); border: 2px solid #ffc107;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px auto; font-size: 2.2rem;
+    animation: pulsar 2s ease-in-out infinite;
+}
+@keyframes pulsar {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,193,7,0.4); }
+    50% { box-shadow: 0 0 0 15px rgba(255,193,7,0); }
+}
+
+.logo { width: 90px; margin: 0 auto 30px auto; display: block; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
+
+h1 { font-size: 1.8rem; color: #ffc107; margin-bottom: 14px; letter-spacing: 1px; }
+p { color: #aaa; line-height: 1.7; margin-bottom: 10px; font-size: 0.95rem; }
+
+.divider { width: 50px; height: 1px; background: rgba(255,255,255,0.12); margin: 24px auto; }
+
+.btn-voltar {
+    display: inline-block; margin-top: 10px; padding: 14px 35px;
+    background: #fff; color: #000; text-decoration: none;
+    border-radius: 12px; font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 1px; text-transform: uppercase; transition: 0.3s;
+}
+.btn-voltar:hover { background: #000; color: #fff; transform: translateY(-3px); }
+
+.whats {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 14px; padding: 12px 25px;
+    background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3);
+    color: #25d366; text-decoration: none; border-radius: 12px;
+    font-weight: 600; font-size: 0.9rem; transition: 0.3s;
+}
+.whats:hover { background: rgba(37,211,102,0.2); transform: translateY(-2px); }
+
+.btns { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+</style>
+</head>
+<body>
+<div id="particles-container"></div>
+
+<div class="card">
+    <img src="https://i.imgur.com/cCq52ps.png" class="logo" alt="Horus Logo">
+    <div class="icone">⏳</div>
+    <h1>Pagamento Pendente</h1>
+    <p>Seu pedido foi recebido, mas o pagamento ainda está sendo processado. Isso é normal para boletos e alguns Pix.</p>
+    <p>Assim que o pagamento for confirmado, entraremos em contato para prosseguir com o envio.</p>
+    <div class="divider"></div>
+    <div class="btns">
+        <a href="catalogo.html" class="btn-voltar">Ver Catálogo</a>
+        <a href="https://wa.me/5511943032667" target="_blank" class="whats">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#25d366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Falar no WhatsApp
+        </a>
+    </div>
+</div>
+
+<script>
+const container = document.getElementById('particles-container');
+for(let i = 0; i < 30; i++){
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    const s = Math.random() * 2 + 1;
+    p.style.width = p.style.height = `${s}px`;
+    p.style.background = 'rgba(255,255,255,0.2)';
+    p.style.top = `${Math.random() * 100}%`;
+    p.style.left = `${Math.random() * 100}%`;
+    container.appendChild(p);
+}
+</script>
+</body>
+</html>
