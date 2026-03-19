@@ -229,6 +229,18 @@ const BANCO_DE_DADOS = {
     },
 
     // =============================================
+    // HOLUNS — referência para o catálogo (preço a partir de)
+    // =============================================
+    "ho-platinum-black":  { nome: "Platinum Black",  preco: 549.99, imagem: "https://i.imgur.com/fE2V9PL.jpeg", link: "marcas/holuns/ho_platinum_black.html",  marca: "holuns" },
+    "ho-platinum-oyster": { nome: "Platinum Oyster", preco: 549.99, imagem: "https://i.imgur.com/Z2Ud07O.jpeg", link: "marcas/holuns/ho_platinum_oyster.html", marca: "holuns" },
+    "ho-platinum-gold":   { nome: "Platinum Gold",   preco: 549.99, imagem: "https://i.imgur.com/E46EzJc.jpeg", link: "marcas/holuns/ho_platinum_gold.html",   marca: "holuns" },
+    "ho-gold-line-b":     { nome: "Gold Line B",     preco: 549.99, imagem: "https://i.imgur.com/Ze60CwG.jpeg", link: "marcas/holuns/ho_gold_line_b.html",     marca: "holuns" },
+    "ho-gold-line":       { nome: "Gold Line",       preco: 549.99, imagem: "https://i.imgur.com/SPDgSBe.jpeg", link: "marcas/holuns/ho_gold_line.html",       marca: "holuns" },
+    "ho-black-gold":      { nome: "Black Gold",      preco: 549.99, imagem: "https://i.imgur.com/6vCW4WX.jpeg", link: "marcas/holuns/ho_black_gold.html",      marca: "holuns" },
+    "ho-white-gold":      { nome: "White Gold",      preco: 549.99, imagem: "https://i.imgur.com/xNUwMnI.jpeg", link: "marcas/holuns/ho_white_gold.html",      marca: "holuns" },
+    "ho-gold":            { nome: "Gold",            preco: 549.99, imagem: "https://i.imgur.com/35Fvq9x.jpeg", link: "marcas/holuns/ho_gold.html",            marca: "holuns" },
+
+    // =============================================
     // HOLUNS — preços por tamanho (36mm / 41mm)
     // =============================================
     "ho-platinum-black-36mm": {
