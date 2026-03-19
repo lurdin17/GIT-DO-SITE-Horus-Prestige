@@ -109,7 +109,7 @@ exports.handler = async (event, context) => {
         };
 
     } catch (error) {
-        console.error("Erro:", error.message);
+        console.error("Erro completo:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
         return {
             statusCode: 500,
             headers: {
