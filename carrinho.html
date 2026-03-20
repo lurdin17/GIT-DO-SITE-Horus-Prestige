@@ -127,6 +127,15 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 .frete-opcao-preco { font-size: 0.9rem; font-weight: 700; color: #00d4a3; }
 .frete-msg { font-size: 0.82rem; color: #ff4d4d; margin-bottom: 10px; display: none; }
 .frete-msg.visivel { display: block; }
+/* AVISO ENCOMENDA */
+.aviso-encomenda { display: none; margin-bottom: 14px; background: rgba(255,200,50,0.07); border: 1px solid rgba(255,200,50,0.25); border-radius: 12px; overflow: hidden; animation: fadeInAv 0.3s ease; }
+@keyframes fadeInAv { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.aviso-encomenda.visivel { display: block; }
+.aviso-encomenda-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; cursor: pointer; user-select: none; }
+.aviso-encomenda-titulo { font-size: 0.82rem; font-weight: 600; color: #ffc832; display: flex; align-items: center; gap: 6px; }
+.aviso-encomenda-toggle { color: #ffc832; font-size: 0.8rem; font-weight: 700; transition: 0.3s; }
+.aviso-encomenda-body { padding: 0 14px 14px; font-size: 0.8rem; color: #ccc; line-height: 1.7; display: none; }
+.aviso-encomenda-body.aberto { display: block; }
 .cupom-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; display: block; }
 .cupom-row { display: flex; gap: 8px; margin-bottom: 6px; }
 .cupom-row input { flex: 1; padding: 11px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
@@ -224,6 +233,19 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         </div>
         <p class="frete-msg" id="frete-msg"></p>
         <div id="frete-resultado"></div>
+
+        <!-- AVISO ENCOMENDA -->
+        <div class="aviso-encomenda" id="aviso-encomenda">
+            <div class="aviso-encomenda-header" onclick="toggleAvisoEncomenda()">
+                <div class="aviso-encomenda-titulo">⚠️ Informação sobre o prazo</div>
+                <div class="aviso-encomenda-toggle" id="aviso-toggle">▼ ler</div>
+            </div>
+            <div class="aviso-encomenda-body" id="aviso-body">
+                Trabalhamos com relógios sob encomenda, selecionados diretamente de fornecedores internacionais.<br><br>
+                O prazo médio para chegada ao nosso estoque é de <strong style="color:#fff">2 semanas</strong>. Após esse processo, seu pedido é enviado com segurança para o endereço informado, iniciando então o prazo informado pelos Correios até sua residência.<br><br>
+                Na Horus Prestige, prezamos pela transparência e você acompanha cada etapa do seu pedido.
+            </div>
+        </div>
 
         <span class="cupom-label">Cupom de Desconto</span>
         <div class="cupom-row">
@@ -352,7 +374,16 @@ function selecionarFrete(index, opcao) {
     const valorFreteEl = document.getElementById('valor-frete');
     valorFreteEl.textContent = opcao.gratis ? '🎉 GRÁTIS' : formatarPreco(opcao.preco);
     valorFreteEl.style.color = opcao.gratis ? '#00d4a3' : '#fff';
+    // Mostra aviso encomenda
+    document.getElementById('aviso-encomenda').classList.add('visivel');
     atualizarTotal(); renderizarMetodos();
+}
+
+function toggleAvisoEncomenda() {
+    const body = document.getElementById('aviso-body');
+    const toggle = document.getElementById('aviso-toggle');
+    const aberto = body.classList.toggle('aberto');
+    toggle.textContent = aberto ? '▲ fechar' : '▼ ler';
 }
 
 function renderizarMetodos() {
