@@ -355,7 +355,7 @@ async function calcularFrete() {
                     <div class="frete-opcao-nome">${op.nome}</div>
                     <div class="frete-opcao-prazo">${op.prazo}</div>
                 </div>
-                <div class="frete-opcao-preco">${op.gratis ? '🎉 GRÁTIS' : formatarPreco(op.preco)}</div>
+                <div class="frete-opcao-preco">${op.gratis ? ' GRÁTIS' : formatarPreco(op.preco)}</div>
             </div>
         `).join('');
         if (dados.opcoes.length === 1) selecionarFrete(0, dados.opcoes[0]);
