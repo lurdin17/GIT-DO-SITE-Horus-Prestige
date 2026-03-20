@@ -372,7 +372,7 @@ function selecionarFrete(index, opcao) {
     const el = document.getElementById(`frete-op-${index}`);
     if (el) el.classList.add('selecionado');
     const valorFreteEl = document.getElementById('valor-frete');
-    valorFreteEl.textContent = opcao.gratis ? '🎉 GRÁTIS' : formatarPreco(opcao.preco);
+    valorFreteEl.textContent = opcao.gratis ? ' GRÁTIS' : formatarPreco(opcao.preco);
     valorFreteEl.style.color = opcao.gratis ? '#00d4a3' : '#fff';
     // Mostra aviso encomenda
     document.getElementById('aviso-encomenda').classList.add('visivel');
