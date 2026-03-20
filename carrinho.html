@@ -98,7 +98,6 @@ header {
     to { bottom: 30px; opacity: 1; }
 }
 
-/* LAYOUT CARRINHO */
 .cart-wrapper {
     position: relative; z-index: 1;
     width: 90%; max-width: 1100px;
@@ -108,15 +107,12 @@ header {
     gap: 25px;
     align-items: start;
 }
-
 .cart-container {
     background: rgba(10,10,10,0.9); border: 1px solid rgba(255,255,255,0.1);
     border-radius: 30px; padding: 35px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.8);
 }
-
 h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
-
 .cart-vazio { text-align: center; padding: 40px; }
 .cart-vazio p { color: #aaa; font-size: 1.1rem; margin-bottom: 20px; }
 .btn-empty {
@@ -125,11 +121,9 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
     border-radius: 10px; font-weight: 600; transition: 0.3s;
 }
 .btn-empty:hover { background: #000; color: #fff; }
-
 .cart-item {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
+    padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
 }
 .cart-item:hover { background: rgba(255,255,255,0.02); border-radius: 10px; padding-left: 8px; }
 .item-info { display: flex; align-items: center; gap: 18px; }
@@ -144,7 +138,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 .btn-qty:hover { color: #d4af37; transform: scale(1.2); }
 .item-price { font-weight: 600; color: #fff; width: 110px; text-align: right; }
 
-/* RESUMO / PAGAMENTO */
 .resumo-container {
     background: rgba(10,10,10,0.9); border: 1px solid rgba(255,255,255,0.1);
     border-radius: 30px; padding: 30px;
@@ -153,35 +146,23 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 }
 .resumo-container h2 { font-size: 1.4rem; margin-bottom: 22px; }
 
-/* MÉTODOS DE PAGAMENTO */
 .metodos-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
 .metodos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
 .metodo-card {
     border: 2px solid rgba(255,255,255,0.12); border-radius: 12px;
     padding: 12px 8px; cursor: pointer; transition: all 0.3s ease;
-    background: rgba(255,255,255,0.04); text-align: center; position: relative;
-    user-select: none;
+    background: rgba(255,255,255,0.04); text-align: center; position: relative; user-select: none;
 }
 .metodo-card:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-.metodo-card.selecionado {
-    border-color: #fff; background: rgba(255,255,255,0.12);
-    box-shadow: 0 0 0 1px #fff, 0 4px 15px rgba(255,255,255,0.1);
-}
-.metodo-card.selecionado::after {
-    content: '✓'; position: absolute; top: 5px; right: 8px;
-    color: #fff; font-size: 0.75rem; font-weight: bold;
-}
+.metodo-card.selecionado { border-color: #fff; background: rgba(255,255,255,0.12); box-shadow: 0 0 0 1px #fff, 0 4px 15px rgba(255,255,255,0.1); }
+.metodo-card.selecionado::after { content: '✓'; position: absolute; top: 5px; right: 8px; color: #fff; font-size: 0.75rem; font-weight: bold; }
 .metodo-icone { height: 26px; display: flex; justify-content: center; align-items: center; margin-bottom: 4px; font-size: 1.2rem; }
 .metodo-nome { font-size: 0.78rem; font-weight: 600; color: #fff; margin-bottom: 3px; }
 .metodo-preco { font-size: 0.9rem; font-weight: 700; color: #fff; }
-.metodo-badge {
-    display: inline-block; background: rgba(0,210,160,0.2); color: #00d4a3;
-    border-radius: 6px; padding: 2px 6px; font-size: 0.65rem; font-weight: bold; margin-top: 3px;
-}
+.metodo-badge { display: inline-block; background: rgba(0,210,160,0.2); color: #00d4a3; border-radius: 6px; padding: 2px 6px; font-size: 0.65rem; font-weight: bold; margin-top: 3px; }
 .metodo-obrigatorio { font-size: 0.8rem; color: #ff4d4d; margin-bottom: 12px; display: none; }
 .metodo-obrigatorio.visivel { display: block; }
 
-/* CUPOM */
 .cupom-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; display: block; }
 .cupom-row { display: flex; gap: 8px; margin-bottom: 6px; }
 .cupom-row input {
@@ -192,33 +173,16 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 }
 .cupom-row input:focus { outline: none; border-color: #fff; background: rgba(255,255,255,0.1); }
 .cupom-row input::placeholder { color: rgba(255,255,255,0.3); text-transform: none; letter-spacing: 0; }
-.btn-cupom {
-    padding: 0 16px; background: #fff; color: #000;
-    border: none; border-radius: 10px; font-weight: 700;
-    cursor: pointer; font-size: 0.85rem; transition: 0.3s; white-space: nowrap;
-}
+.btn-cupom { padding: 0 16px; background: #fff; color: #000; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.85rem; transition: 0.3s; white-space: nowrap; }
 .btn-cupom:hover { background: #ddd; }
 .cupom-msg { font-size: 0.82rem; margin-bottom: 14px; display: none; }
 .cupom-msg.sucesso { color: #00d4a3; display: block; }
 .cupom-msg.erro { color: #ff4d4d; display: block; }
 
-/* LINHAS DO RESUMO */
-.resumo-linha {
-    display: flex; justify-content: space-between;
-    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-    font-size: 0.95rem; color: #ccc;
-}
-.resumo-desconto {
-    display: flex; justify-content: space-between;
-    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-    font-size: 0.95rem; color: #00d4a3;
-}
-.resumo-total {
-    display: flex; justify-content: space-between;
-    padding: 14px 0; font-size: 1.6rem; font-weight: 700; color: #fff;
-}
+.resumo-linha { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.95rem; color: #ccc; }
+.resumo-desconto { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.95rem; color: #00d4a3; }
+.resumo-total { display: flex; justify-content: space-between; padding: 14px 0; font-size: 1.6rem; font-weight: 700; color: #fff; }
 
-/* DADOS PESSOAIS */
 .form-group { margin-bottom: 14px; }
 .form-group label { display: block; margin-bottom: 5px; font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1.5px; }
 .form-group input {
@@ -228,6 +192,25 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 }
 .form-group input:focus { outline: none; border-color: #fff; background: rgba(255,255,255,0.1); }
 .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+
+/* AVISO WHATSAPP */
+.aviso-whats {
+    background: rgba(37,211,102,0.08);
+    border: 1px solid rgba(37,211,102,0.3);
+    border-radius: 12px;
+    padding: 13px 15px;
+    margin-bottom: 12px;
+    font-size: 0.82rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+.aviso-whats strong { color: #fff; }
+.aviso-whats a {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #25d366; font-weight: 600; text-decoration: none;
+    font-size: 0.85rem; margin-top: 8px;
+}
+.aviso-whats a:hover { text-decoration: underline; }
 
 .btn-finalizar {
     width: 100%; padding: 16px; background: #fff; color: #000;
@@ -239,7 +222,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 .btn-finalizar:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .btn-info { text-align: center; margin-top: 8px; opacity: 0.6; font-size: 0.82rem; }
 
-/* LOADING */
 .loading-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.92); display: none; justify-content: center;
@@ -321,22 +303,18 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 </header>
 
 <div class="cart-wrapper" id="cart-wrapper" style="display:none;">
-    <!-- ITENS -->
     <div class="cart-container">
         <h2>Sua Coleção</h2>
         <div id="cart-items-list"></div>
     </div>
 
-    <!-- RESUMO -->
     <div class="resumo-container">
         <h2>💳 Resumo do Pedido</h2>
 
-        <!-- MÉTODOS -->
         <span class="metodos-label">Forma de Pagamento</span>
         <div class="metodos-grid" id="metodos-grid"></div>
         <p class="metodo-obrigatorio" id="metodo-obrigatorio">⚠️ Selecione uma forma de pagamento.</p>
 
-        <!-- LINHAS RESUMO -->
         <div class="resumo-linha"><span>Subtotal</span><span id="resumo-subtotal">R$ 0,00</span></div>
         <div class="resumo-desconto" id="linha-desconto" style="display:none;">
             <span id="label-desconto">Desconto</span>
@@ -345,7 +323,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         <div class="resumo-linha"><span>Frete</span><span style="color:#00d4a3;">A calcular</span></div>
         <div class="resumo-total"><span>Total</span><span id="resumo-total">R$ 0,00</span></div>
 
-        <!-- CUPOM -->
         <span class="cupom-label">Cupom de Desconto</span>
         <div class="cupom-row">
             <input type="text" id="cupom-input" placeholder="Digite seu cupom">
@@ -353,7 +330,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         </div>
         <p class="cupom-msg" id="cupom-msg"></p>
 
-        <!-- DADOS -->
         <div class="form-group">
             <label>Nome Completo</label>
             <input type="text" id="nome" placeholder="Seu nome completo">
@@ -367,6 +343,16 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
             <input type="tel" id="telefone" placeholder="(11) 98765-4321">
         </div>
 
+        <!-- AVISO WHATSAPP -->
+        <div class="aviso-whats">
+            📦 Após finalizar o pagamento, envie o <strong>comprovante</strong> e seu <strong>endereço completo</strong> pelo WhatsApp para agilizar o envio.
+            <br>
+            <a href="https://wa.me/5511943032667" target="_blank">
+                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#25d366;flex-shrink:0"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Falar no WhatsApp
+            </a>
+        </div>
+
         <button class="btn-finalizar" id="btn-finalizar" onclick="finalizarCompra()">
             FINALIZAR PEDIDO
         </button>
@@ -374,13 +360,11 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
     </div>
 </div>
 
-<!-- CARRINHO VAZIO -->
 <div id="cart-vazio" style="display:none; position:relative; z-index:1; text-align:center; padding: 80px 20px;">
     <p style="color:#000000; font-size:1.2rem; margin-bottom:20px;">Seu carrinho está vazio.</p>
     <a href="catalogo.html" class="btn-empty">VER CATÁLOGO</a>
 </div>
 
-<!-- LOADING -->
 <div class="loading-overlay" id="loading-overlay">
     <div class="loading-content">
         <div class="spinner"></div>
@@ -389,11 +373,8 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 </div>
 
 <script>
-// ==========================================
-// CONFIGURAÇÕES DE DESCONTO
-// ==========================================
-const DESCONTO_PIX = 0.05;       // 5% no Pix
-const DESCONTO_CUPOM = 0.05;     // 5% com cupom CHRONO5
+const DESCONTO_PIX = 0.05;
+const DESCONTO_CUPOM = 0.05;
 
 const CUPONS_VALIDOS = {
     'CHRONO5': { desconto: DESCONTO_CUPOM, nome: 'Chrono Mods' }
@@ -402,9 +383,6 @@ const CUPONS_VALIDOS = {
 let metodoPagamento = null;
 let cupomAplicado = null;
 
-// ==========================================
-// HEADER / MENU
-// ==========================================
 function toggleMenu() {
     document.getElementById('mobile-menu').classList.toggle('open');
     document.getElementById('hamburger').classList.toggle('open');
@@ -426,9 +404,6 @@ function atualizarContador() {
     if (cm) { cm.innerText = total > 0 ? total : ''; cm.style.display = total > 0 ? 'inline-flex' : 'none'; }
 }
 
-// ==========================================
-// CÁLCULOS
-// ==========================================
 function calcularFatorDesconto(metodo) {
     let d = 0;
     if (metodo === 'pix') d += DESCONTO_PIX;
@@ -440,9 +415,6 @@ function formatarPreco(valor) {
     return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 }
 
-// ==========================================
-// MÉTODOS DE PAGAMENTO
-// ==========================================
 function renderizarMetodos() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const subtotal = carrinho.reduce((sum, item) => {
@@ -452,22 +424,8 @@ function renderizarMetodos() {
     }, 0);
 
     const metodos = [
-        {
-            id: 'pix',
-            icone: '💠',
-            nome: 'PIX',
-            fator: calcularFatorDesconto('pix'),
-            badge: cupomAplicado
-                ? `${(DESCONTO_PIX + cupomAplicado.desconto) * 100}% OFF`
-                : `${DESCONTO_PIX * 100}% OFF`
-        },
-        {
-            id: 'cartao',
-            icone: '💳',
-            nome: 'Cartão',
-            fator: calcularFatorDesconto('cartao'),
-            badge: cupomAplicado ? `${cupomAplicado.desconto * 100}% OFF` : ''
-        }
+        { id: 'pix', icone: '💠', nome: 'PIX', fator: calcularFatorDesconto('pix'), badge: cupomAplicado ? `${(DESCONTO_PIX + cupomAplicado.desconto) * 100}% OFF` : `${DESCONTO_PIX * 100}% OFF` },
+        { id: 'cartao', icone: '💳', nome: 'Cartão', fator: calcularFatorDesconto('cartao'), badge: cupomAplicado ? `${cupomAplicado.desconto * 100}% OFF` : '' }
     ];
 
     const grid = document.getElementById('metodos-grid');
@@ -482,16 +440,9 @@ function renderizarMetodos() {
 
     const btn = document.getElementById('btn-finalizar');
     const info = document.getElementById('btn-info');
-    if (metodoPagamento === 'pix') {
-        btn.innerText = '💠 PAGAR COM PIX';
-        info.innerText = 'Você será direcionado para pagar via PIX';
-    } else if (metodoPagamento === 'cartao') {
-        btn.innerText = '💳 PAGAR COM CARTÃO';
-        info.innerText = 'Parcelamento disponível no Mercado Pago';
-    } else {
-        btn.innerText = 'FINALIZAR PEDIDO';
-        info.innerText = 'Selecione uma forma de pagamento acima';
-    }
+    if (metodoPagamento === 'pix') { btn.innerText = '💠 PAGAR COM PIX'; info.innerText = 'Você será direcionado para pagar via PIX'; }
+    else if (metodoPagamento === 'cartao') { btn.innerText = '💳 PAGAR COM CARTÃO'; info.innerText = 'Parcelamento disponível no Mercado Pago'; }
+    else { btn.innerText = 'FINALIZAR PEDIDO'; info.innerText = 'Selecione uma forma de pagamento acima'; }
 }
 
 function selecionarMetodo(metodo) {
@@ -500,19 +451,10 @@ function selecionarMetodo(metodo) {
     renderizarCarrinho();
 }
 
-// ==========================================
-// CUPOM
-// ==========================================
 function aplicarCupom() {
     const input = document.getElementById('cupom-input').value.trim().toUpperCase();
     const msg = document.getElementById('cupom-msg');
-
-    if (!input) {
-        msg.textContent = '⚠️ Digite um cupom válido.';
-        msg.className = 'cupom-msg erro';
-        return;
-    }
-
+    if (!input) { msg.textContent = '⚠️ Digite um cupom válido.'; msg.className = 'cupom-msg erro'; return; }
     if (CUPONS_VALIDOS[input]) {
         cupomAplicado = { codigo: input, ...CUPONS_VALIDOS[input] };
         msg.textContent = `✅ Cupom "${input}" aplicado! ${cupomAplicado.desconto * 100}% de desconto.`;
@@ -528,11 +470,7 @@ function aplicarCupom() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const inputCupom = document.getElementById('cupom-input');
-    if (inputCupom) {
-        inputCupom.addEventListener('keypress', e => { if (e.key === 'Enter') aplicarCupom(); });
-    }
-
-    // Máscara telefone
+    if (inputCupom) inputCupom.addEventListener('keypress', e => { if (e.key === 'Enter') aplicarCupom(); });
     const tel = document.getElementById('telefone');
     if (tel) {
         tel.addEventListener('input', function(e) {
@@ -544,15 +482,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.value = v;
         });
     }
-
-    // Recupera dados salvos
     const nome = localStorage.getItem('hp_nome');
     const email = localStorage.getItem('hp_email');
     const telefone = localStorage.getItem('hp_telefone');
     if (nome) document.getElementById('nome').value = nome;
     if (email) document.getElementById('email').value = email;
     if (telefone) document.getElementById('telefone').value = telefone;
-
     ['nome','email','telefone'].forEach(id => {
         document.getElementById(id).addEventListener('input', () => {
             localStorage.setItem(`hp_${id}`, document.getElementById(id).value);
@@ -560,9 +495,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ==========================================
-// RENDERIZAR CARRINHO
-// ==========================================
 function renderizarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const wrapper = document.getElementById('cart-wrapper');
@@ -571,15 +503,10 @@ function renderizarCarrinho() {
 
     atualizarContador();
 
-    if (carrinho.length === 0) {
-        wrapper.style.display = 'none';
-        vazio.style.display = 'block';
-        return;
-    }
+    if (carrinho.length === 0) { wrapper.style.display = 'none'; vazio.style.display = 'block'; return; }
 
     wrapper.style.display = 'grid';
     vazio.style.display = 'none';
-
     let subtotal = 0;
     lista.innerHTML = '';
 
@@ -588,7 +515,6 @@ function renderizarCarrinho() {
         const preco = info ? info.preco : item.preco;
         const sub = preco * (item.quantidade || 1);
         subtotal += sub;
-
         lista.innerHTML += `
             <div class="cart-item">
                 <div class="item-info">
@@ -608,7 +534,6 @@ function renderizarCarrinho() {
         `;
     });
 
-    // Desconto
     let descontoTotal = 0;
     if (metodoPagamento === 'pix') descontoTotal += DESCONTO_PIX;
     if (cupomAplicado) descontoTotal += cupomAplicado.desconto;
@@ -641,9 +566,6 @@ function alterarQtd(index, delta) {
     renderizarCarrinho();
 }
 
-// ==========================================
-// FINALIZAR COMPRA
-// ==========================================
 async function finalizarCompra() {
     if (!metodoPagamento) {
         const aviso = document.getElementById('metodo-obrigatorio');
@@ -651,16 +573,10 @@ async function finalizarCompra() {
         aviso.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
     }
-
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
-
-    if (!nome || !email || !telefone) {
-        alert('⚠️ Preencha todos os campos antes de continuar.');
-        return;
-    }
-
+    if (!nome || !email || !telefone) { alert('⚠️ Preencha todos os campos antes de continuar.'); return; }
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     if (carrinho.length === 0) return;
 
@@ -670,12 +586,10 @@ async function finalizarCompra() {
         const telLimpo = telefone.replace(/\D/g, '');
         const area = telLimpo.substring(0, 2);
         const numero = telLimpo.substring(2);
-
         let descontoTotal = 0;
         if (metodoPagamento === 'pix') descontoTotal += DESCONTO_PIX;
         if (cupomAplicado) descontoTotal += cupomAplicado.desconto;
         const fator = 1 - descontoTotal;
-
         let sufixo = '';
         if (metodoPagamento === 'pix') sufixo += ' [PIX]';
         if (cupomAplicado) sufixo += ` [Cupom: ${cupomAplicado.codigo}]`;
@@ -684,7 +598,7 @@ async function finalizarCompra() {
             const info = BANCO_DE_DADOS[item.id] || Object.values(BANCO_DE_DADOS).find(p => p.nome === item.nome);
             const preco = info ? info.preco : item.preco;
             return {
-                title: item.nome + sufixo,
+                title: item.nome || info?.nome || 'Produto Horus Prestige',
                 unit_price: parseFloat((preco * fator).toFixed(2)),
                 quantity: item.quantidade || 1,
                 picture_url: item.imagem || ''
@@ -702,12 +616,8 @@ async function finalizarCompra() {
         });
 
         const dados = await resposta.json();
-
-        if (dados.init_point) {
-            window.location.href = dados.init_point;
-        } else {
-            throw new Error(dados.error || 'Erro ao gerar link');
-        }
+        if (dados.init_point) { window.location.href = dados.init_point; }
+        else { throw new Error(dados.error || 'Erro ao gerar link'); }
 
     } catch (erro) {
         console.error(erro);
@@ -716,7 +626,6 @@ async function finalizarCompra() {
     }
 }
 
-// Partículas
 const containerP = document.getElementById('particles-container');
 for(let i = 0; i < 35; i++){
     const p = document.createElement('div');
