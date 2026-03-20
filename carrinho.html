@@ -38,6 +38,50 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background
 @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,77,77,0.7); } 70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255,77,77,0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,77,77,0); } }
 .toast-aviso { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); color: #000; padding: 15px 30px; border-radius: 50px; font-weight: 600; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; animation: slideUp 0.5s forwards; }
 @keyframes slideUp { from { bottom: -50px; opacity: 0; } to { bottom: 30px; opacity: 1; } }
+
+/* MODAL */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75); display: none; justify-content: center;
+    align-items: center; z-index: 3000; backdrop-filter: blur(5px);
+    padding: 20px;
+}
+.modal-overlay.show { display: flex; }
+.modal-box {
+    background: #111; border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px; padding: 32px 28px; max-width: 420px; width: 100%;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    animation: modalIn 0.3s ease;
+}
+@keyframes modalIn { from { opacity: 0; transform: scale(0.92) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+.modal-icon { font-size: 2.5rem; text-align: center; margin-bottom: 14px; }
+.modal-title { font-size: 1.2rem; font-weight: 700; color: #fff; text-align: center; margin-bottom: 10px; letter-spacing: 0.5px; }
+.modal-body { font-size: 0.9rem; color: #ccc; text-align: center; line-height: 1.7; margin-bottom: 22px; }
+.modal-body strong { color: #fff; }
+.modal-whats {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3);
+    border-radius: 12px; padding: 12px 16px; margin-bottom: 22px;
+    color: #25d366; font-weight: 600; font-size: 0.9rem; text-decoration: none;
+    transition: 0.3s;
+}
+.modal-whats:hover { background: rgba(37,211,102,0.2); }
+.modal-btns { display: flex; gap: 10px; }
+.btn-modal-cancelar {
+    flex: 1; padding: 14px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15); color: #aaa;
+    border-radius: 12px; cursor: pointer; font-size: 0.9rem;
+    font-weight: 600; transition: 0.3s;
+}
+.btn-modal-cancelar:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.btn-modal-pagar {
+    flex: 2; padding: 14px; background: #fff; color: #000;
+    border: none; border-radius: 12px; cursor: pointer;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; transition: 0.4s;
+}
+.btn-modal-pagar:hover { background: #000; color: #fff; }
+
 .cart-wrapper { position: relative; z-index: 1; width: 90%; max-width: 1100px; margin: 0 auto 60px auto; display: grid; grid-template-columns: 1fr 400px; gap: 25px; align-items: start; }
 .cart-container { background: rgba(10,10,10,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
 h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
@@ -67,7 +111,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 .metodo-badge { display: inline-block; background: rgba(0,210,160,0.2); color: #00d4a3; border-radius: 6px; padding: 2px 6px; font-size: 0.65rem; font-weight: bold; margin-top: 3px; }
 .metodo-obrigatorio { font-size: 0.8rem; color: #ff4d4d; margin-bottom: 12px; display: none; }
 .metodo-obrigatorio.visivel { display: block; }
-/* FRETE */
 .frete-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; display: block; margin-top: 4px; }
 .frete-row { display: flex; gap: 8px; margin-bottom: 8px; }
 .frete-row input { flex: 1; padding: 11px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 10px; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
@@ -84,7 +127,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 .frete-opcao-preco { font-size: 0.9rem; font-weight: 700; color: #00d4a3; }
 .frete-msg { font-size: 0.82rem; color: #ff4d4d; margin-bottom: 10px; display: none; }
 .frete-msg.visivel { display: block; }
-/* CUPOM */
 .cupom-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; display: block; }
 .cupom-row { display: flex; gap: 8px; margin-bottom: 6px; }
 .cupom-row input { flex: 1; padding: 11px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
@@ -103,10 +145,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 .form-group input { width: 100%; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 10px; font-size: 0.9rem; transition: 0.3s; }
 .form-group input:focus { outline: none; border-color: #fff; background: rgba(255,255,255,0.1); }
 .form-group input::placeholder { color: rgba(255,255,255,0.3); }
-.aviso-whats { background: rgba(37,211,102,0.08); border: 1px solid rgba(37,211,102,0.3); border-radius: 12px; padding: 13px 15px; margin-bottom: 12px; font-size: 0.82rem; color: #ccc; line-height: 1.6; }
-.aviso-whats strong { color: #fff; }
-.aviso-whats a { display: inline-flex; align-items: center; gap: 6px; color: #25d366; font-weight: 600; text-decoration: none; font-size: 0.85rem; margin-top: 8px; }
-.aviso-whats a:hover { text-decoration: underline; }
 .btn-finalizar { width: 100%; padding: 16px; background: #fff; color: #000; border: none; font-weight: 700; border-radius: 14px; cursor: pointer; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.4s; margin-top: 8px; }
 .btn-finalizar:hover { transform: translateY(-3px); background: #000; color: #fff; box-shadow: 0 10px 25px rgba(255,255,255,0.1); }
 .btn-finalizar:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
@@ -125,6 +163,26 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
 <body>
 <div id="particles-container"></div>
 <div id="toast" class="toast-aviso"></div>
+
+<!-- MODAL CONFIRMAÇÃO -->
+<div class="modal-overlay" id="modal-confirmacao">
+    <div class="modal-box">
+        <div class="modal-icon">📦</div>
+        <div class="modal-title">Quase lá!</div>
+        <div class="modal-body">
+            Após finalizar o pagamento, envie o <strong>comprovante</strong> e seu <strong>endereço completo</strong> pelo WhatsApp para agilizar o envio.
+        </div>
+        <a href="https://wa.me/5511943032667" target="_blank" class="modal-whats">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#25d366;flex-shrink:0"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Falar no WhatsApp
+        </a>
+        <div class="modal-btns">
+            <button class="btn-modal-cancelar" onclick="fecharModal()">Voltar</button>
+            <button class="btn-modal-pagar" id="btn-modal-pagar" onclick="confirmarPagamento()">Ir para Pagamento</button>
+        </div>
+    </div>
+</div>
+
 <header>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     <a href="carrinho.html" class="cart-mobile">Carrinho <span id="cart-count-mobile"></span></a>
@@ -154,13 +212,11 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         <span class="metodos-label">Forma de Pagamento</span>
         <div class="metodos-grid" id="metodos-grid"></div>
         <p class="metodo-obrigatorio" id="metodo-obrigatorio">⚠️ Selecione uma forma de pagamento.</p>
-
         <div class="resumo-linha"><span>Subtotal</span><span id="resumo-subtotal">R$ 0,00</span></div>
         <div class="resumo-desconto" id="linha-desconto" style="display:none;"><span id="label-desconto">Desconto</span><span id="valor-desconto">- R$ 0,00</span></div>
         <div class="resumo-linha"><span>Frete</span><span id="valor-frete" style="color:#aaa;">Digite o CEP abaixo</span></div>
         <div class="resumo-total"><span>Total</span><span id="resumo-total">R$ 0,00</span></div>
 
-        <!-- FRETE -->
         <span class="frete-label">Calcular Frete (SEDEX)</span>
         <div class="frete-row">
             <input type="text" id="cep-input" placeholder="00000-000" maxlength="9">
@@ -169,7 +225,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         <p class="frete-msg" id="frete-msg"></p>
         <div id="frete-resultado"></div>
 
-        <!-- CUPOM -->
         <span class="cupom-label">Cupom de Desconto</span>
         <div class="cupom-row">
             <input type="text" id="cupom-input" placeholder="Digite seu cupom">
@@ -180,15 +235,6 @@ h2 { font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         <div class="form-group"><label>Nome Completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
         <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="seu@email.com"></div>
         <div class="form-group"><label>Telefone</label><input type="tel" id="telefone" placeholder="(11) 98765-4321"></div>
-
-        <div class="aviso-whats">
-            📦 Após finalizar o pagamento, envie o <strong>comprovante</strong> e seu <strong>endereço completo</strong> pelo WhatsApp para agilizar o envio.
-            <br>
-            <a href="https://wa.me/5511943032667" target="_blank">
-                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#25d366;flex-shrink:0"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Falar no WhatsApp
-            </a>
-        </div>
 
         <button class="btn-finalizar" id="btn-finalizar" onclick="finalizarCompra()">FINALIZAR PEDIDO</button>
         <p class="btn-info" id="btn-info">Selecione uma forma de pagamento acima</p>
@@ -215,7 +261,6 @@ let freteValor = 0;
 let freteSelecionado = null;
 
 function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('open'); document.getElementById('hamburger').classList.toggle('open'); }
-
 function mostrarToast(msg) { const t = document.getElementById('toast'); t.innerText = msg; t.style.display = 'block'; setTimeout(() => { t.style.display = 'none'; }, 2500); }
 
 function atualizarContador() {
@@ -260,15 +305,13 @@ function atualizarTotal() {
     } else { document.getElementById('linha-desconto').style.display = 'none'; }
 }
 
-// FRETE
 async function calcularFrete() {
     const cepInput = document.getElementById('cep-input');
     const cep = cepInput.value.replace(/\D/g, '');
     const msg = document.getElementById('frete-msg');
     const resultado = document.getElementById('frete-resultado');
     const btn = document.getElementById('btn-calcular-frete');
-    msg.className = 'frete-msg';
-    resultado.innerHTML = '';
+    msg.className = 'frete-msg'; resultado.innerHTML = '';
     if (cep.length !== 8) { msg.textContent = '⚠️ Digite um CEP válido com 8 dígitos.'; msg.classList.add('visivel'); return; }
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     const qtdTotal = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
@@ -293,7 +336,6 @@ async function calcularFrete() {
                 <div class="frete-opcao-preco">${op.gratis ? '🎉 GRÁTIS' : formatarPreco(op.preco)}</div>
             </div>
         `).join('');
-        // Seleciona automaticamente se só tem uma opção
         if (dados.opcoes.length === 1) selecionarFrete(0, dados.opcoes[0]);
     } catch (e) {
         btn.disabled = false; btn.textContent = 'Calcular';
@@ -303,16 +345,14 @@ async function calcularFrete() {
 }
 
 function selecionarFrete(index, opcao) {
-    freteSelecionado = opcao;
-    freteValor = opcao.preco || 0;
+    freteSelecionado = opcao; freteValor = opcao.preco || 0;
     document.querySelectorAll('.frete-opcao').forEach(el => el.classList.remove('selecionado'));
     const el = document.getElementById(`frete-op-${index}`);
     if (el) el.classList.add('selecionado');
     const valorFreteEl = document.getElementById('valor-frete');
     valorFreteEl.textContent = opcao.gratis ? '🎉 GRÁTIS' : formatarPreco(opcao.preco);
     valorFreteEl.style.color = opcao.gratis ? '#00d4a3' : '#fff';
-    atualizarTotal();
-    renderizarMetodos();
+    atualizarTotal(); renderizarMetodos();
 }
 
 function renderizarMetodos() {
@@ -435,15 +475,37 @@ function alterarQtd(index, delta) {
     renderizarCarrinho();
 }
 
-async function finalizarCompra() {
-    if (!metodoPagamento) { document.getElementById('metodo-obrigatorio').classList.add('visivel'); document.getElementById('metodo-obrigatorio').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+// MODAL
+function fecharModal() {
+    document.getElementById('modal-confirmacao').classList.remove('show');
+}
+
+function finalizarCompra() {
+    if (!metodoPagamento) {
+        document.getElementById('metodo-obrigatorio').classList.add('visivel');
+        document.getElementById('metodo-obrigatorio').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
     if (!nome || !email || !telefone) { alert('⚠️ Preencha todos os campos antes de continuar.'); return; }
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     if (carrinho.length === 0) return;
+
+    // Mostra o modal antes de ir pro pagamento
+    document.getElementById('modal-confirmacao').classList.add('show');
+}
+
+async function confirmarPagamento() {
+    fecharModal();
     document.getElementById('loading-overlay').classList.add('show');
+
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
+
     try {
         const telLimpo = telefone.replace(/\D/g, '');
         let descontoTotal = 0;
@@ -453,14 +515,17 @@ async function finalizarCompra() {
         let sufixo = '';
         if (metodoPagamento === 'pix') sufixo += ' [PIX]';
         if (cupomAplicado) sufixo += ` [Cupom: ${cupomAplicado.codigo}]`;
+
         const items = carrinho.map(item => {
             const info = BANCO_DE_DADOS[item.id] || Object.values(BANCO_DE_DADOS).find(p => p.nome === item.nome);
             const preco = info ? info.preco : item.preco;
             return { title: (item.nome || info?.nome || 'Produto Horus Prestige') + sufixo, unit_price: parseFloat((preco * fator).toFixed(2)), quantity: item.quantidade || 1, picture_url: item.imagem || '' };
         });
+
         if (freteValor > 0) {
             items.push({ title: `Frete SEDEX${freteSelecionado ? ' - ' + freteSelecionado.prazo : ''}`, unit_price: parseFloat(freteValor.toFixed(2)), quantity: 1, picture_url: '' });
         }
+
         const resposta = await fetch('/.netlify/functions/criar-pagamento', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ items, payer: { name: nome, email, phone: { area_code: telLimpo.substring(0,2), number: telLimpo.substring(2) } }, payment_method: metodoPagamento })
@@ -474,6 +539,13 @@ async function finalizarCompra() {
         document.getElementById('loading-overlay').classList.remove('show');
     }
 }
+
+// Fecha modal clicando fora
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('modal-confirmacao').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+});
 
 const containerP = document.getElementById('particles-container');
 for(let i = 0; i < 35; i++){
