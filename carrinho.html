@@ -490,6 +490,12 @@ function finalizarCompra() {
     const email = document.getElementById('email').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
     if (!nome || !email || !telefone) { alert('⚠️ Preencha todos os campos antes de continuar.'); return; }
+    if (!freteSelecionado) {
+        document.getElementById('frete-msg').textContent = '⚠️ Calcule e selecione o frete antes de continuar.';
+        document.getElementById('frete-msg').classList.add('visivel');
+        document.getElementById('cep-input').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
     const carrinho = JSON.parse(localStorage.getItem('horus_cart')) || [];
     if (carrinho.length === 0) return;
 
