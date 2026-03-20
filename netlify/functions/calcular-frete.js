@@ -36,21 +36,21 @@ exports.handler = async (event) => {
         }
 
         // FRETE GRÁTIS para SP Capital e ABC Paulista
-        if (isFreteGratis(cepLimpo)) {
-            return {
-                statusCode: 200,
-                headers,
-                body: JSON.stringify({
-                    opcoes: [{
-                        id: 'gratis',
-                        nome: 'Entrega Local',
-                        preco: 0,
-                        prazo: '1 a 2 dias úteis',
-                        gratis: true
-                    }]
-                })
-            };
-        }
+if (isFreteGratis(cepLimpo)) {
+    return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+            opcoes: [{
+                id: 'sedex-gratis',
+                nome: 'SEDEX',
+                preco: 0,
+                prazo: '1 a 2 dias úteis',
+                gratis: true
+            }]
+        })
+    };
+}
 
         const token = process.env.MELHOR_ENVIO_TOKEN;
         if (!token) {
